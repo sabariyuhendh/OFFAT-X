@@ -1,0 +1,58 @@
+version: "3.9"
+
+# OFFAT-X Sandbox — Vulnerable API + DIRB testing environment
+# Usage:
+#   docker compose up -d           # start the target API
+#   docker compose run offat-x     # run OFFAT-X full scan
+
+services:
+
+  # ── Deliberately Vulnerable Target API ────────────────────────────────────
+  vulnerable-api:
+    build:
+      context: ./vulnerable-api
+    container_name: offatx-target
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/users"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - offatx-net
+
+  # ── OFFAT-X Scanner ────────────────────────────────────────────────────────
+  offat-x:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: offatx-scanner
+    depends_on:
+      vulnerable-api:
+        condition: service_healthy
+    volumes:
+      - ./results:/results
+      - ../wordlists:/wordlists:ro
+      - ../data-leak-patterns.yml:/data-leak-patterns.yml:ro
+    command: >
+      -f http://vulnerable-api:8000/openapi.json
+      -b http://vulnerable-api:8000
+      -H "Authorization: Bearer token_alice"
+      --dirb
+      --dirb-wordlist /wordlists/api-endpoints.txt
+      --dirb-c 10
+      --dirb-r 30
+      -jwt
+      -rl
+      -rl-probes 20
+      -dl /data-leak-patterns.yml
+      -o /results/offat-x-output.json
+      --html /results/offat-x-report.html
+      -r 50
+    networks:
+      - offatx-net
+
+networks:
+  offatx-net:
+    driver: bridge

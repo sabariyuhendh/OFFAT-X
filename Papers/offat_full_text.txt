@@ -1,0 +1,663 @@
+OFFAT-X: A Sandboxed, Dependency-Aware and Role-Differential Framework for Automated Authorization Testing of REST APIs
+
+Priya A
+
+Department of Computer Science and Business Systems
+
+KIT – Kalaignarkarunanidhi Institute of Technology
+
+Coimbatore, Tamil Nadu, India
+
+Email: drpriyatn@gmail.com
+
+Sabari Yuhendhran M
+
+Department of Computer Science and Business Systems
+
+KIT – Kalaignarkarunanidhi Institute of Technology
+
+Coimbatore, Tamil Nadu, India
+
+Email: sabariyuhendhranm.csbs2023@kitcbe.ac.in
+
+Sadhana M
+
+Department of Computer Science and Business Systems
+
+KIT – Kalaignarkarunanidhi Institute of Technology
+
+Coimbatore, Tamil Nadu, India
+
+Email: sadhanam.csbs2023@kitcbe.ac.in
+
+Jegan S
+
+Department of Computer Science and Business Systems
+
+KIT – Kalaignarkarunanidhi Institute of Technology
+
+Coimbatore, Tamil Nadu, India
+
+Email: jegans.csbs2023@kitcbe.ac.in
+
+Abstract—Broken Object Level Authorization (BOLA) and Broken Function Level Authorization (BFLA) rank first and fifth in the OWASP API Security Top 10 (2023), yet they are hard to find automatically because each depends on the relationship between identities and resources. OWASP OFFAT is a useful open baseline, but its documented checks act on single requests, do not perform the setup calls many resources need, do not compare outcomes across privilege levels, and run without sandboxing. This paper presents OFFAT-X, which adds dependency-aware chaining, a role-differential matrix over four privilege tiers, semantic response diffing, sandboxed reconnaissance with a prebuilt dirb image, and remediation hints with a GitHub Action that gates merges on new findings. On a seeded benchmark and three public vulnerable APIs, evaluated over five runs, OFFAT-X reaches [recall] recall and [FPR] false-positive rate, against [recall] and [FPR] for unmodified OFFAT.
+
+Keywords—API security; authorization testing; BOLA; BFLA; OpenAPI; dynamic application security testing; sandboxing; DevSecOps.
+
+Introduction
+
+REST APIs connect mobile apps, frontends, partner systems and internal services, and most sensitive data passes through them. The OWASP API Security Top 10 (2023) ranks BOLA first and BFLA fifth [1]. BOLA occurs when an endpoint returns or changes an object without checking that the caller owns it; BFLA occurs when a low-privileged caller can invoke an administrative function. Both are improper-authorization weaknesses (CWE-285, CWE-639) [9].
+
+Automated testing struggles with them. A BOLA flaw is visible only when two identities are compared on an existing resource: a scanner that requests /api/orders/{id} with a random identifier receives a 404 and learns nothing, while one that trusts status codes misses 200 responses that carry error bodies. Two-account testing with Autorize [4] works but does not scale to hundreds of operations.
+
+OWASP OFFAT [2] is an MIT-licensed tool that generates tests from an OpenAPI file for BOLA, mass assignment, injection and other classes. It has no stateful setup, no cross-role comparison, no tool isolation or CI-native fixes and its documentation says as much; it’s per-endpoint, single-identity checks. This paper presents OFFAT-X, which keeps OFFAT as its baseline and adds chaining (Sect. IV), a role matrix (V), semantic diffing (VI), sandboxed reconnaissance (VII) and remediation with a CI gate (VIII). Section IX gives the evaluation protocol, Section X the results, and Section XI the limitations.
+
+The contributions are: (i) a stateful chaining engine that derives setup sequences from the specification; (ii) a four-tier role-differential matrix that separates BOLA from BFLA; (iii) a semantic differ that does not rely on status codes; (iv) a sandbox for third-party reconnaissance; and (v) CI-native reporting with remediation hints. Each is specified below with its parameters so that it can be reproduced.
+
+Related Work
+
+RESTler [3] infers producer–consumer dependencies from an API specification and fuzzes request sequences, but targets crashes rather than authorization outcomes. Authorize [4] replays requests under a second identity, and Auto-IDOR-Hunter [5] tracks identifier mutations in passive traffic; both act on traffic a tester has already produced. The OWASP Testing Guide [6] informs our classification rules. OFFAT-X differs by working from the specification, and by reporting in SARIF [7] over the OpenAPI contract [8]. Deliberately vulnerable APIs crAPI [12], VAmPI [13] and Juice Shop [14] supply the ground truth in Section IX.    Table I compares the tools with respect to their documented features; “—” indicates that it is not a documented focus.
+
+The difference is the product. Stateful fuzzers aren’t aware of the decisions made when determining authorization, the dual-identity tools don’t create tests based on the specification, and none of the listed tools separate its helpers or report fixes. OFFAT-X is not a replacement for this existing and widely used baseline, but rather it is built to close this combination.
+
+Capability comparison (documented features)
+
+Capability
+
+RESTler
+
+Autorize
+
+OFFAT
+
+OFFAT-X
+
+Spec-driven
+
+Yes
+
+No
+
+Yes
+
+Yes
+
+Stateful chaining
+
+Yes
+
+No
+
+—
+
+Yes
+
+Multi-role comparison
+
+—
+
+Partial (2)
+
+—
+
+Yes (4)
+
+BOLA / BFLA classes
+
+—
+
+Partial
+
+Partial
+
+Yes
+
+Semantic diff
+
+—
+
+—
+
+—
+
+Yes
+
+Sandboxed tools
+
+—
+
+—
+
+—
+
+Yes
+
+Remediation / CI gate
+
+—
+
+—
+
+Partial
+
+Yes
+
+System Architecture
+
+The pipeline is as shown in Fig. 1. Before any tests are generated, Spec ingestion normalizes OpenAPI 2.0 and 3.x [8]. The planner creates chains × roles × operations, while the sandbox provides undocumented candidate endpoints, the executor, differ and classifier label outcomes, the reporter and CI gate generate output, and an audit log provides information about each request. The generators used by OFFAT are re-used and not forked; each extension is a plugin; findings are deterministic. A scope file contains allowed hosts, tiers and rate limits, and it is read from the environment and never written to reports (as shown in Listing 1).
+
+The pipeline is run in the following stages: (1) scope validation; (2) ingestion and normalisation of the specification; (3) if enabled, the running of the sandboxed reconnaissance; (4) building the dependency graph and making plans; (5) the running of chains by tier and identity; (6) classification of responses and scoring them; (7) generating hints and reports; and (8) applying the CI gate. If it fails at step 1, it will not proceed and will be recorded as a failure, which will prevent another request being within the allowed scope.s
+
+Listing 1.  Scope file (offat-x.yml)
+
+target: https://api.staging.example.com
+
+scope:  [api.staging.example.com]
+
+roles:
+
+guest:   {auth: none}
+
+low:     {auth: bearer, env: LOW_TOKEN}
+
+premium: {auth: bearer, env: PREMIUM_TOKEN}
+
+admin:   {auth: bearer, env: ADMIN_TOKEN}
+
+policy:  # optional explicit rules
+
+- {op: 'DELETE /api/admin/users/{id}',
+
+allow: [admin]}
+
+limits: {rps: 5, destructive: false}
+
+OFFAT-X pipeline. OFFAT’s generator is the baseline; the dashed sandbox runs third-party tools in isolation.
+
+Dependency-Aware Stateful Chaining
+
+Resources are created before they are read. We build a graph G = (V, E) from the specification, with an edge (p, c) when operation p produces a resource type τ that c consumes. Producers are identified from 2xx response schemas containing an id field, and consumers from path parameters such as {orderId}. A chain is discovered by BFS from the nearest producer for a target t, bounded to four steps. Algorithm 1 executes it per tier, and a setup failure is recorded as inconclusive rather than negative, so a missing object is never taken for a secure endpoint. For example, POST /api/cart → POST /api/checkout yields an order identifier that a second identity then requests from GET /api/orders/{orderId}.
+
+Inference is deliberately conservative. An ambiguous producer keeps a low-weight edge, and the planner reports how many targets have no chain at all, so coverage gaps are visible in the report instead of silently skipped.
+
+Algorithm 1.  Dependency-aware chain execution
+
+Step
+
+Operation
+
+1
+
+Build G from the normalised spec; derive τ(o) per operation
+
+2
+
+For target t, find chain P(t) by BFS from producers of its τ
+
+3
+
+For each tier r, run P(t) as an identity of r; store ids in C_r[τ]
+
+4
+
+On setup failure, mark (t, r) inconclusive and continue
+
+5
+
+Issue t with those ids as an identity of another tier r′
+
+6
+
+Append (t, r, r′, status, body) to the evidence set
+
+Role-Differential Authorization Testing
+
+Tiers form the ordered set R = {guest &lt; low &lt; premium &lt; admin}, and a tier may hold several identities for horizontal tests. For target t on a resource owned by identity o, the executor issues t as every other identity, producing M[t, a, o]. Table II maps each comparison to a finding class, and Fig. 2 gives the same rules as a decision path. Because many specifications omit permissions, a provisional policy is inferred: an operation is treated as admin-only when admin receives a 2xx and a lower tier receives 401 or 403. Vertical findings resting on that inference are labelled suspected; explicit policy entries override it and yield confirmed findings.
+
+As a worked case, a low-tier identity Alice creates order 42. A second low-tier identity, Bob, requests GET /api/orders/42 and receives 200 with Alice’s line items and address. The semantic score for this response is D = 1.0 (Eq. 2), so the finding is BOLA with high confidence. If instead an admin-only operation returns 200 to a low-tier identity while the admin tier also succeeds and the lower tier receives 403 for the same operation, the policy inference marks it as suspected BFLA until an explicit entry confirms or rejects it.
+
+Role-differential classification rules
+
+Attacker → target
+
+Condition
+
+Finding
+
+Same tier → another identity’s object
+
+Semantic match (Eq. 2)
+
+BOLA, confirmed
+
+Guest → authenticated object
+
+Semantic match
+
+Broken auth. (API2)
+
+Low → admin-only operation
+
+2xx where policy denies
+
+BFLA, confirmed/suspected
+
+Low → premium-only field
+
+Field match premium baseline
+
+BOPLA (API3)
+
+Any → PUT / PATCH / DELETE
+
+Scanner-created objects only
+
+Only if destructive enabled
+
+Role-differential classification as a decision path (Table II).
+
+Semantic Response Diffing
+
+Status Codes Deceive: A lot of frameworks return 200 when they fail or expose the data beside a failure flag. For attacker response a and owner baseline v, the differ compares key structure K, identifier overlap V and an error signature E:
+
+J = |K(a) ∩ K(v)| / |K(a) ∪ K(v)|
+
+O = |V(v) ∩ V(a)| / |V(v)|
+
+and flags the response when the score of Eq. (2) reaches the threshold τ:
+
+D = w_k·J + w_o·O + w_s·1[2xx] − w_e·E(a)
+
+The initial weights are w_k = 0.3, w_o = 0.5, w_s = 0.2 and w_e = 0.6, with τ = 0.7, to be tuned on a calibration service [[N]]. The verdicts these weights give are listed in Table III, and the steps of the scoring can be seen in Fig. 3 as a flowchart.
+
+The weights are interpreted as a priority order. The most evident identifier is the owner identifier (w_o), followed by a shape identifier (w_k) and a 2xx status (w_s) which is common to many responses, with the error signature (w_e) superseding them, eliminating the 200-with-error false positives.
+
+Verdicts of the semantic differ (Eq. 2)
+
+Attacker response
+
+D
+
+Verdict
+
+200, owner’s data (shape, ids)
+
+1.0
+
+Vulnerable
+
+200, owner ids, other shape
+
+0.7
+
+Vulnerable (at τ)
+
+200, owner shape, no ids
+
+0.5
+
+Not vulnerable
+
+200, {"success": false}
+
+−0.1
+
+Not vulnerable
+
+401 / 403
+
+—
+
+Not vulnerable
+
+404 / 5xx
+
+—
+
+Inconclusive / anomaly
+
+Default parameters for scoring steps and Eq. 2 for semantic response diff.
+
+Sandboxed Reconnaissance
+
+Reconnaissance tools analyze aggressive responses, and may be able to access the internal hosts. OFFAT-X thus runs each tool in an ephemeral container: the default one is a Debian base container with Dirb [10] and its wordlists pinned by digest. Candidate paths from dirb are normalised and passed through the same semantic checks, and plugins are accepted only against a validated manifest. The controls listed in Table IV are based on the Docker’s hardening guidance [11]. Fig. 4 shows the trust boundary.
+
+All containers are destroyed at the end of their run or at their timeout. The sandbox introduces no extra cost beyond container start-up, which is measured separately in Section X, because only this is a cost the sandbox imposes on detection.
+
+Container controls for third-party tools
+
+Control
+
+Setting
+
+Threat
+
+Identity
+
+Non-root, fixed UID
+
+Impact of compromise
+
+Root FS
+
+Read-only; tmpfs /tmp
+
+Persistence
+
+Capabilities
+
+Drop ALL; no-new-privileges
+
+Escalation
+
+Resources
+
+CPU, memory, PID limits
+
+Exhaustion
+
+Network
+
+Egress allowlist (scope hosts)
+
+Internal pivoting
+
+Mounts / secrets
+
+Spec read-only; secrets via env
+
+Host or credential leak
+
+Trust boundary and lifespan of third-party tools in the sandbox.
+
+Remediation, Reporting and CI/CD
+
+For each finding, the OWASP category, CWE, tiers, chain trace, decisive request and response, score D and confidence are recorded. If the template is deterministic and exists in the project manifest, then the fix is provided in remediation, which is shown beside the vulnerable query in Listing 2 for Node.js and Prisma. Results are output as JSON (which is compatible with SARIF 2.1.0 [7]) and as HTML.
+
+The verdict, the score and its three terms are included in each HTML report next to the request pair that created the score, allowing the developer to verify the decision without needing to re-run the scan. The JSON form is identical to that used for tooling, and each finding in the SARIF form is associated with its operation for code-scanning platforms [7].
+
+Listing 2.  Remediation hint for a BOLA finding
+
+Vulnerable:
+
+prisma.order.findUnique({
+
+where: { id: req.params.id } })
+
+Fix:
+
+prisma.order.findFirst({
+
+where: { id: req.params.id,
+
+userId: currentUser.id } })
+
+A composite GitHub Action (Listing 3) is executed on pull requests with changes to the specification, uploads SARIF and fails only on new Critical or High findings when compared to the default-branch baseline.
+
+A fingerprint of operation is used to match findings between runs, not the request text; this means that a rename or a finding with a different payload does not re-open an old finding. The gate only fails if there is a fingerprint in the pull request and it is not in the baseline.
+
+Listing 3.  Workflow step (GitHub Actions)
+
+- uses: ./.github/actions/offat-x
+
+with:
+
+spec: openapi.json
+
+scope: offat-x.yml
+
+fail-on: high-new  # new only
+
+env:
+
+LOW_TOKEN: ${{ secrets.LOW_TOKEN }}
+
+Experimental Setup
+
+Targets. crAPI [12], VAmPI [13] and the Juice Shop API [14] provide public ground truth. An in-house multi-role service with [N] BOLA, [N] BFLA and [N] benign endpoints that return 200 with error bodies measures false positives directly. Table V summarises them.
+
+The in-house service is written before any tool is run, and its planted flaws are listed in a ground-truth file that is hidden from the scanner’s configuration. Benign endpoints are included so that false positives can be counted on the same run as detections. A calibration service with the same structure but different planted flaws is used only to set the weights of Eq. (2).
+
+Evaluation targets and ground truth
+
+Target
+
+Type
+
+Ground truth
+
+Tiers
+
+crAPI [12]
+
+Vulnerable API
+
+Documented challenges
+
+Per docs
+
+VAmPI [13]
+
+Vulnerable REST API
+
+Documented flaws
+
+[tiers]
+
+Juice Shop [14]
+
+Vulnerable web app API
+
+Documented challenges
+
+[tiers]
+
+In-house
+
+Seeded multi-role
+
+[N] BOLA, [N] BFLA
+
+All four
+
+Protocol. OFFAT is run in default mode. OFFAT-X is run in full and with each module removed. A finding matches ground truth when operation, class and tiers agree. Metrics are computed per tool:
+
+P = TP/(TP+FP),   R = TP/(TP+FN),   F1 = (2·P·R)/(P+R),   FPR = FP/(FP+TN)
+
+Each configuration is repeated five times; the mean, standard deviation and 95% confidence intervals [1] are reported. Each run will include the scope file, image digests and random seeds, and the test hardware will be reported with results (hardware, Docker version). Four hypotheses that are predestined: H1, chaining increases BOLA recall for chained operations; H2, the role matrix catches BFLA that OFFAT misses; H3, the differ reduces false positives, while maintaining the recall; H4, sandbox start-up adds at most [x] s per scan.
+
+Results and Discussion
+
+Table VI is to be completed with detection and Table VII with ablation—both to be completed from the five-run protocol. The operational cost is reported in Table VIII and the bracketed cells are for future expansions.
+
+Five runs were performed and the results reported with their spread for each. The answers to H1 - H3 are directly provided in Tables VI and VII, while the answer to H4 is provided in Table VIII. If a configuration is not better than its ablation on a specific hypothesis, it is reported as such.
+
+Detection on the combined benchmark (mean of five runs)
+
+Metric
+
+OFFAT
+
+OFFAT-X
+
+TP / FP / FN
+
+[TP] / [FP] / [FN]
+
+[TP] / [FP] / [FN]
+
+Precision / Recall
+
+[x.xx] / [x.xx]
+
+[x.xx] / [x.xx]
+
+F1
+
+[x.xx]
+
+[x.xx]
+
+False-positive rate
+
+[x.xx] %
+
+[x.xx] %
+
+Ablation (recall by class, FP count, F1)
+
+Configuration
+
+BOLA R
+
+BFLA R
+
+FP
+
+F1
+
+Full OFFAT-X
+
+[x.xx]
+
+[x.xx]
+
+[n]
+
+[x.xx]
+
+− chaining
+
+[x.xx]
+
+[x.xx]
+
+[n]
+
+[x.xx]
+
+− role matrix
+
+[x.xx]
+
+[x.xx]
+
+[n]
+
+[x.xx]
+
+− semantic differ
+
+[x.xx]
+
+[x.xx]
+
+[n]
+
+[x.xx]
+
+− sandbox
+
+[x.xx]
+
+[x.xx]
+
+[n]
+
+[x.xx]
+
+Operational cost
+
+Metric
+
+OFFAT
+
+OFFAT-X
+
+Operations covered (%)
+
+[x]
+
+[x]
+
+Mean scan time (s)
+
+[x]
+
+[x]
+
+Sandbox start-up (s)
+
+—
+
+[x]
+
+Peak memory (MB)
+
+[x]
+
+[x]
+
+[Analysis of H1–H4 against Tables VI–VIII, with the chained-versus-unchained BOLA recall, the number of suspected versus confirmed BFLA findings, and the start-up cost against the H4 bound.] Threats to validity: the weights are tuned on a calibration service, three public targets do not cover all API styles, and ground-truth matching depends on class and tier labels.
+
+Scope is not just a design choice, but also a safety measure. Why the check is first is that a non-allowlisted scanner cannot be misconfigured to attack a third party.
+
+Figs. 5–8 characterise the semantic differ analytically from the default parameters of Eq. (2), so they follow from the stated weights and do not depend on the five-run measurements. Fig. 5 reproduces the verdicts of Table III against τ, and Fig. 6 splits each score into its weighted terms: the owner-identifier term carries the largest share, and the error term is the only one that can pull a 200 response below zero. Fig. 7 shows that an error-free 2xx response with matching shape reaches τ at an owner-identifier overlap of 0.4, while a response with a different shape needs full overlap. Fig. 8 shows the same boundary over the whole (J, O) plane.
+
+Differ score D for the four response scenarios of Table III, against the threshold τ.
+
+Weighted terms behind each score in Fig. 5 (Eq. 2).
+
+Score D against owner-identifier overlap O for three response conditions.
+
+Score D over the (J, O) plane for a 2xx response with no error signature; the dashed line is τ.
+
+Fig. 9 scores the documented capabilities of Table I, counting Yes as 1 and Partial as 0.5; it is a count of documented features, not a measure of detection quality. Fig. 10 gives the worst-case request count for one dependent target, assuming each of the four tiers runs the chain once and then replays the target as each of the other three tiers, which is 4(L + 3) requests for L setup steps. With the bound of four steps the count stays at 28 or fewer, which is the predictability argued for in Section XI. Measured recall, false-positive and timing figures are to be added once the five-run protocol is complete.
+
+Documented capabilities covered by each tool, scored from Table I (Yes = 1, Partial = 0.5).
+
+Worst-case requests per dependent target against chain length, with four tiers.
+
+Discussion
+
+Three trade-offs are made explicit in the design. Chaining has additional requests per dependent target and the maximum number of targets in a chain ensures that the cost remains predictable. The role matrix requires one account per Tier, which is an up-front cost not incurred by single-identity scanners. The semantic differ is replacing the one-or-zero check result with a score, which gives the developer a way to explain each component of a verdict in every report, due to the consequence of a finding being reportable.
+
+Limitations, Ethics and Responsible Use
+
+Chains rely on the specification, so any identifier outside of the specification cannot be captured. Inferred policies may be incorrect and be marked as suspected. The differ targets JSON; status and length are used if there is no JSON. There are no pre-provisioned accounts in each tier required for role tests, and business-logic abuse (API6) is outside of scope. The scope allowlist is used, destructive methods are “off” (disabled) by default and will only handle objects which the scanner created, credentials will NOT be saved in reports/images and an audit log tracks every request.
+
+Threats to validity are typical of the split. The weights are fitted into the calibration service and should not be fitted on the test targets. From the outside, there are three public targets that are not all API styles and deployments. Ground truth matching is constructive, requiring class and tier annotations, and disagreements are not hidden, but are reported.
+
+Conclusion and Future Work
+
+The purpose of this paper was to identify the authorization flaws that single-request scanners do not account for, and to specify a new extension, called OFFAT-X, to previous work on OWASP OFFAT [2]. These mechanisms are either individually enableable, individually measurable and individually removable. The protocol in section IX is set in advance and thus results can be read without post-hoc adjustments. In addition, upcoming features include support for OpenAPI 3.1, GraphQL and gRPC, active policy inference (confirmed) and a live internal API governance evaluation.
+
+References
+
+OWASP Foundation, “OWASP API Security Top 10 – 2023,” 2023. [Online]. Available: https://owasp.org/API-Security/editions/2023/en/0x00-header/
+
+OWASP Foundation, “OWASP Offensive API Tester (OFFAT),” GitHub, MIT License. [Online]. Available: https://github.com/OWASP/OFFAT
+
+V. Atlidakis, P. Godefroid, and M. Polishchuk, “RESTler: Stateful REST API fuzzing,” in Proc. 41st Int. Conf. Software Engineering (ICSE), 2019, pp. 748–758, doi: 10.1109/ICSE.2019.00083.
+
+PortSwigger, “Autorize,” Burp Suite extension. [Online]. Available: https://github.com/PortSwigger/autorize
+
+SecureByChaos, “Auto-IDOR-Hunter,” GitHub. [Online]. Available: https://github.com/SecureByChaos/Auto-IDOR-Hunter
+
+OWASP Foundation, “Web Security Testing Guide: Authorization Testing.” [Online]. Available: https://owasp.org/www-project-web-security-testing-guide/
+
+OASIS, “Static Analysis Results Interchange Format (SARIF) Version 2.1.0,” OASIS Standard, 2020.
+
+OpenAPI Initiative, “OpenAPI Specification v3.1.0,” 2021. [Online]. Available: https://spec.openapis.org/oas/v3.1.0
+
+MITRE, “CWE-285: Improper Authorization” and “CWE-639: Authorization Bypass Through User-Controlled Key.” [Online]. Available: https://cwe.mitre.org
+
+The Dark Raver, “DIRB: Web Content Scanner.” [Online]. Available: https://dirb.sourceforge.net
+
+Docker Inc., “Docker Engine security.” [Online]. Available: https://docs.docker.com/engine/security/
+
+OWASP Foundation, “OWASP crAPI: Completely Ridiculous API.” [Online]. Available: https://github.com/OWASP/crAPI
+
+erev0s, “VAmPI: Vulnerable API.” [Online]. Available: https://github.com/erev0s/VAmPI
+
+OWASP Foundation, “OWASP Juice Shop.” [Online]. Available: https://github.com/juice-shop/juice-shop

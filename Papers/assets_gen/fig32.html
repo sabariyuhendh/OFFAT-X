@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body { background: #0b0f17; color: #e6edf3; padding: 25px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+  .title { font-size: 20px; font-weight: 700; color: #58a6ff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+  .arch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; max-width: 1120px; }
+  .card { background: #161b22; border: 1.5px solid #30363d; border-radius: 8px; padding: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); position: relative; }
+  .card.highlight { border-color: #238636; background: rgba(35, 134, 54, 0.05); }
+  .card.special { border-color: #1f6feb; background: rgba(31, 111, 235, 0.05); }
+  .card.orange { border-color: #d29922; background: rgba(210, 153, 34, 0.05); }
+  .card.purple { border-color: #8957e5; background: rgba(137, 87, 229, 0.05); }
+  .card-title { font-size: 14px; font-weight: 700; color: #58a6ff; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; }
+  .card-title .tag { font-size: 10px; padding: 2px 6px; border-radius: 4px; background: #30363d; color: #c9d1d9; }
+  .card-body { font-size: 11.5px; color: #8b949e; line-height: 1.55; }
+  .card-body ul { list-style: none; padding-left: 0; }
+  .card-body li { margin-bottom: 6px; position: relative; padding-left: 14px; }
+  .card-body li::before { content: "✔"; position: absolute; left: 0; color: #3fb950; font-size: 10px; }
+  .banner-conn { grid-column: span 3; background: #161b22; border: 1px dashed #388bfd; border-radius: 6px; padding: 12px; display: flex; justify-content: space-around; align-items: center; font-size: 12px; color: #58a6ff; font-weight: 600; }
+  .conn-item { display: flex; align-items: center; gap: 8px; }
+</style>
+</head>
+<body>
+  <div class="title">Proposed OFFAT-X Framework Architecture</div>
+  <div class="arch-grid">
+    <div class="card special">
+      <div class="card-title">
+        <span>1. Spec & Graph Ingestion</span>
+        <span class="tag">Kin-OpenAPI</span>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>OpenAPI 2.0 & 3.x contract parser</li>
+          <li>Producer-Consumer dependency graph G=(V,E)</li>
+          <li>Extracts schemas, paths, params & responses</li>
+          <li>Normalizes endpoints & authentication schemes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card highlight">
+      <div class="card-title">
+        <span>2. Dependency-Aware Chaining</span>
+        <span class="tag">BFS Planner</span>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Automated state setup sequence discovery</li>
+          <li>Bounded BFS traversal (Max depth L ≤ 4)</li>
+          <li>Executes: POST /create ➔ GET /target/{id}</li>
+          <li>Predictable worst-case cost: 4(L + 3) requests</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title">
+        <span>3. Role-Differential Matrix</span>
+        <span class="tag">4 Privilege Tiers</span>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Privilege hierarchy: Guest &lt; Low &lt; Prem &lt; Admin</li>
+          <li>Horizontal testing: Alice vs Bob identity isolation</li>
+          <li>Vertical testing: Low tier accessing Admin functions</li>
+          <li>Discovers BOLA (API1) & BFLA (API5) flaws</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card orange">
+      <div class="card-title">
+        <span>4. Sandboxed Reconnaissance</span>
+        <span class="tag">Docker Isolation</span>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Ephemeral Debian container with pinned DIRB</li>
+          <li>Drops ALL Linux capabilities (no-new-privs)</li>
+          <li>Read-only rootfs + temporary tmpfs</li>
+          <li>Detects Shadow & Undocumented APIs (API9)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card special">
+      <div class="card-title">
+        <span>5. Semantic Response Differ</span>
+        <span class="tag">Equation (2)</span>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Calculates Jaccard schema similarity J</li>
+          <li>Calculates Owner Value Overlap ratio O</li>
+          <li>Applies Error Signature penalty E(a)</li>
+          <li>Flags true leaks (D ≥ τ = 0.70); eliminates false 200s</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card highlight">
+      <div class="card-title">
+        <span>6. CI/CD Gate & Reporting</span>
+        <span class="tag">DevSecOps</span>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>CVSS v3.1 scoring & OWASP Top 10 mapping</li>
+          <li>Actionable source code remediation hints</li>
+          <li>Standard SARIF 2.1.0 output for code scanning</li>
+          <li>GitHub Action fails merges only on new High/Crit</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="banner-conn">
+      <div class="conn-item">⚡ <span>Scope Allowlist Guard</span></div>
+      <div class="conn-item">🔒 <span>JWT & GraphQL Security Probers</span></div>
+      <div class="conn-item">📊 <span>Rate-Limit Bypass Engine</span></div>
+      <div class="conn-item">🛡 <span>Interactive HTML Dashboard</span></div>
+    </div>
+  </div>
+</body>
+</html>

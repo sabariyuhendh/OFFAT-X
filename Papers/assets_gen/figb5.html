@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Consolas', 'Courier New', monospace; }
+  body { background: #0a0d14; padding: 25px; display: flex; justify-content: center; align-items: center; height: 100vh; }
+  .box { width: 100%; max-width: 1100px; background: #0d1117; border: 1.5px solid #30363d; border-radius: 8px; box-shadow: 0 12px 36px rgba(0,0,0,0.6); overflow: hidden; font-size: 12px; }
+  .header { background: #161b22; padding: 10px 16px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
+  .title { color: #58a6ff; font-weight: bold; font-size: 13px; }
+  .content { padding: 20px; color: #c9d1d9; line-height: 1.5; white-space: pre-wrap; height: 600px; }
+  .c-green { color: #3fb950; font-weight: bold; }
+  .c-yellow { color: #d29922; }
+  .c-red { color: #f85149; font-weight: bold; }
+  .c-cyan { color: #58a6ff; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="header">
+      <div class="title">⚖ OFFAT-X Role-Differential Execution & Semantic Diff Evidence Console</div>
+      <div style="font-size:11px; color:#8b949e;">Endpoint: GET /api/v1/orders/{orderId} • Resource Owner: Alice (ID: 1042)</div>
+    </div>
+    <div class="content"><span class="c-cyan">=== ROLE-DIFFERENTIAL TESTING EXECUTION TRACE ===</span>
+
+[Step 1] Setup: Alice (Tier: Low) issues POST /api/v1/orders -> <span class="c-green">201 Created (Created Order ID: 1042)</span>
+[Step 2] Owner Baseline: Alice requests GET /api/v1/orders/1042:
+         Status: <span class="c-green">200 OK</span>
+         Body:   {"id": 1042, "user": "alice@kit.ac.in", "items": [{"sku": "A1", "price": 450}], "cc": "4111-XXXX"}
+
+[Step 3] Cross-Identity Horizontal Probe: Bob (Tier: Low, Attacker) requests GET /api/v1/orders/1042:
+         Status: <span class="c-red">200 OK</span>
+         Body:   {"id": 1042, "user": "alice@kit.ac.in", "items": [{"sku": "A1", "price": 450}], "cc": "4111-XXXX"}
+
+<span class="c-cyan">=== SEMANTIC DIFFER FORMULATION EVALUATION (Equation 2) ===</span>
+    • Jaccard Key Similarity J:   <span class="c-green">1.00</span> (|K(Bob) ∩ K(Alice)| / |K(Bob) ∪ K(Alice)| = 4/4)
+    • Value Overlap Ratio O:      <span class="c-green">1.00</span> (|V(Alice) ∩ V(Bob)| / |V(Alice)| = 1042 / 1042)
+    • Status Indicator 1[2xx]:    <span class="c-green">1.00</span> (HTTP Status is 200 OK)
+    • Error Signature Penalty E:  <span class="c-green">0.00</span> (No error payload detected)
+    ---------------------------------------------------------------------------------
+    • Computed Diff Score D:     <span class="c-red">D = (0.3 × 1.0) + (0.5 × 1.0) + (0.2 × 1.0) - (0.6 × 0.0) = 1.00</span>
+    • Threshold Comparison:      <span class="c-red">1.00 ≥ τ (0.70) ➔ VERDICT: CONFIRMED BOLA VULNERABILITY!</span>
+
+<span class="c-cyan">=== AUTOMATED CODE REMEDIATION HINT SYNTHESIS ===</span>
+<span class="c-yellow">// Vulnerable Code (src/controllers/orderController.js):</span>
+const order = await prisma.order.findUnique({
+  where: { id: req.params.orderId }
+});
+
+<span class="c-green">// Suggested Remediation Patch:</span>
+const order = await prisma.order.findFirst({
+  where: { 
+    id: req.params.orderId,
+    userId: req.user.id  <span class="c-green">// Enforce tenant & owner identity bound</span>
+  }
+});
+if (!order) return res.status(404).json({ error: "Order not found" });</div>
+  </div>
+</body>
+</html>

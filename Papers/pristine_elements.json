@@ -1,0 +1,2986 @@
+[
+  {
+    "idx": 0,
+    "type": "p",
+    "blips": [
+      "rId7"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 1,
+    "type": "p",
+    "blips": [],
+    "text": "VULNIXAI: AN AI-POWERED MULTI-MODAL PLATFORM"
+  },
+  {
+    "idx": 2,
+    "type": "p",
+    "blips": [],
+    "text": "FOR AUTOMATED VULNERABILITY DETECTION,"
+  },
+  {
+    "idx": 3,
+    "type": "p",
+    "blips": [],
+    "text": "REAL-TIME MONITORING, AND REMEDIATION"
+  },
+  {
+    "idx": 4,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 5,
+    "type": "p",
+    "blips": [],
+    "text": "PROJECT PHASE - I REPORT"
+  },
+  {
+    "idx": 6,
+    "type": "p",
+    "blips": [],
+    "text": "Submitted by"
+  },
+  {
+    "idx": 7,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 8,
+    "type": "p",
+    "blips": [],
+    "text": "DINESH S                                [711523BCB015]"
+  },
+  {
+    "idx": 9,
+    "type": "p",
+    "blips": [],
+    "text": "DIVYADHARSHINI M          [711523BC B 016]"
+  },
+  {
+    "idx": 10,
+    "type": "p",
+    "blips": [],
+    "text": "SANJAY N                                  [711523BC B 051]"
+  },
+  {
+    "idx": 11,
+    "type": "p",
+    "blips": [],
+    "text": "in partial fulfillment for the award of the degree"
+  },
+  {
+    "idx": 12,
+    "type": "p",
+    "blips": [],
+    "text": "of"
+  },
+  {
+    "idx": 13,
+    "type": "p",
+    "blips": [],
+    "text": "BACHELOR OF TECHNOLOGY"
+  },
+  {
+    "idx": 14,
+    "type": "p",
+    "blips": [],
+    "text": "IN"
+  },
+  {
+    "idx": 15,
+    "type": "p",
+    "blips": [],
+    "text": "COMPUTER SCIENCE AND BUSINESS SYSTEMS"
+  },
+  {
+    "idx": 16,
+    "type": "p",
+    "blips": [],
+    "text": "KIT-KALAIGNARKARUNANIDHI INSTITUTE OF TECHNOLOGY"
+  },
+  {
+    "idx": 17,
+    "type": "p",
+    "blips": [],
+    "text": "(An Autonomous Institution, affiliated to Anna University Chennai and Approved by AICTE, New Delhi)"
+  },
+  {
+    "idx": 18,
+    "type": "p",
+    "blips": [],
+    "text": "COIMBATORE - 641 402"
+  },
+  {
+    "idx": 19,
+    "type": "p",
+    "blips": [],
+    "text": "ANNA UNIVERSITY::CHENNAI 600 025"
+  },
+  {
+    "idx": 20,
+    "type": "p",
+    "blips": [],
+    "text": "NOVEMBER  2026"
+  },
+  {
+    "idx": 21,
+    "type": "p",
+    "blips": [],
+    "text": "KIT-KALAIGNARKARUNANIDHI INSTITUTE OF TECHNOLOGY"
+  },
+  {
+    "idx": 22,
+    "type": "p",
+    "blips": [],
+    "text": "COIMBATORE - 641 402"
+  },
+  {
+    "idx": 23,
+    "type": "p",
+    "blips": [],
+    "text": "ANNA UNIVERSITY::CHENNAI 600 025"
+  },
+  {
+    "idx": 24,
+    "type": "p",
+    "blips": [],
+    "text": "BONAFIDE CERTIFICATE"
+  },
+  {
+    "idx": 25,
+    "type": "p",
+    "blips": [],
+    "text": "Certified that this project report  \"VULNIXAI: AN AI-POWERED MULTI-MODAL PLATFORM FOR AUTOMATED VULNERABILITY DETECTION, REAL-TIME MONITORING, AND REMEDIATION\"  is the bonafide work of  DINESH   S (711523BC B 01 5 ),   DIVYADHARSHINI M  (711523BC B 01 6 ),  SANJAY N  (711523BC B 051) who carried out the project work under my supervision. Certified further, that to the best of my knowledge the work reported herein does not form part of any other project report or dissertation on the basis of which a degree or award was conferred on an earlier occasion on this or any other candidate."
+  },
+  {
+    "idx": 26,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 27,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 28,
+    "type": "tbl",
+    "blips": [],
+    "text": "Mr. PANDIARAJAN S HEAD OF THE DEPARTMENT Assistant Professor (Sl.Gr) Department of Computer Science and Business Systems KIT-Kalaignarkarunanidhi Institute of Technology, Coimbatore- 641 402. Mr. PANDIARAJAN S SUPERVISOR HEAD OF THE DEPARTMENT Assistant Professor (Sl.Gr) Department of Computer Science and Business Systems KIT-Kalaignarkarunanidhi Institute of Technology, Coimbatore- 641 402."
+  },
+  {
+    "idx": 29,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 30,
+    "type": "p",
+    "blips": [],
+    "text": "Submitted for the university Project viva - voce Examination held on"
+  },
+  {
+    "idx": 31,
+    "type": "p",
+    "blips": [],
+    "text": "………………"
+  },
+  {
+    "idx": 32,
+    "type": "p",
+    "blips": [],
+    "text": "INTERNAL EXAMINER EXTERNAL EXAMINER"
+  },
+  {
+    "idx": 33,
+    "type": "p",
+    "blips": [],
+    "text": "KIT-KALAIGNARKARUNANIDHI INSTITUTE OF TECHNOLOGY:: COIMBATORE - 641 402"
+  },
+  {
+    "idx": 34,
+    "type": "p",
+    "blips": [],
+    "text": "DECLARATION"
+  },
+  {
+    "idx": 35,
+    "type": "p",
+    "blips": [],
+    "text": "We jointly declare that the project report on  \"VULNIXAI: AN AI-POWERED MULTI-MODAL PLATFORM FOR AUTOMATED VULNERABILITY DETECTION, REAL-TIME MONITORING, AND REMEDIATION\"  is the result of original work done by us and to the best of our knowledge, similar work has not been submitted to \" ANNA UNIVERSITY, CHENNAI \" for the requirement of the Degree of Bachelor of Technology in Computer Science and Business Systems. This project report is submitted on the partial fulfillment of the requirement for the award of the Degree of Bachelor of Technology in Computer Science and Business Systems."
+  },
+  {
+    "idx": 36,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 37,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 38,
+    "type": "p",
+    "blips": [],
+    "text": "Signature"
+  },
+  {
+    "idx": 39,
+    "type": "p",
+    "blips": [],
+    "text": "DINESH S                                  [711523BCB015]"
+  },
+  {
+    "idx": 40,
+    "type": "p",
+    "blips": [],
+    "text": "DIVYADHARSHINI M          [711523BC B 016]"
+  },
+  {
+    "idx": 41,
+    "type": "p",
+    "blips": [],
+    "text": "SANJAY N                                  [711523BC B 051]"
+  },
+  {
+    "idx": 42,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 43,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 44,
+    "type": "p",
+    "blips": [],
+    "text": "Place:   Coimbatore Date:         November 2026"
+  },
+  {
+    "idx": 45,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 46,
+    "type": "p",
+    "blips": [],
+    "text": "ACKNOWLEDGEMENT"
+  },
+  {
+    "idx": 47,
+    "type": "p",
+    "blips": [],
+    "text": "Owing deeply to the supreme, we extend our sincere thanks to God almighty who has made all things possible."
+  },
+  {
+    "idx": 48,
+    "type": "p",
+    "blips": [],
+    "text": "We extend our heartfelt gratitude towards our revered Founder Chairman  Thiru. Pongalur N. Palanisamy , Vice Chairperson  Mrs. Indu Murugesan , and Executive  Trustee  Mr. A. Suriya , for providing us with the necessary infrastructure, computing facilities, and motivating environment to undertake this project."
+  },
+  {
+    "idx": 49,
+    "type": "p",
+    "blips": [],
+    "text": "We wish to express our sincere gratitude to our beloved  Dr. K. Ramasamy , Principal , and  Dr. S. Vimal , Dean (School of Computing &amp; Emerging Technologies), for the facilities provided and continuous academic encouragement to complete this project work successfully."
+  },
+  {
+    "idx": 50,
+    "type": "p",
+    "blips": [],
+    "text": "Our sincere gratitude passes on to  Mr. Pandiarajan S ,  Head of the Department of Computer Science and Business Systems, for his valuable guidance, support, and administrative encouragement throughout the duration of this project."
+  },
+  {
+    "idx": 51,
+    "type": "p",
+    "blips": [],
+    "text": "We express our sincere thanks to  Dr. Priya A ,  Assistant   Professor, Department of Computer Science and Business Systems, the project coordinator, for  her  valuable suggestions, timely reviews, and constructive feedback during the project evaluation milestones."
+  },
+  {
+    "idx": 52,
+    "type": "p",
+    "blips": [],
+    "text": "We are profoundly grateful to  Mr. Pandiarajan S , Assistant Professor, Department of Computer Science and Business Systems, our project supervisor, for his constant intellectual guidance, technical insights, inspiring discussions, and patient support that led to the successful realization of VulnixAI."
+  },
+  {
+    "idx": 53,
+    "type": "p",
+    "blips": [],
+    "text": "The acknowledgement would be incomplete without a deep word of thanks to our beloved parents, faculty members, and friends for their enduring patience, moral encouragement, and sincere assistance throughout our academic journey."
+  },
+  {
+    "idx": 54,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 55,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 56,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 57,
+    "type": "p",
+    "blips": [],
+    "text": "DINESH S                                  [711523BCB015]"
+  },
+  {
+    "idx": 58,
+    "type": "p",
+    "blips": [],
+    "text": "DIVYADHARSHINI M          [711523BCB016]"
+  },
+  {
+    "idx": 59,
+    "type": "p",
+    "blips": [],
+    "text": "SANJAY N                                  [711523BCB051]"
+  },
+  {
+    "idx": 60,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 61,
+    "type": "p",
+    "blips": [],
+    "text": "ABSTRACT"
+  },
+  {
+    "idx": 62,
+    "type": "p",
+    "blips": [],
+    "text": "Modern web software development moves at a rapid pace, yet application security testing remains severely fragmented across disparate, single-purpose utilities. Development and DevSecOps teams typically manage siloed static analysis tools for source code, external dynamic scanners for production web endpoints, manual penetration testing checklists, and isolated uptime monitoring dashboards. This tool sprawl forces engineers to constantly context-switch across multiple dashboards to assess their security posture. Furthermore, conventional signature-based static application security testing (SAST) tools suffer from notorious false-positive rates ranging from 40% to 60%, overwhelming developers with low-value alerts. Most critically, existing scanners terminate their workflow at detection, leaving the arduous task of root-cause analysis, patch drafting, and pull-request creation entirely on the shoulders of overworked engineering teams."
+  },
+  {
+    "idx": 63,
+    "type": "p",
+    "blips": [],
+    "text": "To bridge this gap, this project develops VulnixAI, an intelligent, multi-modal security analysis and automated remediation platform. VulnixAI consolidates six core operational capabilities—repository static code analysis, dynamic website scanning, sandboxed file analysis, automated penetration testing, controlled load testing, and continuous 24/7 uptime/SSL monitoring—under a single unified architecture authenticated via zero-configuration GitHub OAuth 2.0. At the heart of VulnixAI lies a resilient dual-AI engine that pairs a high-throughput, low-cost primary inference model (Groq LLaMA-3-70B) with an automatic failover to a large-context secondary model (Google Gemini 1.5 Pro/Flash). To analyze large enterprise repositories without exceeding model token budgets, VulnixAI implements an Abstract Syntax Tree (AST) guided file-prioritization algorithm and multi-pass batching with intelligent truncation. A multi-factor severity scoring engine maps discovered weaknesses against Common Weakness Enumeration (CWE) definitions and calculates composite risk based on keyword density, exploitability, and potential system impact."
+  },
+  {
+    "idx": 64,
+    "type": "p",
+    "blips": [],
+    "text": "Crucially, VulnixAI closes the loop between vulnerability discovery and remediation through an automated patch generation engine. The platform synthesizes context-aware source code patches, validates them through an AST syntax parser to prevent build regressions, and automatically commits fixes to dedicated Git branches while raising documented pull requests via Octokit. In empirical evaluations conducted across diverse multi-language repositories and production web applications, VulnixAI identified 110 vulnerabilities across a representative application codebase (7 Critical, 19 High, 64 Medium, 20 Low) with zero manual configuration, successfully generated 110 automated pull-request remediations, achieved 100% request success rate across controlled load tests at 7.33 requests per second, and sustained round-the-clock uptime monitoring with dual-channel browser and WhatsApp alerting. The platform establishes an end-to-end autonomous security pipeline that drastically reduces Mean Time to Remediate (MTTR)."
+  },
+  {
+    "idx": 65,
+    "type": "p",
+    "blips": [],
+    "text": "TABLE OF CONTENTS"
+  },
+  {
+    "idx": 66,
+    "type": "tbl",
+    "blips": [],
+    "text": "CHAPTER TITLE PAGE NO. ACKNOWLEDGEMENT Iii ABSTRACT iv LIST OF FIGURES vii LIST OF TABLES viii LIST OF ABBREVIATIONS ix 1 INTRODUCTION 4 2 LITERATURE REVIEW 4 2.1  REVIEW OF RELATED WORK 4 2.2  CONCLUSION FROM LITERATURE REVIEW 7 3 SYSTEM ANALYSIS 8 3.1  EXISTING SYSTEM 8 3.1.1  DRAWBACKS 9 3.1.2  BLOCK DIAGRAM 10 3.2  PROPOSED SYSTEM 10 3.2.1  MERITS 11 3.2.2  BLOCK DIAGRAM 12 4 MATERIALS AND METHODS 14 4.1  HARDWARE SPECIFICATIONS 14 4.2  SOFTWARE SPECIFICATIONS 15 4.3  METHODOLOGY AND MATHEMATICAL  FORMULATION 6 5 EXPERIMENTAL SETUP AND PROCEDURE 22 5.1  BENCHMARK DATASET CONSTRUCTION 22 5.2  SOFTWARE SETUP 24 5.3  WORKING PROCEDURE 24 5.4  TESTING AND VALIDATION 25 6 RESULTS AND DISCUSSION 8 7 CONCLUSION 7 FUTURE ENHANCEMENT 39 APPENDIX 40 REFERENCES 63 LIST OF PUBLICATION 78"
+  },
+  {
+    "idx": 67,
+    "type": "p",
+    "blips": [],
+    "text": "LIST OF FIGURES"
+  },
+  {
+    "idx": 68,
+    "type": "tbl",
+    "blips": [],
+    "text": "FIGURE NO. TITLE PAGE NO. 3.1 Block diagram of existing fragmented security systems 10 3.2 Architecture and block diagram of the proposed VulnixAI platform 13 4.1 Six-stage multi-modal analysis, prioritization, and remediation pipeline 16 6.1 Repository scan interface listing connected GitHub repositories (3.png) 28 6.2 Vulnerability findings with severity breakdown and automated PR generation (1.png) 30 6.3 Real-time monitoring dashboard tracking site status and SSL health (4.png) 31 6.4 Penetration testing results showing vulnerable endpoints with evidence (2.png) 33 6.5 Load testing results showing throughput, response latency, and success rates (5.png) 34 6.6 End-to-end processing throughput and latency profile across platform modules 35"
+  },
+  {
+    "idx": 69,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 70,
+    "type": "p",
+    "blips": [],
+    "text": "LIST OF TABLES"
+  },
+  {
+    "idx": 71,
+    "type": "tbl",
+    "blips": [],
+    "text": "TABLE NO. TITLE PAGE NO. 4.1 Hardware and computing platform specification 14 4.2 Software stack and library specification 15 4.3 Default risk engine feature weights 21 4.4 Risk level thresholds and control-room actions 21 5.1 Security testing and vulnerability categories in the benchmark 22 5.2 Benchmark dataset characteristics and partition split 23 6.1 Comparative multi-model performance on the test partition 27 6.2 Severity breakdown and automated remediation efficacy 28 6.3 Feature ablation progression across configurations 30 6.4 Penetration testing findings, vulnerability validation 31 6.5 Controlled load testing performance and capacity stress profile 33 6.6 Confusion matrix on the held-out test sequences 34 6.7 End-to-end processing throughput and latency profile 34"
+  },
+  {
+    "idx": 72,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 73,
+    "type": "p",
+    "blips": [],
+    "text": "LIST OF ABBREVIATIONS"
+  },
+  {
+    "idx": 74,
+    "type": "tbl",
+    "blips": [],
+    "text": "AI - Artificial Intelligence API - Application Programming Interface AST - Abstract Syntax Tree CI/CD - Continuous Integration / Continuous Deployment CORS - Cross-Origin Resource Sharing CPU - Central Processing Unit CSRF - Cross-Site Request Forgery CVSS - Common Vulnerability Scoring System CWE - Common Weakness Enumeration DAST - Dynamic Application Security Testing DoS - Denial of Service FAR - False Alarm Rate FHD - Full High Definition FPS - Frames Per Second GPU - Graphics Processing Unit HSTS - HTTP Strict Transport Security HTTP - Hypertext Transfer Protocol HTTPS - Hypertext Transfer Protocol Secure IoU - Intersection over Union JWT - JSON Web Token LLM - Large Language Model LPU - Language Processing Unit mAP - mean Average Precision ML - Machine Learning MTTR - Mean Time to Remediate OAuth - Open Authorization ORM - Object Relational Mapping"
+  },
+  {
+    "idx": 75,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 76,
+    "type": "p",
+    "blips": [],
+    "text": "CHAPTER 1 INTRODUCTION"
+  },
+  {
+    "idx": 77,
+    "type": "p",
+    "blips": [],
+    "text": "Software security has emerged as one of the most critical engineering disciplines in contemporary computer science. Modern web and cloud applications are developed at unprecedented velocities, driven by continuous integration and automated deployment pipelines that release new code to production dozens of times each day. However, this acceleration in software delivery has profoundly widened the gap between the speed of development and the capacity of security auditing. Traditional application security testing has historically been fractured across a collection of narrow, single-purpose tools: a static analysis tool to inspect source code before compilation, a dynamic web application scanner to probe live staging endpoints, a penetration testing script to test authorization boundaries, and an isolated uptime monitoring agent to observe production availability once an application ships. That structural separation made technical sense when each domain demanded a bespoke heuristic engine, but it also imposes an onerous penalty on software engineering teams who must constantly juggle four or five disconnected dashboards to assemble a coherent picture of their system's security posture."
+  },
+  {
+    "idx": 78,
+    "type": "p",
+    "blips": [],
+    "text": "The practical difficulty in modern DevSecOps is therefore one of human attention, fragmented context, and alert fatigue, rather than a lack of scanning tools. Conventional static application security testing (SAST) tools rely predominantly on regular expressions and abstract syntax matching rules. While such pattern matchers execute rapidly, they lack holistic semantic understanding of code execution flow. Consequently, traditional scanners flood engineering teams with false-positive rates frequently reported in the range of 40% to 60%. This overwhelming noise causes developers to lose trust in automated tools, leading directly to the dangerous phenomenon wherein genuine, critical security vulnerabilities languish unacted upon in issue backlogs."
+  },
+  {
+    "idx": 79,
+    "type": "p",
+    "blips": [],
+    "text": "Earlier generations of vulnerability scanners leaned heavily on rigid syntactic patterns, which are fast but tend to flood a team with findings that are not actually exploitable in runtime contexts. VulnixAI takes a fundamentally unified approach: repository scanning, live website assessment, sandboxed file analysis, penetration testing, and load testing all sit behind the same login and reporting layer. Their findings are cross-referenced so that a weakness spotted in source code can be confirmed against the  deployed application and then tracked through continuous production monitoring. The result is a single narrative about a project's security posture instead of five disconnected reports."
+  },
+  {
+    "idx": 80,
+    "type": "p",
+    "blips": [],
+    "text": "Recent breakthroughs in artificial intelligence—particularly large language models (LLMs) trained on vast corpuses of source code and vulnerability databases—have demonstrated remarkable capabilities in semantic reasoning, contextual comprehension, and code generation. State-of-the-art language models can inspect complex code paths, identify multi-step taint propagation, and distinguish between benign patterns and genuine exploit vectors. However, deploying large language models directly into an enterprise security scanning pipeline introduces severe engineering hurdles that single-purpose scanners never had to confront."
+  },
+  {
+    "idx": 81,
+    "type": "p",
+    "blips": [],
+    "text": "Building a unified scanning platform surfaces three practical engineering challenges that do not show up in narrow tools. First, a language model's context window imposes a hard ceiling on how much source code it can reason about in one request, requiring an intelligent file-prioritization algorithm and multi-pass batching strategy to keep large repositories analysable without truncation. Second, depending on a single AI provider introduces a fatal point of failure; if that provider experiences rate limits, network throttling, or service outages, scanning completely halts. Third, generating a code patch is insufficient unless it can be applied safely; every proposed fix must pass an automated syntax verification check before it is committed to a repository."
+  },
+  {
+    "idx": 82,
+    "type": "p",
+    "blips": [],
+    "text": "VulnixAI addresses these fundamental challenges by combining static application security testing, dynamic website scanning, sandboxed file analysis, automated penetration testing, controlled load testing, and continuous real-time uptime monitoring into a unified, multi-modal artificial intelligence platform. Built from the ground up to shorten the distance between finding a vulnerability and merging a verified fix, VulnixAI connects seamlessly with GitHub via zero-configuration OAuth 2.0. At the architectural center of the platform sits a dual-AI engine that pairs an ultra-fast, low-cost primary inference model (Groq LLaMA-3-70B) with an automatic failover to a massive-context secondary model (Google Gemini 1.5 Pro/Flash). When an engineering team selects a repository, VulnixAI's AST-guided prioritization algorithm scores and orders files by security sensitivity, ensuring that authentication routes, API endpoints, and critical sinks are audited first."
+  },
+  {
+    "idx": 83,
+    "type": "p",
+    "blips": [],
+    "text": "A hallmark innovation of VulnixAI is automated remediation. Every identified vulnerability is triaged through a multi-factor severity scoring engine that synthesizes keyword density, Common Weakness Enumeration (CWE) impact, and exploit reachability into actionable Critical, High, Medium, and Low tiers. For every fixable issue, the platform synthesizes a context-aware patch, verifies the code against an AST syntax checker to guarantee that no syntax errors are introduced, and automatically commits the patch to a new branch while raising a documented pull request on GitHub, closing the feedback loop between detection and repair."
+  },
+  {
+    "idx": 84,
+    "type": "p",
+    "blips": [],
+    "text": "Around the clock, an autonomous monitoring worker tracks registered production web applications, evaluating HTTP availability, network response latency, and SSL certificate lifespans. If an application degrades or experiences an outage, VulnixAI bypasses crowded email channels to dispatch instant alerts via browser push notifications and WhatsApp messages, ensuring that site reliability engineers and developers receive actionable notifications within seconds of an incident occurring."
+  },
+  {
+    "idx": 85,
+    "type": "p",
+    "blips": [],
+    "text": "The scope of this project is stated deliberately: VulnixAI is an early vulnerability detection, real-time monitoring, and decision-support platform built on measurable code semantics and runtime indicators. It does not claim to replace senior human security auditors for complex architectural reviews; rather, it aims to eliminate 90% of routine triaging overhead, suppress false alarms through deep language model reasoning, and automate the mechanical process of patch authoring and deployment."
+  },
+  {
+    "idx": 86,
+    "type": "p",
+    "blips": [],
+    "text": "The remainder of this report is organised as follows. Chapter 2 reviews prior work on AI-assisted vulnerability detection, dynamic web auditing, automated penetration testing, continuous site reliability monitoring, and automated program repair, and formalizes the research gap. Chapter 3 analyses the limitations of existing fragmented systems and presents the proposed VulnixAI architecture together with its operational merits and block diagrams. Chapter 4 specifies the hardware and software environments and develops the mathematical formulation of every algorithmic module. Chapter 5 describes the benchmark repository testbed, the software setup, the working procedure, and the validation tests. Chapter 6 presents and discusses the experimental results in full across all six scanning modes. Chapter 7 concludes the report and sets out the planned future enhancements."
+  },
+  {
+    "idx": 87,
+    "type": "p",
+    "blips": [],
+    "text": "CHAPTER 2 LITERATURE REVIEW"
+  },
+  {
+    "idx": 88,
+    "type": "p",
+    "blips": [],
+    "text": "Automated software security analysis sits at the intersection of static code analysis, dynamic application testing, network telemetry, and machine learning. Each of these fields has contributed foundational techniques that VulnixAI synthesizes and extends. The literature review below is structured into four primary thematic areas, culminating in an explicit definition of the research gap addressed by this work."
+  },
+  {
+    "idx": 89,
+    "type": "p",
+    "blips": [],
+    "text": "2.1  REVIEW OF RELATED WORK"
+  },
+  {
+    "idx": 90,
+    "type": "p",
+    "blips": [],
+    "text": "2.1.1  AI-Assisted Vulnerability Detection and LLM Source Code Analysis"
+  },
+  {
+    "idx": 91,
+    "type": "p",
+    "blips": [],
+    "text": "The earliest generation of static application security testing (SAST) relied on lexical tokenization and syntactic pattern matching using regular expressions. These tools, while computationally lightweight, lacked any contextual understanding of execution flow or variable scoping. In a comprehensive benchmarking study, Tamberg and Bahsi evaluated classical static analysis tools against emerging neural approaches across diverse software datasets, demonstrating that rule-based scanners routinely suffer from false-positive rates exceeding 50%, while missing subtle semantic flaws such as insecure deserialization and authorization bypasses."
+  },
+  {
+    "idx": 92,
+    "type": "p",
+    "blips": [],
+    "text": "To overcome these limitations, the research community transitioned toward machine learning and graph neural networks operating over Code Property Graphs (CPGs) and Abstract Syntax Trees (ASTs). While graph-based methods captured structural data flow, they demanded intensive feature engineering and struggled with multi-file contextual dependencies. The emergence of Transformer-based Large Language Models (LLMs) marked a transformative paradigm shift. Zhou et al. conducted an extensive empirical study evaluating OpenAI's GPT-3.5 and GPT-4 across standardized vulnerability detection benchmarks, finding that LLMs consistently outperformed dedicated deep learning models by leveraging their extensive pre-training over diverse software repositories. GPT-4 demonstrated a superior capacity to reason about code semantics, identify taint propagation paths, and explain the physical mechanisms of vulnerabilities."
+  },
+  {
+    "idx": 93,
+    "type": "p",
+    "blips": [],
+    "text": "In parallel, Szabo and Bilicki investigated the practical application of GPT-style language models for web application source code inspection. Their findings revealed that prompt-driven inspection surfaced complex security vulnerabilities that  conventional commercial scanners overlooked entirely. However, their study also highlighted persistent operational bottlenecks: language models are subject to hard context window ceilings, stochastic outputs, and high API latency. When applied naively to large repositories, single-prompt models either truncate critical files or incur prohibitive operational costs. VulnixAI directly builds upon this literature by introducing an AST-guided prioritization and multi-pass batching engine that partitions large codebases intelligently, ensuring maximum semantic coverage within strict token budgets."
+  },
+  {
+    "idx": 94,
+    "type": "p",
+    "blips": [],
+    "text": "2.1.2  Dynamic Website Security Scanning and Runtime Auditing"
+  },
+  {
+    "idx": 95,
+    "type": "p",
+    "blips": [],
+    "text": "Dynamic Application Security Testing (DAST) inspects running applications from the outside in, treating the target system as a black box. Classical web vulnerability scanners execute automated web crawling, inject synthetic payloads into form fields and URL parameters, and analyze server responses for signatures of SQL injection, Cross-Site Scripting (XSS), and header misconfigurations."
+  },
+  {
+    "idx": 96,
+    "type": "p",
+    "blips": [],
+    "text": "While DAST tools are inherently immune to source-code false positives—since they evaluate real HTTP responses—they possess notable drawbacks. Purely dynamic scanners cannot determine the exact source file or code line responsible for an observed vulnerability. Furthermore, conventional dynamic tools fail to evaluate client-side Single Page Applications (SPAs) effectively, miss deep API routes hidden behind client-side state, and offer zero guidance on source-level remediation. VulnixAI bridges this chasm by cross-referencing dynamic website scan findings with repository static analysis, correlating runtime misconfigurations (such as missing security headers or exposed sensitive directories) with underlying server configuration files."
+  },
+  {
+    "idx": 97,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 98,
+    "type": "p",
+    "blips": [],
+    "text": "2.1.3  Automated Penetration Testing and Load Testing in Modern CI/CD"
+  },
+  {
+    "idx": 99,
+    "type": "p",
+    "blips": [],
+    "text": "Automated penetration testing has traditionally been bounded by static checklists and pre-scripted exploit frameworks such as OWASP ZAP and Metasploit. Recently, researchers have explored harnessing LLMs to plan and execute multi-step interactive penetration testing engagements. Deng et al. introduced PentestGPT, a specialized framework demonstrating that an LLM could effectively guide a penetration tester through the reconnaissance, vulnerability verification, and exploit generation phases of  an engagement. In a subsequent benchmarking study, Isozaki et al. evaluated LLM-driven autonomous penetration testing frameworks and observed that while models excel at identifying standard injection vectors and file exposures, completely autonomous exploitation remains constrained by hallucinations and a lack of real-time environmental feedback."
+  },
+  {
+    "idx": 100,
+    "type": "p",
+    "blips": [],
+    "text": "Concurrently, performance and capacity stress testing has evolved from a manual, pre-release staging ritual into a continuous quality gate. Neelapu analyzed the effectiveness of modern load testing methodologies on application scalability, emphasizing that detecting throughput degradation, resource contention, and concurrency bottlenecks early in the development lifecycle is essential to preventing production outages. VulnixAI incorporates both automated penetration testing and controlled load testing into its unified platform, structuring penetration probe evidence so that discovered flaws (such as exposed sensitive database dumps or business logic anomalies) can be directly triaged alongside code-level findings."
+  },
+  {
+    "idx": 101,
+    "type": "p",
+    "blips": [],
+    "text": "2.1.4  Continuous Uptime Monitoring, KPI Anomaly Detection, and Automated Program Repair"
+  },
+  {
+    "idx": 102,
+    "type": "p",
+    "blips": [],
+    "text": "Once an application is deployed, continuous telemetry and site reliability monitoring become paramount. Yu et al. explored supervised fine-tuning for unsupervised Key Performance Indicator (KPI) anomaly detection in mobile web systems, demonstrating that subtle latency drifts and intermittent HTTP 5xx spikes often precede catastrophic cascading failures. Extending this paradigm, Jha et al. introduced an LLM-assisted anomaly detection service for Site Reliability Engineers (SREs), proving that language models can synthesize disparate log streams, error codes, and telemetry metrics into coherent incident summaries."
+  },
+  {
+    "idx": 103,
+    "type": "p",
+    "blips": [],
+    "text": "Simultaneously, the field of Automated Program Repair (APR) has made remarkable strides. Berabi et al. introduced DeepCode AI Fix, demonstrating that fine-tuned language models can successfully generate correct, regression-free patches for security vulnerabilities discovered during static analysis. Jimenez et al. benchmarked autonomous coding agents on SWE-bench, establishing that modern LLMs can resolve complex real-world GitHub issues end-to-end when supplied with appropriate issue descriptions and codebase context. VulnixAI synthesizes these dual disciplines by pairing continuous production telemetry (with out-of-band WhatsApp alerting) with an  autonomous patch generation and pull-request pipeline, closing the feedback loop between detection, alerting, and remediation."
+  },
+  {
+    "idx": 104,
+    "type": "p",
+    "blips": [],
+    "text": "2.2  CONCLUSION FROM LITERATURE REVIEW"
+  },
+  {
+    "idx": 105,
+    "type": "p",
+    "blips": [],
+    "text": "Taken together, the reviewed body of literature establishes that while each individual facet of application security—static analysis, dynamic scanning, penetration testing, performance benchmarking, and continuous uptime monitoring—has achieved significant technical maturity, their operational value remains severely compromised by tool fragmentation. A security engineer in a contemporary organization must maintain separate vendor subscriptions, parse incompatible report formats, manually correlate dynamic findings back to raw source code, and manually draft pull requests for every single flagged issue."
+  },
+  {
+    "idx": 106,
+    "type": "p",
+    "blips": [],
+    "text": "The research gap addressed by VulnixAI follows directly from these findings. There exists an acute need for a unified, multi-modal security engineering platform that: (1) consolidates static, dynamic, penetration, load, and monitoring capabilities under a single zero-configuration interface; (2) implements a resilient dual-AI failover architecture that guarantees operational continuity despite single-provider rate limits or outages; (3) solves the token context bottleneck on enterprise repositories via intelligent AST-based file prioritization; (4) filters false alarms through multi-factor severity scoring; and (5) autonomously generates syntax-validated code patches that are raised directly as GitHub pull requests. VulnixAI is engineered specifically to fulfill this research gap."
+  },
+  {
+    "idx": 107,
+    "type": "p",
+    "blips": [],
+    "text": "CHAPTER 3 SYSTEM ANALYSIS"
+  },
+  {
+    "idx": 108,
+    "type": "p",
+    "blips": [],
+    "text": "3.1  EXISTING SYSTEM"
+  },
+  {
+    "idx": 109,
+    "type": "p",
+    "blips": [],
+    "text": "Application security architectures in current commercial and open-source use fall predominantly into four fragmented, isolated categories. Each category addresses a specific slice of the software delivery lifecycle but operates independently of all others."
+  },
+  {
+    "idx": 110,
+    "type": "p",
+    "blips": [],
+    "text": "The first category comprises standalone Static Application Security Testing (SAST) tools (such as SonarQube, Checkmarx, or ESLint security plugins). These tools inspect source code before compilation, searching for syntactic patterns, dangerous function invocations, or known vulnerable API usages. While valuable during early development, they operate entirely on static heuristics, possess no knowledge of whether code is actually reachable in production, and generate a massive volume of non-exploitable warnings."
+  },
+  {
+    "idx": 111,
+    "type": "p",
+    "blips": [],
+    "text": "The second category comprises Dynamic Application Security Testing (DAST) scanners (such as OWASP ZAP, Burp Suite, or Nikto). These scanners attack a deployed application from the outside, crawling web endpoints and fuzzing HTTP parameters. Because they operate strictly against running web servers, they have no visibility into the underlying source code, cannot pinpoint the exact file or line number responsible for an error, and require extensive manual setup to configure authentication sessions."
+  },
+  {
+    "idx": 112,
+    "type": "p",
+    "blips": [],
+    "text": "The third category comprises ad-hoc manual penetration testing and standalone load testing scripts (such as Apache JMeter, k6, or Postman collections). These tools require specialized security engineering expertise to script, execute, and interpret, making them rare and costly exercises typically reserved for major quarterly releases rather than continuous integration."
+  },
+  {
+    "idx": 113,
+    "type": "p",
+    "blips": [],
+    "text": "The fourth category comprises production uptime and synthetic monitoring services (such as Pingdom, UptimeRobot, or Datadog synthetic monitors). These platforms repeatedly ping production URLs to verify availability and track response times. However, they are treated as pure operations utilities, remaining completely disconnected from the security testing and code review workflows of software engineering teams."
+  },
+  {
+    "idx": 114,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 115,
+    "type": "p",
+    "blips": [],
+    "text": "3.1.1  DRAWBACKS"
+  },
+  {
+    "idx": 116,
+    "type": "p",
+    "blips": [],
+    "text": "The limitations of existing fragmented security systems are summarized below:"
+  },
+  {
+    "idx": 117,
+    "type": "p",
+    "blips": [],
+    "text": "Extreme tool sprawl and fragmented dashboards: Engineering teams must navigate between four or five disparate user interfaces, correlation engines, and notification streams to understand their overall risk posture."
+  },
+  {
+    "idx": 118,
+    "type": "p",
+    "blips": [],
+    "text": "Severe false-positive rates and alert fatigue: Conventional pattern-based scanners lack semantic comprehension, producing false-positive rates of 40% to 60% that overwhelm developers and cause real threats to be ignored."
+  },
+  {
+    "idx": 119,
+    "type": "p",
+    "blips": [],
+    "text": "Lack of automated remediation: Existing scanners identify flaws but provide only generic text advisories, forcing developers to manually research, author, test, and commit code patches from scratch."
+  },
+  {
+    "idx": 120,
+    "type": "p",
+    "blips": [],
+    "text": "Token context window exhaustion in single-model LLMs: Emerging AI-assisted tools attempt to pass entire repositories into a single LLM prompt, crashing against hard context limits or silently truncating large files."
+  },
+  {
+    "idx": 121,
+    "type": "p",
+    "blips": [],
+    "text": "Single point of failure in cloud AI dependencies: Systems relying on a single AI provider suffer complete operational disruption whenever that provider experiences rate limits, API throttling, or cloud outages."
+  },
+  {
+    "idx": 122,
+    "type": "p",
+    "blips": [],
+    "text": "No runtime-to-source correlation: Vulnerabilities identified by external web scanners or uptime probes are never automatically linked back to the originating repository files or dependencies."
+  },
+  {
+    "idx": 123,
+    "type": "p",
+    "blips": [],
+    "text": "Delayed out-of-band incident alerting: Traditional monitoring alerts are routed to crowded email inboxes, where critical production outages or SSL expirations remain unread for hours."
+  },
+  {
+    "idx": 124,
+    "type": "p",
+    "blips": [],
+    "text": "Accelerated hardware requirement:  the deep spatio-temporal models that achieve the best published accuracy require a graphics accelerator, which places them beyond the equipment budget and the installed base of most operational sites."
+  },
+  {
+    "idx": 125,
+    "type": "p",
+    "blips": [],
+    "text": "Optimistic validation:  evaluations that partition data frame by frame rather than recording by recording allow near-identical adjacent frames into both the training and the test set, which inflates reported accuracy and conceals poor generalisation to unseen scenes."
+  },
+  {
+    "idx": 126,
+    "type": "p",
+    "blips": [],
+    "text": "3.1.2  BLOCK DIAGRAM"
+  },
+  {
+    "idx": 127,
+    "type": "p",
+    "blips": [],
+    "text": "Figure 3.1 illustrates the architectural workflow common to existing fragmented security testing installations, highlighting the disconnected silos and the manual triaging bottleneck that impedes software remediation."
+  },
+  {
+    "idx": 128,
+    "type": "p",
+    "blips": [
+      "rId14"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 129,
+    "type": "p",
+    "blips": [],
+    "text": "Fig no: 3.1  Block Diagram of Existing System"
+  },
+  {
+    "idx": 130,
+    "type": "p",
+    "blips": [],
+    "text": "3.2  PROPOSED SYSTEM"
+  },
+  {
+    "idx": 131,
+    "type": "p",
+    "blips": [],
+    "text": "The proposed system, VulnixAI, is an intelligent, multi-modal security analysis, real-time monitoring, and automated remediation platform. VulnixAI brings together repository static analysis, dynamic website scanning, sandboxed file analysis, penetration testing, load testing, and continuous uptime monitoring under a unified four-layer architecture."
+  },
+  {
+    "idx": 132,
+    "type": "p",
+    "blips": [],
+    "text": "Processing within VulnixAI is orchestrated across six modular stages. First, a developer authenticates using zero-configuration GitHub OAuth 2.0, granting secure read/write access to their repositories. Second, when a repository is selected for analysis, an AST-guided prioritization engine scores and ranks files based on security keywords, route handlers, and entry points, segmenting the codebase into optimized multi-pass batches. Third, the batches are routed through a resilient dual-AI engine that executes primary inference on Groq's LPU-accelerated LLaMA-3-70B model, automatically failing over  to Google's massive-context Gemini 1.5 Pro model if rate limits or token thresholds are exceeded. Fourth, returned security findings are scored using a multi-factor risk model synthesizing keyword density, Common Weakness Enumeration (CWE) impact, and exploitability. Fifth, an automated remediation worker generates context-aware patches, verifies them via an AST syntax parser, and directly raises a documented pull request on GitHub. Sixth, a continuous background daemon monitors registered production endpoints, tracking response times and SSL certificate validity, and pushing critical alerts via browser notifications and WhatsApp."
+  },
+  {
+    "idx": 133,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 134,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 135,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 136,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 137,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 138,
+    "type": "p",
+    "blips": [],
+    "text": "3.2.1  MERITS"
+  },
+  {
+    "idx": 139,
+    "type": "p",
+    "blips": [],
+    "text": "The operational merits of the proposed VulnixAI platform are summarized below:"
+  },
+  {
+    "idx": 140,
+    "type": "p",
+    "blips": [],
+    "text": "Unified single-pane security management: Consolidates six distinct security testing modalities behind a single intuitive dashboard, eliminating tool sprawl and fragmented reporting."
+  },
+  {
+    "idx": 141,
+    "type": "p",
+    "blips": [],
+    "text": "Semantic AI reasoning with drastically suppressed false alarms: By leveraging deep language model comprehension rather than brittle regex rules, VulnixAI evaluates full code context, driving false alarm rates down to 4.3%."
+  },
+  {
+    "idx": 142,
+    "type": "p",
+    "blips": [],
+    "text": "Resilient dual-AI failover architecture: Ensures uninterrupted scanning operations by dynamically failing over from Groq LLaMA-3-70B to Google Gemini 1.5 Pro upon detecting API throttling, rate limits, or context overflow."
+  },
+  {
+    "idx": 143,
+    "type": "p",
+    "blips": [],
+    "text": "Intelligent AST file prioritization: Guarantees that the most security-sensitive files (authentication controllers, database clients, API routes) are audited first, ensuring comprehensive coverage within token budgets."
+  },
+  {
+    "idx": 144,
+    "type": "p",
+    "blips": [],
+    "text": "Closed-loop automated pull-request remediation: Eliminates the manual burden of patch authoring by automatically generating, syntax-verifying, and committing code fixes directly to GitHub pull requests."
+  },
+  {
+    "idx": 145,
+    "type": "p",
+    "blips": [],
+    "text": "Live runtime-to-code correlation: Correlates dynamic web vulnerabilities (such as exposed files or missing security headers) directly with project configuration files."
+  },
+  {
+    "idx": 146,
+    "type": "p",
+    "blips": [],
+    "text": "Multi-channel instant alerting: Dispatches out-of-band critical alerts via Twilio WhatsApp API and Web Push, ensuring that production incidents are noticed within seconds."
+  },
+  {
+    "idx": 147,
+    "type": "p",
+    "blips": [],
+    "text": "Runs on existing hardware:  7.4 frames per second at VGA resolution on an Intel Core i7 processor with no graphics accelerator, so the system deploys on the equipment class already installed at typical surveillance sites."
+  },
+  {
+    "idx": 148,
+    "type": "p",
+    "blips": [],
+    "text": "Leakage-free validation:  partitioning at the level of whole recordings rather than individual frames means no temporally adjacent frame ever appears in both the training and the test set, so the reported figures reflect genuine generalisation."
+  },
+  {
+    "idx": 149,
+    "type": "p",
+    "blips": [],
+    "text": "Privacy preserving by construction:  the system performs no face recognition and maintains no individual identities, working exclusively with aggregate occupancy regions and flow fields computed on site."
+  },
+  {
+    "idx": 150,
+    "type": "p",
+    "blips": [],
+    "text": "3.2.2  BLOCK DIAGRAM"
+  },
+  {
+    "idx": 151,
+    "type": "p",
+    "blips": [],
+    "text": "Figure 3.2 shows the complete four-layer architecture of the proposed VulnixAI platform, illustrating the interaction between the React/Vite front-end, the Express.js back-end orchestrator, the dual-AI analysis engine, the MongoDB document database, and external GitHub/WhatsApp APIs."
+  },
+  {
+    "idx": 152,
+    "type": "p",
+    "blips": [
+      "rId15"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 153,
+    "type": "p",
+    "blips": [],
+    "text": "Fig no: 3.2  Block Diagram of Proposed System"
+  },
+  {
+    "idx": 154,
+    "type": "p",
+    "blips": [],
+    "text": "CHAPTER 4 MATERIALS AND METHODS"
+  },
+  {
+    "idx": 155,
+    "type": "p",
+    "blips": [],
+    "text": "The objective of the methodology described in this chapter is to design, implement, and formalize an intelligent, multi-modal security analysis and automated remediation pipeline. Because VulnixAI is a modern cloud-native software system rather than an embedded hardware instrument, the computing specifications describe the hosting environment, cloud inference engines, and client software stack employed for development and empirical validation."
+  },
+  {
+    "idx": 156,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 157,
+    "type": "p",
+    "blips": [],
+    "text": "4.1  HARDWARE SPECIFICATIONS"
+  },
+  {
+    "idx": 158,
+    "type": "p",
+    "blips": [],
+    "text": "Table 4.1 records the computing platform, cloud inference endpoints, and network environment used for the development, training, benchmarking, and production deployment of VulnixAI."
+  },
+  {
+    "idx": 159,
+    "type": "p",
+    "blips": [],
+    "text": "Table 4.1  Hardware and Computing Platform Specification"
+  },
+  {
+    "idx": 160,
+    "type": "tbl",
+    "blips": [],
+    "text": "Component Specification Role in the system Host Processor Intel Core i7-1360P, 12 cores / 16 threads, up to 5.0 GHz Runs back-end orchestration, AST parsing, and local tokenization Primary AI Cloud Infrastructure Groq LPU Inference Engine (LLaMA-3-70B) Ultra-fast primary vulnerability detection and semantic code analysis Fallback AI Cloud Infrastructure Google Cloud Vertex AI (Gemini 1.5 Pro / Flash) High-capacity secondary model with 1M+ token context window System Memory 16 GB DDR5 4800 MHz Dual-Channel Buffers file trees, multi-pass batch queues, and AST representations Persistent Storage 512 GB NVMe PCIe 4.0 SSD Stores local repository clones, temporary patch diffs, and test artifacts Database Server MongoDB Atlas Cloud Cluster (M10 Tier) Persists vulnerability findings, scan history, user tokens, and uptime metrics Network Infrastructure Gigabit Ethernet / High-Speed Broadband (1 Gbps) Handles concurrent GitHub REST API calls, web crawls, and push notifications Target Testbeds Cloud-hosted web services (Render, AWS, Vercel) Live target domains for dynamic scanning, load testing, and uptime monitoring"
+  },
+  {
+    "idx": 161,
+    "type": "p",
+    "blips": [],
+    "text": "4.2  SOFTWARE SPECIFICATIONS"
+  },
+  {
+    "idx": 162,
+    "type": "p",
+    "blips": [],
+    "text": "The software architecture of VulnixAI is organized into four decoupled layers: the Front-End Presentation Layer, the Back-End Orchestration Layer, the Dual-AI Analysis Engine, and the Persistent Document Database Layer. Table 4.2 details the complete software stack, language versions, and external software libraries comprising the system."
+  },
+  {
+    "idx": 163,
+    "type": "p",
+    "blips": [],
+    "text": "Table 4.2  Software Stack and Library Specification"
+  },
+  {
+    "idx": 164,
+    "type": "tbl",
+    "blips": [],
+    "text": "Component Version Purpose Runtime Environment Node.js v20.x / Python 3.11 Host environments for back-end microservices and AI analysis scripts Front-End Framework React 18.2 with Vite &amp; TailwindCSS Responsive, dark-themed dashboard adhering to WCAG 2.1 AA standards Code Editor &amp; Diff Viewer Monaco Editor v0.45 Interactive source viewer with syntax highlighting and side-by-side patch diffs Back-End Framework Express.js v4.19 RESTful API gateway coordinating scan requests and background queues Primary LLM Provider Groq SDK / LLaMA-3-70B-Instruct Sub-second primary vulnerability analysis and patch authoring Fallback LLM Provider Google Generative AI SDK / Gemini 1.5 Pro Automated failover handling context overflow and complex repo structures Version Control Client Octokit (@octokit/rest v20.x) GitHub OAuth 2.0, repository tree ingestion, branch and pull-request automation Database Driver Mongoose v8.3 / MongoDB Driver Document-oriented storage for scans, severity metrics, and historical logs Dynamic Web Crawler Cheerio / Axios / Puppeteer-core Crawls live DOM, audits security headers, and probes sensitive exposed paths Load Testing Engine Autocannon / Custom Concurrent Worker Controlled multi-user load generation (1 to 1000 users) measuring throughput Alerting &amp; Messaging Twilio WhatsApp API &amp; Web Push Notifications Dual-channel out-of-band notification engine for high-priority incidents Security &amp; Token Management jsonwebtoken (JWT) &amp; bcrypt Secure HTTP-only cookie authentication, CSRF tokens, and secret encryption"
+  },
+  {
+    "idx": 165,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 166,
+    "type": "p",
+    "blips": [],
+    "text": "4.3  METHODOLOGY AND MATHEMATICAL FORMULATION"
+  },
+  {
+    "idx": 167,
+    "type": "p",
+    "blips": [],
+    "text": "Figure 4.1 depicts the six-stage per-repository and per-target scanning pipeline implemented within VulnixAI. The subsequent subsections develop the rigorous mathematical formulation and operational mechanics of each pipeline phase."
+  },
+  {
+    "idx": 168,
+    "type": "p",
+    "blips": [
+      "rId16"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 169,
+    "type": "p",
+    "blips": [],
+    "text": "Fig no: 4.1  Five-Stage Per-Frame Processing Pipeline"
+  },
+  {
+    "idx": 170,
+    "type": "p",
+    "blips": [],
+    "text": "4.3.1  Repository Ingestion and Intelligent File Prioritization Scoring"
+  },
+  {
+    "idx": 171,
+    "type": "p",
+    "blips": [],
+    "text": "When a user signs in via GitHub OAuth 2.0 and selects a target repository, VulnixAI immediately initiates recursive tree ingestion using the GitHub REST API. In an enterprise repository comprising hundreds or thousands of source files, analyzing every file sequentially with equal weighting is computationally wasteful and mathematically impossible within standard LLM context budgets. To solve this bottleneck, VulnixAI formulates an intelligent AST-guided prioritization scoring function."
+  },
+  {
+    "idx": 172,
+    "type": "p",
+    "blips": [],
+    "text": "Let R denote the set of all source code files in the repository, R = {f_1, f_2, ..., f_n}. For each file f_i in R, an Abstract Syntax Tree (AST) is generated to extract structural metrics. The priority score S_priority(f_i) is defined as a linear weighted combination of four normalized security factors:"
+  },
+  {
+    "idx": 173,
+    "type": "p",
+    "blips": [],
+    "text": "S_priority(f_i) = w_k * K_sec(f_i) + w_e * E_entry(f_i) + w_r * R_route(f_i) + w_s * S_size(f_i)"
+  },
+  {
+    "idx": 174,
+    "type": "p",
+    "blips": [],
+    "text": "where K_sec(f_i) in [0, 1] represents the normalized density of security-sensitive keywords (e.g., 'password', 'token', 'secret', 'exec', 'eval', 'dangerouslySetInnerHTML', 'SELECT', 'query'); E_entry(f_i) in {0, 1} is a binary indicator denoting whether f_i is an application entry point (such as 'index.ts', 'server.js', 'main.py', or 'App.tsx'); R_route(f_i) in [0, 1] quantifies the ratio of public HTTP route definitions and API controllers within the file; and S_size(f_i) in [0, 1] is an inversely scaled file-size penalty favoring compact, high-density files over vast auto-generated bundles. The weighting coefficients satisfy w_k + w_e + w_r + w_s = 1.0, with default empirical weights set to w_k = 0.35, w_e = 0.25, w_r = 0.25, and w_s = 0.15. Files are sorted in descending order of S_priority, ensuring that critical attack surfaces are audited first."
+  },
+  {
+    "idx": 175,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 176,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 177,
+    "type": "p",
+    "blips": [],
+    "text": "4.3.2  Multi-Pass Batching and Context-Window Truncation Algorithm"
+  },
+  {
+    "idx": 178,
+    "type": "p",
+    "blips": [],
+    "text": "Once files are prioritized, they must be partitioned into discrete inference batches that fit comfortably within the context window C_max of the primary language model. Let T(f_i) denote the token count of file f_i computed via Byte-Pair Encoding (BPE) tokenization. A naive greedy algorithm that packs files until sum(T(f_i)) &lt;= C_max risks straddling semantic boundaries or starving low-priority files."
+  },
+  {
+    "idx": 179,
+    "type": "p",
+    "blips": [],
+    "text": "VulnixAI introduces a multi-pass batching strategy with intelligent semantic truncation. A dynamic token threshold T_budget = gamma * C_max is enforced (with safety margin gamma = 0.75). Files whose token length exceeds an upper ceiling T_single_max (set to 4,000 tokens) undergo AST-aware structural truncation: import statements, interface definitions, exported route signatures, and function headers are preserved, while repetitive boilerplate and static asset definitions are pruned. Consecutive prioritized files are aggregated into a batch B_k = {f_{k,1}, ..., f_{k,m}} such that the total prompt tokens plus anticipated completion tokens remain strictly bounded by T_budget. Batches are dispatched asynchronously to the AI layer, with deduplication hashes computed across findings."
+  },
+  {
+    "idx": 180,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 181,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 182,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 183,
+    "type": "p",
+    "blips": [],
+    "text": "4.3.3  Dual-AI Inference and Dynamic Failover Mechanism"
+  },
+  {
+    "idx": 184,
+    "type": "p",
+    "blips": [],
+    "text": "To guarantee operational high availability and eliminate single-provider vulnerability, VulnixAI implements a stateful dual-AI failover engine. The primary inference engine utilizes Groq's Language Processing Unit (LPU) architecture running Meta's LLaMA-3-70B-Instruct model. Groq delivers exceptional inference throughput (exceeding 250 tokens per second) at minimal operational expense, enabling sub-second vulnerability analysis per file batch."
+  },
+  {
+    "idx": 185,
+    "type": "p",
+    "blips": [],
+    "text": "However, if Groq returns an HTTP 429 (Rate Limit Exceeded), an HTTP 503 (Service Unavailable), experiences an API timeout tau &gt; 12.0 seconds, or if a monolithic file cannot be segmented without losing critical semantic cross-file context, the failover dispatcher instantly intercepts the request. The dispatcher transfers execution seamlessly to Google Cloud's Gemini 1.5 Pro model, which boasts a million-token context window capable of ingesting the entire un-truncated repository in a single forward pass. State transitions are governed by a circuit-breaker pattern: after three consecutive primary failures, the circuit trips to Open state, routing all traffic to the secondary model for an exponential backoff period before attempting a half-open probe."
+  },
+  {
+    "idx": 186,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 187,
+    "type": "p",
+    "blips": [],
+    "text": "4.3.4  Multi-Factor Vulnerability Severity Scoring and CWE Mapping"
+  },
+  {
+    "idx": 188,
+    "type": "p",
+    "blips": [],
+    "text": "Every potential vulnerability returned by the AI inference layer undergoes rigorous triaging through VulnixAI's multi-factor severity scoring engine. Rather than accepting an uncalibrated LLM label, the platform computes a composite risk score R_sev in [0, 100] blending four objective mathematical indicators:"
+  },
+  {
+    "idx": 189,
+    "type": "p",
+    "blips": [],
+    "text": "R_sev = alpha * K_kw + beta * C_CWE + gamma * E_exploit + delta * I_impact"
+  },
+  {
+    "idx": 190,
+    "type": "p",
+    "blips": [],
+    "text": "where K_kw in [0, 100] represents keyword-level risk confirmation; C_CWE in [0, 100] is the baseline Common Weakness Enumeration severity mapped from the official MITRE and CVSS v3.1 databases (e.g., CWE-798 Hardcoded Credentials = 85, CWE-89 SQLi = 95, CWE-79 XSS = 65, CWE-200 Information Exposure = 70); E_exploit in [0, 100] measures exploitability based on route accessibility (public endpoint vs internal helper); and I_impact in [0, 100] quantifies the potential damage to data confidentiality, integrity, and system availability."
+  },
+  {
+    "idx": 191,
+    "type": "p",
+    "blips": [],
+    "text": "The normalization coefficients satisfy alpha + beta + gamma + delta = 1.0, with default platform weights assigned as alpha = 0.25, beta = 0.30, gamma = 0.25, and delta = 0.20 (Table 4.3). The calculated composite score R_sev maps directly to  discrete operational risk levels and automated platform actions as specified in Table 4.4."
+  },
+  {
+    "idx": 192,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 193,
+    "type": "p",
+    "blips": [],
+    "text": "4.3.5  Automated Patch Generation and Git Pull-Request Remediation Pipeline"
+  },
+  {
+    "idx": 194,
+    "type": "p",
+    "blips": [],
+    "text": "A hallmark innovation of VulnixAI is its automated remediation pipeline. When a vulnerability is confirmed and scored as Critical, High, or Medium, the system initiates closed-loop program repair. The AI engine is prompted with the vulnerable code snippet, the exact line range, the discovered CWE classification, and the multi-factor severity report."
+  },
+  {
+    "idx": 195,
+    "type": "p",
+    "blips": [],
+    "text": "The model generates a replacement code block embodying the remediation. Before any code is committed, the patch undergoes an AST Syntax Verification Check. For JavaScript/TypeScript files, the patch is parsed using the Babel AST parser; for Python, the ast.parse() engine verifies abstract grammar; and for HTML/PHP, lightweight linters validate closing tags. If a syntax error is detected, the patch is rejected and an iterative repair prompt is dispatched. Once syntax integrity is certified, VulnixAI uses the authenticated GitHub Octokit client to: (1) create a new Git branch (e.g., 'vulnixai/fix-cwe-798-admin-credentials'); (2) commit the modified file; and (3) open a pull request against the repository's base branch with full markdown documentation, severity badges, and remediation rationale."
+  },
+  {
+    "idx": 196,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 197,
+    "type": "p",
+    "blips": [],
+    "text": "4.3.6  Dynamic Website Security Scanning and Controlled Penetration Testing"
+  },
+  {
+    "idx": 198,
+    "type": "p",
+    "blips": [],
+    "text": "In addition to static source auditing, VulnixAI incorporates active runtime assessment modules. The Website Security Scanner inspects live deployed web applications over HTTPS. It evaluates HTTP response headers against OWASP guidelines, checking for the presence of Content-Security-Policy (CSP), Strict-Transport-Security (HSTS), X-Frame-Options, X-Content-Type-Options, and Referrer-Policy. It parses the server's SSL/TLS certificate chain, extracting validity start/end timestamps, issuer authority, and cipher suite strength."
+  },
+  {
+    "idx": 199,
+    "type": "p",
+    "blips": [],
+    "text": "The Penetration Testing module conducts controlled, active probes against verified target domains. It inspects common sensitive file paths often left accessible by deployment errors (such as '/database.sql', '/.DS_Store', '/.env', and '/phpinfo.php'). Furthermore, it executes business-logic verification checks by injecting out-of-bound numerical values (such as negative currency amounts or extreme quantity thresholds) into API forms to verify whether server-side input sanitization properly rejects anomalous inputs."
+  },
+  {
+    "idx": 200,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 201,
+    "type": "p",
+    "blips": [],
+    "text": "4.3.7  Real-Time Availability, SSL Health Monitoring, and Dual-Channel Alerting"
+  },
+  {
+    "idx": 202,
+    "type": "p",
+    "blips": [],
+    "text": "Production applications demand continuous operational surveillance. VulnixAI includes an asynchronous background daemon that performs scheduled health checks against all registered production endpoints at 60-second intervals. Each health check transmits an HTTP GET request with custom User-Agent telemetry, recording three vital metrics: (1) HTTP status code (200 OK, 3xx Redirect, 4xx Client Error, 5xx Server Error); (2) round-trip network response latency (measured in milliseconds); and (3) SSL certificate days until expiration."
+  },
+  {
+    "idx": 203,
+    "type": "p",
+    "blips": [],
+    "text": "Sites are categorized into three real-time operational states: Operational (Status 200, Latency &lt; 1,000 ms, Valid SSL), Degraded (Status 200 with Latency &gt; 1,000 ms, or SSL Certificate expiring within 14 days), and Down (HTTP 5xx, TCP timeout, or DNS resolution failure). If a site transitions to Degraded or Down, the alerting engine immediately triggers dual-channel notifications: browser push notifications via Web Push API and urgent out-of-band messaging via the Twilio WhatsApp Business API, ensuring immediate incident response."
+  },
+  {
+    "idx": 204,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 205,
+    "type": "p",
+    "blips": [],
+    "text": "Table 4.3  Default Risk Engine Feature Weights"
+  },
+  {
+    "idx": 206,
+    "type": "tbl",
+    "blips": [],
+    "text": "Feature Factor Symbol Weight What a high value indicates Security Keyword Density K_sec 0.25 High concentration of dangerous functions, hardcoded keys, or sensitive sinks CWE Severity Baseline C_CWE 0.30 Underlying weakness maps to critical CVSS baseline (e.g., SQLi, RCE, Broken Auth) Exploitability Metric E_exploit 0.25 Vulnerability is directly reachable via public routes, entry points, or unauthenticated APIs Production Impact I_impact 0.20 Potential consequence involves complete data exfiltration, system compromise, or downtime"
+  },
+  {
+    "idx": 207,
+    "type": "p",
+    "blips": [],
+    "text": "Table 4.4  Risk Level Thresholds and Control-Room Actions"
+  },
+  {
+    "idx": 208,
+    "type": "tbl",
+    "blips": [],
+    "text": "Risk level Composite score R Control-room action"
+  },
+  {
+    "idx": 209,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 210,
+    "type": "tbl",
+    "blips": [],
+    "text": "Risk Level Composite Score R Control-Room / Platform Action LOW 0 &lt;= R &lt; 35 Log finding in dashboard; annotate code with security advisory; no urgent pull request MEDIUM 35 &lt;= R &lt; 60 Generate patch; stage remediation branch; notify developer in summary dashboard HIGH 60 &lt;= R &lt; 80 Trigger automated pull request; dispatch push notification; flag affected routes CRITICAL 80 &lt;= R &lt;= 100 Immediate WhatsApp alert; raise prioritized pull request; trigger automated lockdown advisory"
+  },
+  {
+    "idx": 211,
+    "type": "p",
+    "blips": [],
+    "text": "CHAPTER 5 EXPERIMENTAL SETUP AND PROCEDURE"
+  },
+  {
+    "idx": 212,
+    "type": "p",
+    "blips": [],
+    "text": "This chapter establishes the experimental framework, benchmark testbed, software environment, procedural workflow, and validation protocols used to rigorously evaluate the VulnixAI platform across diverse multi-language codebases and live production deployments."
+  },
+  {
+    "idx": 213,
+    "type": "p",
+    "blips": [],
+    "text": "5.1  BENCHMARK DATASET CONSTRUCTION"
+  },
+  {
+    "idx": 214,
+    "type": "p",
+    "blips": [],
+    "text": "To evaluate the multi-modal detection, dynamic testing, and automated remediation capabilities of VulnixAI, a comprehensive benchmark comprising diverse software repositories and live production web domains was assembled. Table 5.1 details the seven vulnerability and security testing domains exercised within the benchmark."
+  },
+  {
+    "idx": 215,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 216,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 217,
+    "type": "p",
+    "blips": [],
+    "text": "Table 5.1  Security Testing and Vulnerability Categories in the Benchmark"
+  },
+  {
+    "idx": 218,
+    "type": "tbl",
+    "blips": [],
+    "text": "Security Domain Physical Weakness Represented Indicators Primarily Exercised Hardcoded Credentials API tokens, private keys, admin passwords in source code Keyword density (CWE-798), AST sink detection, regex validation Insecure Storage Unsalted passwords, plain text auth tokens in localStorage AST data-flow analysis (CWE-316, CWE-312), token lifecycle check Missing Input Validation Unsanitized user parameters reaching queries or outputs Taint analysis (CWE-20, CWE-89, CWE-79), type checking, route filters Sensitive File Exposure Database dumps (.sql), .DS_Store, environment files public Dynamic URL probing, HTTP status audit (CWE-200), header verification Business Logic Flaws Negative numeric inputs, cart manipulation, auth bypass Boundary condition testing (CWE-840), server validation, pentest probe Insecure Configurations Missing CSP, permissive CORS, weak TLS/expired SSL Dynamic header inspection, SSL certificate chain parser, port audit Load Capacity Stress High latency, server crashes, connection timeouts under surge Concurrency throughput, latency percentiles, error rate measurement"
+  },
+  {
+    "idx": 219,
+    "type": "p",
+    "blips": [],
+    "text": "5.1.1  Sequence-Level Partitioning Protocol"
+  },
+  {
+    "idx": 220,
+    "type": "p",
+    "blips": [],
+    "text": "To prevent data leakage and ensure realistic operational evaluation, the benchmark testbed was partitioned across six distinct target applications spanning multiple programming languages, framework stacks, and hosting environments. Table 5.2 summarizes the characteristics of the evaluated repositories and target web systems, including primary languages, source file counts, and dominant vulnerability classes."
+  },
+  {
+    "idx": 221,
+    "type": "p",
+    "blips": [],
+    "text": "Table 5.2  Benchmark Dataset Characteristics and Partition Split"
+  },
+  {
+    "idx": 222,
+    "type": "tbl",
+    "blips": [],
+    "text": "Target System / Repo Primary Language Source Files / Endpoints Vulnerabilities Found Dominant Flaws Detected Stude (lakshanaaaaa/Stude) TypeScript / React / Node 48 source files, 12 routes 110 vulnerabilities Hardcoded credentials, Insecure storage, Input validation Sillobite (sillobite.in) PHP / Apache / MySQL 24 endpoints, 8 forms 18 vulnerabilities database.sql exposed, .DS_Store leak, negative value flaw Code-Guardian (onrender.com) Node.js / Express 16 endpoints, 1 service 8 vulnerabilities Expired SSL certificate, missing HSTS, CORS wildcard NexAcademy (nexacademy.in) TypeScript / Next.js 32 endpoints, 4 APIs 12 vulnerabilities High response latency (971ms), exposed API docs, token leak LearnLogicify (learnlogicify.in) Python / Django 18 endpoints, 6 models 6 vulnerabilities Valid SSL, degraded response (317ms), CSRF missing PinMyPic (pinmypic.online) TypeScript / Vite Live production URL Service Outage HTTP 502 Bad Gateway, DNS timeout, complete downtime"
+  },
+  {
+    "idx": 223,
+    "type": "p",
+    "blips": [],
+    "text": "5.2  SOFTWARE SETUP"
+  },
+  {
+    "idx": 224,
+    "type": "p",
+    "blips": [],
+    "text": "The experimental deployment was hosted on an Intel Core i7 computing environment running Node.js v20.x, Python 3.11, and Express.js back-end services, connected to a dedicated MongoDB Atlas M10 cluster. Groq API endpoints were configured with Meta's LLaMA-3-70B-Instruct model via the official Groq SDK, with an API key authenticated for high-throughput LPU execution. Google Cloud Vertex AI SDK was configured with Gemini 1.5 Pro credentials for secondary failover."
+  },
+  {
+    "idx": 225,
+    "type": "p",
+    "blips": [],
+    "text": "GitHub OAuth 2.0 application credentials were configured with 'repo', 'read:user', and 'workflow' scopes, enabling dynamic repository tree retrieval, branch creation, commit pushing, and pull-request dispatch. The Twilio WhatsApp API sandbox was initialized with verified receiver telephone endpoints for out-of-band mobile alerting. Network telemetry was captured using Axios interceptors and Node.js performance hooks (perf_hooks) to record microsecond-precision latency metrics across all scan phases."
+  },
+  {
+    "idx": 226,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 227,
+    "type": "p",
+    "blips": [],
+    "text": "5.3  WORKING PROCEDURE"
+  },
+  {
+    "idx": 228,
+    "type": "p",
+    "blips": [],
+    "text": "The operational workflow of VulnixAI is structured into six sequential steps executed whenever a security scan or monitoring task is initiated:"
+  },
+  {
+    "idx": 229,
+    "type": "p",
+    "blips": [],
+    "text": "Step 1: Initialisation and Authentication"
+  },
+  {
+    "idx": 230,
+    "type": "p",
+    "blips": [],
+    "text": "Step 1: Initialisation and Authentication: The user authenticates through GitHub OAuth 2.0. The platform verifies the state parameter against CSRF attacks, issues an HTTP-only secure JWT cookie with a 7-day expiration, and populates the repository dashboard with accessible repositories."
+  },
+  {
+    "idx": 231,
+    "type": "p",
+    "blips": [],
+    "text": "Step 2: Repository Discovery and AST Prioritization"
+  },
+  {
+    "idx": 232,
+    "type": "p",
+    "blips": [],
+    "text": "Step 2: Repository Discovery and AST Prioritization: Upon repository selection, the back-end retrieves the complete tree via GitHub REST API, discards binary and vendor files, and calculates the priority score S_priority for all source files based on security keywords, entry-point indicators, and route definitions."
+  },
+  {
+    "idx": 233,
+    "type": "p",
+    "blips": [],
+    "text": "Step 3: Multi-Pass Batching and Dual-AI Inference"
+  },
+  {
+    "idx": 234,
+    "type": "p",
+    "blips": [],
+    "text": "Step 3: Multi-Pass Batching and Dual-AI Inference: Prioritized files are grouped into token-budgeted batches (gamma = 0.75). The primary Groq LLaMA-3 engine analyzes  each batch in parallel; if rate limits or context timeouts occur, the failover circuit immediately routes requests to Gemini 1.5 Pro."
+  },
+  {
+    "idx": 235,
+    "type": "p",
+    "blips": [],
+    "text": "Step 4: Multi-Factor Severity Triaging"
+  },
+  {
+    "idx": 236,
+    "type": "p",
+    "blips": [],
+    "text": "Step 4: Multi-Factor Severity Triaging: Raw findings returned by the AI are deduplicated, mapped to official CWE identifiers, and scored via the 4-factor composite formula into Critical, High, Medium, and Low tiers."
+  },
+  {
+    "idx": 237,
+    "type": "p",
+    "blips": [],
+    "text": "Step 5: Syntax-Validated Patching and Pull Request"
+  },
+  {
+    "idx": 238,
+    "type": "p",
+    "blips": [],
+    "text": "Step 5: Syntax-Validated Patching and Pull Request: For each confirmed vulnerability, the remediation engine synthesizes a patch, validates syntax through an AST parser, creates a new Git branch, commits the fix, and opens a documented pull request on GitHub."
+  },
+  {
+    "idx": 239,
+    "type": "p",
+    "blips": [],
+    "text": "Step 6: Continuous Health and Uptime Surveillance"
+  },
+  {
+    "idx": 240,
+    "type": "p",
+    "blips": [],
+    "text": "Step 6: Continuous Health and Uptime Surveillance: Registered web endpoints are monitored at 60-second intervals for HTTP availability, response latency, and SSL certificate validity, pushing real-time alerts via push notifications and WhatsApp."
+  },
+  {
+    "idx": 241,
+    "type": "p",
+    "blips": [],
+    "text": "5.4  TESTING AND VALIDATION"
+  },
+  {
+    "idx": 242,
+    "type": "p",
+    "blips": [],
+    "text": "Validation was executed through five distinct testing procedures designed to verify every subsystem independently and end-to-end:"
+  },
+  {
+    "idx": 243,
+    "type": "p",
+    "blips": [],
+    "text": "5.4.1  Repository static scan test"
+  },
+  {
+    "idx": 244,
+    "type": "p",
+    "blips": [],
+    "text": "5.4.1 Repository static scan test: Evaluated AST file prioritization, batching efficiency, and vulnerability detection accuracy across all 48 files of the Stude repository."
+  },
+  {
+    "idx": 245,
+    "type": "p",
+    "blips": [],
+    "text": "5.4.2  Dual-AI failover and resilience test"
+  },
+  {
+    "idx": 246,
+    "type": "p",
+    "blips": [],
+    "text": "5.4.2 Dual-AI failover and resilience test: Injected synthetic HTTP 429 rate-limit responses and artificial 15-second latency timeouts into the primary Groq client to verify that the circuit breaker tripped and completed scanning seamlessly via Gemini 1.5 Pro without data loss."
+  },
+  {
+    "idx": 247,
+    "type": "p",
+    "blips": [],
+    "text": "5.4.3  Website security and header audit test"
+  },
+  {
+    "idx": 248,
+    "type": "p",
+    "blips": [],
+    "text": "5.4.3 Website security and header audit test: Executed dynamic scans against production endpoints to audit security headers (CSP, HSTS, X-Frame-Options) and validate SSL certificate chain parsers."
+  },
+  {
+    "idx": 249,
+    "type": "p",
+    "blips": [],
+    "text": "5.4.4  Penetration testing and logic flaw test"
+  },
+  {
+    "idx": 250,
+    "type": "p",
+    "blips": [],
+    "text": "5.4.4 Penetration testing and logic flaw test: Probed test endpoints for sensitive file exposures ('/database.sql', '/.DS_Store') and injected negative integer payloads into form endpoints to verify vulnerability reporting."
+  },
+  {
+    "idx": 251,
+    "type": "p",
+    "blips": [],
+    "text": "5.4.5  Load testing and continuous monitoring test"
+  },
+  {
+    "idx": 252,
+    "type": "p",
+    "blips": [],
+    "text": "5.4.5 Load testing and alerting test: Executed a controlled 220-request concurrent load test against target domains to measure throughput and response latency, followed by simulating service outages to verify WhatsApp alert delivery."
+  },
+  {
+    "idx": 253,
+    "type": "p",
+    "blips": [],
+    "text": "CHAPTER 6 RESULTS AND DISCUSSION"
+  },
+  {
+    "idx": 254,
+    "type": "p",
+    "blips": [],
+    "text": "This chapter presents the comprehensive experimental results obtained from evaluating VulnixAI across all six operational security modalities. Section 6.1 compares vulnerability detection accuracy across classifier and LLM architectures. Section 6.2 details the 110 real-world vulnerabilities identified and remediated in the repository testbed. Section 6.3 discusses real-time uptime and SSL monitoring performance. Section 6.4 reviews penetration testing findings. Section 6.5 analyzes controlled load testing results. Section 6.6 profiles computational runtime and dual-AI latency, and Section 6.7 provides an in-depth academic discussion."
+  },
+  {
+    "idx": 255,
+    "type": "p",
+    "blips": [],
+    "text": "6.1  MULTI-MODEL PERFORMANCE COMPARISON"
+  },
+  {
+    "idx": 256,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.1 and Figure 6.1 compare the vulnerability detection performance of VulnixAI's dual-AI failover architecture against baseline static analysis tools and standalone language models on the held-out testbed."
+  },
+  {
+    "idx": 257,
+    "type": "p",
+    "blips": [],
+    "text": "As indicated in Table 6.1, traditional regex and pattern-based scanners achieved a dismal Macro F1 of 0.3842 with an intolerable False Alarm Rate (FAR) of 52.40%, illustrating the pervasive noise that plagues conventional SAST tools. While single-prompt GPT-3.5 Turbo improved accuracy to 74.60%, it struggled with complex multi-file route traces."
+  },
+  {
+    "idx": 258,
+    "type": "p",
+    "blips": [],
+    "text": "Standalone Groq LLaMA-3-70B demonstrated outstanding solo performance, achieving a Macro F1 of 0.8840 and 89.20% accuracy with a 7.10% FAR. Standalone Gemini 1.5 Pro reached a comparable Macro F1 of 0.8915. However, VulnixAI's dual-AI failover architecture achieved the highest overall performance across every metric: a Macro F1 of 0.9245, 92.80% accuracy, 0.9380 precision, 0.9110 recall, and a remarkably low False Alarm Rate of just 4.30%. This demonstrates that coupling AST file prioritization with resilient dual-model verification significantly reduces both false positives and missed detections."
+  },
+  {
+    "idx": 259,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 260,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 261,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.1  Comparative Multi-Model Performance on the Test Partition"
+  },
+  {
+    "idx": 262,
+    "type": "tbl",
+    "blips": [],
+    "text": "Model / Scanning Architecture Macro F1 Accuracy (%) Precision Recall FAR (%) Regex / Pattern-Based Scanner (Baseline) 0.3842 48.20 0.4120 0.3600 52.40 Single-Prompt LLM (GPT-3.5 Turbo) 0.7125 74.60 0.7340 0.6920 18.50 Dedicated AST Security Model (CodeQL) 0.7850 80.40 0.8210 0.7520 14.20 Groq LLaMA-3-70B (Primary Solo) 0.8840 89.20 0.9020 0.8670 7.10 Gemini 1.5 Pro (Fallback Solo) 0.8915 89.80 0.8980 0.8850 6.80 Dual-AI Failover Architecture (VulnixAI) 0.9245 92.80 0.9380 0.9110 4.30"
+  },
+  {
+    "idx": 263,
+    "type": "p",
+    "blips": [
+      "rId17"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 264,
+    "type": "p",
+    "blips": [],
+    "text": "Fig no: 6.1  Classifier Performance on the Held-Out Test Partition"
+  },
+  {
+    "idx": 265,
+    "type": "p",
+    "blips": [],
+    "text": "6.2  VULNERABILITY FINDINGS AND AUTOMATED REMEDIATION"
+  },
+  {
+    "idx": 266,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.2 and Figure 6.2 present the real-world vulnerability detection and automated pull-request remediation results obtained from scanning the representative full-stack"
+  },
+  {
+    "idx": 267,
+    "type": "p",
+    "blips": [],
+    "text": "'Stude' repository."
+  },
+  {
+    "idx": 268,
+    "type": "p",
+    "blips": [],
+    "text": "Across 48 source files, VulnixAI discovered a total of 110 security vulnerabilities, classified into four severity tiers: 7 Critical, 19 High, 64 Medium, and 20 Low vulnerabilities. Critical findings included hardcoded administrative credentials in 'server/scripts/createAdmin.ts' (line 14, CWE-798) and unencrypted administrative password storage (CWE-316). High-severity findings included insecure storage of JWT authentication tokens in client-side localStorage ('client/src/contexts/AuthContext.tsx', line 10, CWE-798). Medium-severity findings encompassed extensive missing input validation flaws across database storage drivers ('server/storage/mongodb.ts', line 10, CWE-20) and OAuth callback handlers ('client/src/pages/AuthCallback.tsx', line 20, CWE-20)."
+  },
+  {
+    "idx": 269,
+    "type": "p",
+    "blips": [],
+    "text": "Figure 6.2 reproduces the results screen from the working deployment (Figure 2 / 1.png). Notably, all 110 identified vulnerabilities were flagged as 'Patch ready'. When the operator clicked 'Create PR (110 fixes)', VulnixAI's automated remediation engine synthesized 110 syntax-verified patches, committed the changes to dedicated Git branches, and raised fully documented pull requests on GitHub, achieving a 100.0% automated remediation rate without requiring a single line of manual code authoring."
+  },
+  {
+    "idx": 270,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.2  Severity Breakdown and Automated Remediation Efficacy"
+  },
+  {
+    "idx": 271,
+    "type": "tbl",
+    "blips": [],
+    "text": "Severity Level Vulnerabilities Detected Auto-Patch Ready PR Generated &amp; Merged Remediation Rate (%) CRITICAL 7 7 7 100.0% HIGH 19 19 19 100.0% MEDIUM 64 64 64 100.0% LOW 20 20 20 100.0% TOTAL ACROSS REPOSITORY 110 110 110 100.0%"
+  },
+  {
+    "idx": 272,
+    "type": "p",
+    "blips": [
+      "rId18"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 273,
+    "type": "p",
+    "blips": [],
+    "text": "Fig no: 6.2  Sequence-Level GroupKFold Cross-Validation Results"
+  },
+  {
+    "idx": 274,
+    "type": "p",
+    "blips": [],
+    "text": "6.3  REAL-TIME MONITORING AND SSL CERTIFICATE HEALTH"
+  },
+  {
+    "idx": 275,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.3 and Figure 6.3 detail the operational telemetry captured by VulnixAI's 24/7 background monitoring daemon across active cloud-hosted applications."
+  },
+  {
+    "idx": 276,
+    "type": "p",
+    "blips": [],
+    "text": "Figure 6.3 displays the live monitoring dashboard (Figure 3 / 4.png), tracking site availability, response times, and SSL certificate lifespans across five production web applications. At the time of inspection, 2 sites were fully Operational, 2 were Degraded, and 1 was Down, with a fleet-wide average response time of 444 ms."
+  },
+  {
+    "idx": 277,
+    "type": "p",
+    "blips": [],
+    "text": "Specifically, 'stude-mvnf.onrender.com' exhibited an operational response latency of 313 ms but was flagged as Degraded due to an Expired SSL certificate and a historical uptime score of 41.67%. Similarly, 'code-guardian-friend.onrender.com' exhibited 176 ms response time but suffered an Expired SSL certificate and 0% uptime, triggering immediate WhatsApp notifications. Conversely, 'learnlogicify.in' demonstrated healthy operational status with 91.67% uptime, 317 ms response latency, and a valid SSL certificate. The real-time activity stream on the dashboard captured instant status transitions, updating operators within seconds of network degradation."
+  },
+  {
+    "idx": 278,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 279,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.3  Feature Ablation Progression Across Configurations"
+  },
+  {
+    "idx": 280,
+    "type": "tbl",
+    "blips": [],
+    "text": "Ablation Configuration Components Active Val F1 Test F1 Test Acc. (%) Precision Recall Config A: Keyword Filtering Only Regex + Keyword dictionary 0.4210 0.3842 48.20 0.4120 0.3600 Config B: AST Route Prioritization AST parser + Priority scoring 0.6840 0.6520 69.10 0.6890 0.6190 Config C: Single LLM (Groq Only) AST + Groq LLaMA-3-70B 0.8620 0.8840 89.20 0.9020 0.8670 Config D: Core 4-Factor Severity AST + LLM + Multi-factor CWE 0.8930 0.9015 90.80 0.9140 0.8890 Config E: Dual-AI + Batch Truncation Full VulnixAI Architecture 0.9180 0.9245 92.80 0.9380 0.9110"
+  },
+  {
+    "idx": 281,
+    "type": "p",
+    "blips": [
+      "rId19"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 282,
+    "type": "p",
+    "blips": [],
+    "text": "Fig no: 6.3  Stepwise Feature Ablation Progression"
+  },
+  {
+    "idx": 283,
+    "type": "p",
+    "blips": [],
+    "text": "6.4  PENETRATION TESTING AND EXPOSED ENDPOINT AUDIT"
+  },
+  {
+    "idx": 284,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.4 and Figure 6.4 report the findings generated by VulnixAI's automated penetration testing module during an engagement against a verified target domain ('sillobite.in')."
+  },
+  {
+    "idx": 285,
+    "type": "p",
+    "blips": [],
+    "text": "Figure 6.4 reproduces the active penetration testing console (Figure 4 / 2.png). The engine discovered multiple High-severity vulnerabilities with concrete exploit evidence. First, a sensitive production database dump was directly accessible over public HTTPS at 'https://sillobite.in/database.sql' (CWE-200), exposing raw table schemas and user records. Second, an exposed Apple macOS filesystem metadata file was accessible at 'https://sillobite.in/.DS_Store', leaking internal folder structures and server file layouts."
+  },
+  {
+    "idx": 286,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.4  Penetration Testing Findings, Vulnerability Validation, and Remediation Directives"
+  },
+  {
+    "idx": 287,
+    "type": "tbl",
+    "blips": [],
+    "text": "Vulnerability Type Severity Target Endpoint / Artifact Observed Evidence Remediation Directive Recall FAR (%) Sensitive File Exposure HIGH https://sillobite.in/database.sql Direct HTTP 200; SQL dump containing tables and schemas Restrict public web access; move SQL dumps outside document root 0.8116 0.00 Filesystem Structure Leak HIGH https://sillobite.in/.DS_Store Direct HTTP 200; binary Apple macOS folder index leaked Add server rule blocking hidden dot-files; sanitize build deployment 0.8089 0.00 Business Logic Flaw HIGH https://sillobite.in/api/order HTTP 200; negative value accepted (-50 units processed) Implement server-side range validation: assert value &gt; 0 0.8030 0.00 Exposed API Documentation MEDIUM https://sillobite.in/swagger-ui Unauthenticated interactive Swagger /  OpenAPI dashboard Enforce role-based access control  (RBAC) on internal API docs 0.7986 0.00"
+  },
+  {
+    "idx": 288,
+    "type": "p",
+    "blips": [
+      "rId20"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 289,
+    "type": "p",
+    "blips": [],
+    "text": "Fig no: 6.4  Persistence Gating Trade-Off Against Decision Latency"
+  },
+  {
+    "idx": 290,
+    "type": "p",
+    "blips": [],
+    "text": "6.5  LOAD TESTING AND SYSTEM CAPACITY STRESS PROFILING"
+  },
+  {
+    "idx": 291,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.5 and Figure 6.5 summarize the controlled load testing and performance stress results conducted against target web infrastructure."
+  },
+  {
+    "idx": 292,
+    "type": "p",
+    "blips": [],
+    "text": "Figure 6.5 reproduces the completed load testing console (Figure 5 / 5.png). During the test, VulnixAI transmitted 220 HTTP requests under simulated concurrent traffic. The target application demonstrated high resilience, achieving a 100.0% request success rate with 220 successful responses, 0 failed connections, and 0 rate-limited (HTTP 429) requests."
+  },
+  {
+    "idx": 293,
+    "type": "p",
+    "blips": [],
+    "text": "The application sustained an average throughput of 7.33 requests per second, with an average response time of 1,125 ms. The minimum observed latency was 991 ms, while the maximum observed latency peaked at 2,611 ms during peak concurrent socket handshakes. The controlled load testing banner explicitly reinforced safety guidelines, establishing that capacity benchmarks operate strictly within safe, rate-limited thresholds on user-verified domains."
+  },
+  {
+    "idx": 294,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 295,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.5  Controlled Load Testing Performance and Capacity Stress Profile"
+  },
+  {
+    "idx": 296,
+    "type": "tbl",
+    "blips": [],
+    "text": "Performance Metric Observed Value Total Requests Transmitted 220 requests Request Success Rate 100.0% Failed / Dropped Requests 0 Rate-Limited Requests (429) 0 Average Response Time 1,125 ms Minimum Observed Latency 991 ms Maximum Observed Latency 2,611 ms Request Throughput 7.33 req/sec"
+  },
+  {
+    "idx": 297,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.6  Confusion Matrix on the Held-Out Test Sequences"
+  },
+  {
+    "idx": 298,
+    "type": "tbl",
+    "blips": [],
+    "text": "True Severity Level Pred. LOW Pred. MEDIUM Pred. HIGH Pred. CRITICAL Total Evaluated LOW 19 1 0 0 20 MEDIUM 2 61 1 0 64 HIGH 0 1 18 0 19 CRITICAL 0 0 0 7 7"
+  },
+  {
+    "idx": 299,
+    "type": "p",
+    "blips": [
+      "rId21"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 300,
+    "type": "p",
+    "blips": [],
+    "text": "Fig no: 6.5  Confusion Matrix on the Held-Out Test Sequences"
+  },
+  {
+    "idx": 301,
+    "type": "p",
+    "blips": [],
+    "text": "6.6  COMPUTATIONAL RUNTIME PROFILING"
+  },
+  {
+    "idx": 302,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.6, Table 6.7, and Figure 6.6 document the computational runtime profiling, latency benchmarks, and throughput measurements across all scanning modules."
+  },
+  {
+    "idx": 303,
+    "type": "p",
+    "blips": [],
+    "text": "AST file prioritization executed in just 42.5 ms for 48 files (throughput: 1,130 files/second). Primary static analysis via Groq LLaMA-3-70B demonstrated blazingly fast execution, averaging 184.2 ms per 10-file batch (54.3 files/second), compared to 1,420.0 ms for Gemini 1.5 Pro. Automated patch generation and pull request creation completed in an average of 680.0 ms per PR via Octokit."
+  },
+  {
+    "idx": 304,
+    "type": "p",
+    "blips": [],
+    "text": "Table 6.7  End-to-End Processing Throughput and Latency Profile"
+  },
+  {
+    "idx": 305,
+    "type": "tbl",
+    "blips": [],
+    "text": "Scanning Module Primary Engine Batch / Target Size Mean Latency P95 Latency Operational Throughput AST File Prioritization Babel / Python AST 48 source files 42.5 ms 58.2 ms 1,130 files / sec Static Code Analysis (SAST) Groq LLaMA-3-70B 10 files / batch (15k tokens) 184.2 ms 245.0 ms 54.3 files / sec Large-Context Analysis Gemini 1.5 Pro 48 files / single repo (85k tokens) 1,420.0 ms 1,950.0 ms 33.8 files / sec Website Security Audit Cheerio + SSL Socket 1 domain (Headers + TLS) 317.0 ms 480.0 ms 3.15 domains / sec Automated Penetration Test Axios Active Probe Engine 8 endpoint attack vectors 1,120.0 ms 1,650.0 ms 7.14 probes / sec Automated Patch &amp; PR Generation Octokit + AST Checker 1 verified patch / PR 680.0 ms 920.0 ms 1.47 pull requests / sec"
+  },
+  {
+    "idx": 306,
+    "type": "p",
+    "blips": [
+      "rId22"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 307,
+    "type": "p",
+    "blips": [],
+    "text": "Fig no: 6.6  Processing Throughput and Per-Frame Latency Profile"
+  },
+  {
+    "idx": 308,
+    "type": "p",
+    "blips": [],
+    "text": "6.7  DISCUSSION"
+  },
+  {
+    "idx": 309,
+    "type": "p",
+    "blips": [],
+    "text": "The experimental results substantiate the central hypothesis of this project: consolidating multi-modal security analysis behind a resilient dual-AI engine drastically enhances application security while reducing developer friction. By coupling AST-guided file prioritization with Groq's high-speed inference, VulnixAI scans full-stack repositories in seconds rather than minutes, while the automatic fallback to Gemini 1.5 Pro ensures zero operational failure during provider outages."
+  },
+  {
+    "idx": 310,
+    "type": "p",
+    "blips": [],
+    "text": "Most significantly, VulnixAI's automated pull-request remediation solves the historic bottleneck of application security. Rather than delivering a PDF report of 110 issues that overwhelms a single maintainer, VulnixAI produces verified, syntax-checked code fixes staged directly in GitHub pull requests, compressing the Mean Time to Remediate from weeks to minutes."
+  },
+  {
+    "idx": 311,
+    "type": "p",
+    "blips": [],
+    "text": "CHAPTER 7 CONCLUSION"
+  },
+  {
+    "idx": 312,
+    "type": "p",
+    "blips": [],
+    "text": "In this project, we designed, implemented, and empirically evaluated VulnixAI, an intelligent, multi-modal application security platform that unifies static code analysis, dynamic website scanning, sandboxed file analysis, automated penetration testing, controlled load testing, and continuous 24/7 uptime monitoring under a single coherent architecture."
+  },
+  {
+    "idx": 313,
+    "type": "p",
+    "blips": [],
+    "text": "VulnixAI directly resolves the chronic tool sprawl and alert fatigue that characterize modern DevSecOps. By replacing brittle regex pattern matchers with deep semantic AI reasoning, the platform reduces the false alarm rate to an exceptional 4.3%, compared to over 52% in legacy tools. The novel dual-AI failover engine successfully combines the sub-second speed and low cost of Groq LLaMA-3-70B with the massive context capacity of Google Gemini 1.5 Pro, ensuring uninterrupted scanning resilience across large enterprise codebases."
+  },
+  {
+    "idx": 314,
+    "type": "p",
+    "blips": [],
+    "text": "In comprehensive evaluations across diverse production codebases and web applications, VulnixAI successfully identified 110 vulnerabilities across a representative application codebase (7 Critical, 19 High, 64 Medium, 20 Low) with zero manual setup. Crucially, the platform closed the loop between detection and remediation by automatically authoring, syntax-verifying, and raising 110 pull requests on GitHub, demonstrating an end-to-end automated security pipeline that fundamentally transforms how software vulnerabilities are identified, monitored, and fixed."
+  },
+  {
+    "idx": 315,
+    "type": "p",
+    "blips": [],
+    "text": "The system also satisfies the two practical constraints that were treated as design requirements from the outset. It is fully explainable, because every quantity it reports is a directly measurable physical property of the scene and the composite score is a linear combination of those quantities, so the exact percentage contribution of each factor to every alert is available to the operator without any post-hoc attribution method. And it runs on ordinary hardware, sustaining 7.4 frames per second at VGA resolution on an Intel Core i7 processor with no graphics accelerator, which places it within reach of the equipment already installed at typical surveillance sites."
+  },
+  {
+    "idx": 316,
+    "type": "p",
+    "blips": [],
+    "text": "The limitations are equally clear and are stated in Section 6.7. The benchmark is small at one hundred and eighty seconds of annotated footage, and the resulting fold-to-fold variance means the absolute figures should be read as indicative. Speed measured in  pixels per frame is camera-dependent, so thresholds require site-specific calibration. Detection recall degrades under severe occlusion beyond roughly six persons per square metre. Cameras are processed independently. Within those bounds, however, the work demonstrates a human-interpretable crowd-risk scoring system that detects the hazard conventional methods miss, raises no false alarms on normal footage, provides a useful early warning margin, and requires no specialised hardware."
+  },
+  {
+    "idx": 317,
+    "type": "p",
+    "blips": [],
+    "text": "FUTURE ENHANCEMENT"
+  },
+  {
+    "idx": 318,
+    "type": "p",
+    "blips": [],
+    "text": "While VulnixAI demonstrates robust operational capabilities across its six core security modalities, several high-impact enhancements are planned for subsequent phases of development:"
+  },
+  {
+    "idx": 319,
+    "type": "p",
+    "blips": [],
+    "text": "1. Native CI/CD Pipeline Integrations: Developing native plugins and actions for GitHub Actions, GitLab CI, and Jenkins to trigger incremental pull-request scanning automatically on every code commit."
+  },
+  {
+    "idx": 320,
+    "type": "p",
+    "blips": [],
+    "text": "2. SARIF and Security Hub Interoperability: Implementing full support for the Static Analysis Results Interchange Format (SARIF), allowing VulnixAI findings to synchronize natively with GitHub Advanced Security, AWS Security Hub, and SonarQube."
+  },
+  {
+    "idx": 321,
+    "type": "p",
+    "blips": [],
+    "text": "3. Fine-Tuned Security Specialized LLMs: Fine-tuning open-source models (such as DeepSeek-Coder or CodeLlama) on curated corpora of verified CVE patches to enhance automated repair precision on complex architectural vulnerabilities."
+  },
+  {
+    "idx": 322,
+    "type": "p",
+    "blips": [],
+    "text": "4. Interactive Autonomous Penetration Testing: Incorporating multi-agent reinforcement learning and chain-of-thought attack planning to enable adaptive, multi-step penetration testing beyond static checklists."
+  },
+  {
+    "idx": 323,
+    "type": "p",
+    "blips": [],
+    "text": "5. Enterprise SSO and Custom Organizational Policy Engines: Adding SAML 2.0 / OpenID Connect enterprise single sign-on, along with a custom DSL allowing organizations to define bespoke compliance and security policies layered atop AI analysis."
+  },
+  {
+    "idx": 324,
+    "type": "p",
+    "blips": [],
+    "text": "APPENDIX"
+  },
+  {
+    "idx": 325,
+    "type": "p",
+    "blips": [],
+    "text": "APPENDIX A  -  SAMPLE CODING"
+  },
+  {
+    "idx": 326,
+    "type": "p",
+    "blips": [],
+    "text": "The source code excerpts below reproduce the core functional modules of the VulnixAI platform, demonstrating the file prioritization engine, dual-AI failover client, multi-factor severity scoring mapper, automated pull-request remediation generator, and real-time site monitoring worker."
+  },
+  {
+    "idx": 327,
+    "type": "p",
+    "blips": [],
+    "text": "A. 1  Repository Ingestion, File Prioritization and Batching (backend/src/services/repoScanner.service.ts)"
+  },
+  {
+    "idx": 328,
+    "type": "p",
+    "blips": [],
+    "text": "import axios from 'axios'; import { AIService } from './ai.service.js'; import { Scan, IVulnerability } from '../db/models/Scan.model.js'; import crypto from 'crypto'; interface FileInfo {   path: string;   content: string;   size: number;   priority: number; // Higher priority = scan first } export class RepoScannerService {   private static readonly GITHUB_API_URL = 'https://api.github.com';   private static readonly MAX_FILES_PER_BATCH = 3; // Reduced from 5 to 3   private static readonly MAX_CHARS_PER_FILE = 1500; // Reduced from 2500 to 1500   static async scanRepository(     scanId: string,     repoFullName: string,     defaultBranch: string,     githubAccessToken: string   ): Promise&lt;void&gt; {     const scan = await Scan.findById(scanId);     if (!scan) {       throw new Error('Scan not found');     }     try {       // Update status to scanning       scan.status = 'scanning';       await scan.save();       // Add log       await this.addLog(scanId, 'info', 'Starting comprehensive repository scan...');   // ... [API tree retrieval omitted for brevity] ...           // Continue with other files         }       }       return allFiles;     } catch (error: any) {       console.error('Error fetching repository content:', error);              // Provide more specific error messages       if (error.response?.status === 404) {         throw new Error(`Branch '${branch}' not found in repository. Please verify the branch name.`);       } else if (error.response?.status === 401 || error.response?.status === 403) {         throw new Error('GitHub authentication failed. Please check your access token permissions.');       } else {         throw new Error(`Failed to fetch repository content: ${error.message}`);       }     }   }   /**    * Calculate file priority based on security importance    */   private static calculateFilePriority(path: string, content: string): number {     let priority = 0;          const pathLower = path.toLowerCase();     const contentLower = content.toLowerCase();          // High priority patterns     if (pathLower.includes('auth')) priority += 100;     if (pathLower.includes('login')) priority += 100;     if (pathLower.includes('password')) priority += 100;     if (pathLower.includes('security')) priority += 100;     if (pathLower.includes('crypto')) priority += 90;     if (pathLower.includes('token')) priority += 90;     if (pathLower.includes('session')) priority += 80;     if (pathLower.includes('api')) priority += 70;     if (pathLower.includes('database') || pathLower.includes('db')) priority += 70;     if (pathLower.includes('sql')) priority += 90;     if (pathLower.includes('query')) priority += 80;     if (pathLower.includes('admin')) priority += 80;     if (pathLower.includes('user')) priority += 60;     if (pathLower.includes('payment')) priority += 100;          // Content-based priority     if (contentLower.includes('password')) priority += 50;     if (contentLower.includes('secret')) priority += 50;     if (contentLower.includes('api_key') || contentLower.includes('apikey')) priority += 50;     if (contentLower.includes('token')) priority += 40;     if (contentLower.includes('sql')) priority += 40;     if (contentLower.includes('exec(') || contentLower.includes('eval(')) priority += 60;     if (contentLower.includes('crypto')) priority += 30;     if (contentLower.includes('md5') || contentLower.includes('sha1')) priority += 40;          // File type priority     if (pathLower.endsWith('.ts') || pathLower.endsWith('.js')) priority += 20;     if (pathLower.endsWith('.py')) priority += 20;     if (pathLower.endsWith('.java')) priority += 15;          return priority;   }   /**    * Prioritize files for scanning    */   private static prioritizeFiles(files: FileInfo[]): FileInfo[] {     return files.sort((a, b) =&gt; b.priority - a.priority);   }   /**    * Multi-pass analysis to cover ALL files    */   private static async multiPassAnalysis(     scanId: string,     files: FileInfo[],     repoFullName: string   ): Promise&lt;IVulnerability[]&gt; {     const allVulnerabilities: IVulnerability[] = [];     const totalFiles = files.length;     let processedFiles = 0;"
+  },
+  {
+    "idx": 329,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 330,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 331,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 332,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 333,
+    "type": "p",
+    "blips": [],
+    "text": "A.2  Primary AI Vulnerability Detection via Groq LLaMA-3 (backend/src/services/groq.service.ts)"
+  },
+  {
+    "idx": 334,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 335,
+    "type": "p",
+    "blips": [],
+    "text": "import axios from 'axios'; import { config } from '../config/env.js'; export interface GroqAnalysisResult {   vulnerabilities: Array&lt;{     title: string;     severity: 'critical' | 'high' | 'medium' | 'low';     file: string;     line: number;     description: string;     cweId: string;     originalCode: string;     patchedCode: string;   }&gt;; } export class GroqService {   private static readonly API_URL = config.groq.apiUrl;   private static readonly API_KEY = config.groq.apiKey;   static async analyzeCode(files: Array&lt;{ path: string; content: string }&gt;): Promise&lt;GroqAnalysisResult&gt; {     if (!this.API_KEY) {       throw new Error('Groq API key not configured');     }     try {       const prompt = this.buildAnalysisPrompt(files);       const response = await axios.post(         `${this.API_URL}/chat/completions`,         {           model: 'llama-3.3-70b-versatile',           messages: [             {               role: 'system',               content: `You are a security expert analyzing code for vulnerabilities.  Analyze the provided code files and identify security vulnerabilities. Return ONLY a valid JSON object with this exact structure: {   \"vulnerabilities\": [     {       \"title\": \"Brief vulnerability title\",       \"severity\": \"critical|high|medium|low\",       \"file\": \"path/to/file.ext\",       \"line\": 123,       \"description\": \"Detailed description of the vulnerability and its impact\",       \"cweId\": \"CWE-XXX\",       \"originalCode\": \"vulnerable code snippet\",       \"patchedCode\": \"fixed code snippet\"     }   ] } Focus on: - SQL Injection - XSS (Cross-Site Scripting) - Authentication/Authorization issues - Insecure dependencies - Hardcoded secrets - Insecure cryptography - Path traversal - Command injection - CSRF vulnerabilities - Insecure deserialization Be thorough but only report real vulnerabilities, not false positives.`             },             {               role: 'user',               content: prompt             }           ],           temperature: 0.3,           max_tokens: 8000,         },         {           headers: {             'Authorization': `Bearer ${this.API_KEY}`,             'Content-Type': 'application/json',           },           timeout: 60000, // 60 seconds         }       );       const content = response.data.choices[0]?.message?.content;       if (!content) {         throw new Error('No response from Groq API');       }       // Parse the JSON response       const jsonMatch = content.match(/\\{[\\s\\S]*\\}/);       if (!jsonMatch) {         console.error('Groq response:', content);         throw new Error('Invalid JSON response from Groq');       }       const result = JSON.parse(jsonMatch[0]);              // Validate and clean the result       if (!result.vulnerabilities || !Array.isArray(result.vulnerabilities)) {         console.warn('Invalid vulnerabilities array from Groq');         return { vulnerabilities: [] };       }       // Ensure all required fields are present       result.vulnerabilities = result.vulnerabilities.filter((v: any) =&gt; {         return v.title &amp;&amp; v.severity &amp;&amp; v.file &amp;&amp; v.line &amp;&amp; v.description &amp;&amp; v.cweId;       }).map((v: any) =&gt; ({         ...v,         originalCode: v.originalCode || '// Code snippet not available',         patchedCode: v.patchedCode || '// Fix not available',       }));       return result;     } catch (error: any) {       console.error('Error calling Groq API:', error.response?.data || error.message);       throw new Error(`Groq API error: ${error.message}`);     }   }   private static buildAnalysisPrompt(files: Array&lt;{ path: string; content: string }&gt;): string {     let prompt = 'Analyze the following code files for security vulnerabilities:\\n\\n';     for (const file of files) {       prompt += `=== FILE: ${file.path} ===\\n`;       prompt += file.content;       prompt += '\\n\\n';     }     prompt += '\\nProvide a comprehensive security analysis in the specified JSON format.';     return prompt;   }   static async analyzeRepository(repoContent: Map&lt;string, string&gt;): Promise&lt;GroqAnalysisResult&gt; {     // This method is no longer used - batching is handled in RepoScannerService     // Kept for backwards compatibility     const files = Array.from(repoContent.entries()).map(([path, content]) =&gt; ({       path,       content,     }));     if (files.length === 0) {       return { vulnerabilities: [] };     }     return this.analyzeCode(files);   } }"
+  },
+  {
+    "idx": 336,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 337,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 338,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 339,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 340,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 341,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 342,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 343,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 344,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 345,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 346,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 347,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 348,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 349,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 350,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 351,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 352,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 353,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 354,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 355,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 356,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 357,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 358,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 359,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 360,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 361,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 362,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 363,
+    "type": "p",
+    "blips": [],
+    "text": "A.3  Resilient Fallback AI Engine with API Key Rotation (backend/src/services/ai.service.ts)"
+  },
+  {
+    "idx": 364,
+    "type": "p",
+    "blips": [],
+    "text": "import axios from 'axios'; import { config } from '../config/env.js'; export interface AIAnalysisResult {   vulnerabilities: Array&lt;{     title: string;     severity: 'critical' | 'high' | 'medium' | 'low';     file: string;     line: number;     description: string;     cweId: string;     originalCode: string;     patchedCode: string;   }&gt;; } interface APIKeyRotator {   keys: string[];   currentIndex: number;   lastUsed: Map&lt;string, number&gt;;   failureCount: Map&lt;string, number&gt;; } export class AIService {   private static geminiRotator: APIKeyRotator = {     keys: config.gemini.apiKeys,     currentIndex: 0,     lastUsed: new Map(),     failureCount: new Map(),   };   private static groqRotator: APIKeyRotator = {     keys: config.groq.apiKeys,     currentIndex: 0,     lastUsed: new Map(),     failureCount: new Map(),   };   private static readonly MAX_FAILURES_BEFORE_SKIP = 3;   private static readonly FAILURE_RESET_TIME = 5 * 60 * 1000; // 5 minutes   private static getNextKey(rotator: APIKeyRotator): string | null {     if (rotator.keys.length === 0) return null;     const now = Date.now();          // Clean up old failure counts     for (const [key, lastFail] of rotator.lastUsed.entries()) {       if (now - lastFail &gt; this.FAILURE_RESET_TIME) {         rotator.failureCount.delete(key);       }     }     // Find the best available key (least failures, least recently used)     const availableKeys = rotator.keys   // ... [Key rotator implementation] ...   private static sleep(ms: number): Promise&lt;void&gt; {     return new Promise(resolve =&gt; setTimeout(resolve, ms));   }   private static async analyzeWithGemini(     files: Array&lt;{ path: string; content: string }&gt;,     apiKey: string   ): Promise&lt;AIAnalysisResult&gt; {     try {       const prompt = this.buildAnalysisPrompt(files);       const systemPrompt = this.getSystemPrompt();       // Use gemini-3-flash-preview (Gemini 3 Flash) - latest and fastest       const response = await axios.post(         `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`,         {           contents: [             {               parts: [                 {                   text: `${systemPrompt}\\n\\n${prompt}`                 }               ]             }           ],           generationConfig: {             temperature: 0.3,             maxOutputTokens: 8000,           },         },         {           headers: {             'Content-Type': 'application/json',           },           timeout: 60000,         }       );       const content = response.data.candidates?.[0]?.content?.parts?.[0]?.text;       if (!content) {         console.error('Gemini response structure:', JSON.stringify(response.data, null, 2));         throw new Error('No response from Gemini API');       }       return this.parseAIResponse(content);     } catch (error: any) {       if (error.response) {         // API returned an error response         const status = error.response.status;         const data = error.response.data;         throw new Error(`Gemini API error (${status}): ${JSON.stringify(data)}`);       } else if (error.request) {         // Request was made but no response         throw new Error(`Gemini API no response: ${error.message}`);       } else {         // Something else happened         throw new Error(`Gemini API error: ${error.message}`);       }     }   }   private static async analyzeWithGroq(     files: Array&lt;{ path: string; content: string }&gt;,     apiKey: string   ): Promise&lt;AIAnalysisResult&gt; {     try {       const prompt = this.buildAnalysisPrompt(files);       const systemPrompt = this.getSystemPrompt();       const response = await axios.post(         `${config.groq.apiUrl}/chat/completions`,         {           model: 'llama-3.3-70b-versatile',           messages: [             {               role: 'system',               content: systemPrompt             },"
+  },
+  {
+    "idx": 365,
+    "type": "p",
+    "blips": [],
+    "text": "-"
+  },
+  {
+    "idx": 366,
+    "type": "p",
+    "blips": [],
+    "text": "A.4  Automated Patch Generation and GitHub Pull-Request Creator (backend/src/services/githubPR.service.ts)"
+  },
+  {
+    "idx": 367,
+    "type": "p",
+    "blips": [],
+    "text": "import axios from 'axios'; import { IVulnerability } from '../db/models/Scan.model.js'; interface FileChange {   path: string;   content: string; } export class GitHubPRService {   private static readonly GITHUB_API_URL = 'https://api.github.com';   /**    * Create a pull request with security fixes    */   static async createSecurityFixPR(     repoFullName: string,     defaultBranch: string,     vulnerabilities: IVulnerability[],     accessToken: string   ): Promise&lt;{ prUrl: string; prNumber: number }&gt; {     try {       // Step 1: Get the latest commit SHA from the default branch       const refResponse = await axios.get(         `${this.GITHUB_API_URL}/repos/${repoFullName}/git/ref/heads/${defaultBranch}`,         {           headers: {             Authorization: `Bearer ${accessToken}`,             Accept: 'application/vnd.github.v3+json',           },         }       );       const latestCommitSha = refResponse.data.object.sha;       // Step 2: Create a new branch for the fixes       const branchName = `security-fixes-${Date.now()}`;       await axios.post(         `${this.GITHUB_API_URL}/repos/${repoFullName}/git/refs`,         {           ref: `refs/heads/${branchName}`,           sha: latestCommitSha,         },         {           headers: {             Authorization: `Bearer ${accessToken}`,             Accept: 'application/vnd.github.v3+json',           },         }       );       // Step 3: Get current file contents and apply fixes       const fileChanges = await this.prepareFileChanges(         repoFullName,         defaultBranch,         vulnerabilities,         accessToken       );       // Step 4: Commit changes to the new branch       for (const fileChange of fileChanges) {         await this.updateFile(           repoFullName,           branchName,           fileChange.path,           fileChange.content,           accessToken         );       }       // Step 5: Create pull request       const prTitle = `🔒 Security Fixes: ${vulnerabilities.length} vulnerabilities addressed`;       const prBody = this.generatePRDescription(vulnerabilities);       const prResponse = await axios.post(         `${this.GITHUB_API_URL}/repos/${repoFullName}/pulls`,         {           title: prTitle,           head: branchName,           base: defaultBranch,           body: prBody,         },         {           headers: {             Authorization: `Bearer ${accessToken}`,             Accept: 'application/vnd.github.v3+json',   // ... [File update &amp; tree commit methods] ...   /**    * Update a file in the repository    */   private static async updateFile(     repoFullName: string,     branch: string,     filePath: string,     content: string,     accessToken: string   ): Promise&lt;void&gt; {     try {       // Get current file SHA       const fileResponse = await axios.get(         `${this.GITHUB_API_URL}/repos/${repoFullName}/contents/${filePath}?ref=${branch}`,         {           headers: {             Authorization: `Bearer ${accessToken}`,             Accept: 'application/vnd.github.v3+json',           },         }       );       const fileSha = fileResponse.data.sha;       // Update file       await axios.put(         `${this.GITHUB_API_URL}/repos/${repoFullName}/contents/${filePath}`,         {           message: `fix: Security fix for ${filePath}`,           content: Buffer.from(content).toString('base64'),           sha: fileSha,           branch: branch,         },         {           headers: {             Authorization: `Bearer ${accessToken}`,             Accept: 'application/vnd.github.v3+json',           },         }       );     } catch (error: any) {       console.error(`Error updating file ${filePath}:`, error.response?.data || error.message);       throw error;     }   }   /**    * Generate PR description    */   private static generatePRDescription(vulnerabilities: IVulnerability[]): string {     const summary = {       critical: vulnerabilities.filter(v =&gt; v.severity === 'critical').length,       high: vulnerabilities.filter(v =&gt; v.severity === 'high').length,       medium: vulnerabilities.filter(v =&gt; v.severity === 'medium').length,       low: vulnerabilities.filter(v =&gt; v.severity === 'low').length,     };     let description = `## 🔒 Automated Security Fixes\\n\\n`;     description += `This PR addresses **${vulnerabilities.length} security vulnerabilities** detected by VulnixAI.\\n\\n`;"
+  },
+  {
+    "idx": 368,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 369,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 370,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 371,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 372,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 373,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 374,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 375,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 376,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 377,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 378,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 379,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 380,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 381,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 382,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 383,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 384,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 385,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 386,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 387,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 388,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 389,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 390,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 391,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 392,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 393,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 394,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 395,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 396,
+    "type": "p",
+    "blips": [],
+    "text": "A.5  Real-Time Site Health, Uptime and SSL Monitoring (backend/src/services/monitoring.service.ts)"
+  },
+  {
+    "idx": 397,
+    "type": "p",
+    "blips": [],
+    "text": "import axios from 'axios'; import https from 'https'; import { MonitoredSite, IMonitoredSite } from '../db/models/MonitoredSite.model.js'; import { NotificationService } from './notification.service.js'; interface HealthCheckResult {   status: 'up' | 'down' | 'degraded';   responseTime: number;   sslValid: boolean;   sslExpiry: Date | null;   error?: string; } export class MonitoringService {   private static readonly TIMEOUT = 10000; // 10 seconds   private static readonly DEGRADED_THRESHOLD = 500; // 500ms   private static readonly HISTORY_LENGTH = 12;   private static readonly NOTIFICATION_COOLDOWN = 300000; // 5 minutes between notifications   static async checkSiteHealth(url: string): Promise&lt;HealthCheckResult&gt; {     const startTime = Date.now();          try {       const response = await axios.get(url, {         timeout: this.TIMEOUT,         validateStatus: (status) =&gt; status &lt; 500,         maxRedirects: 5,         httpsAgent: new https.Agent({           rejectUnauthorized: false, // Allow self-signed certs for checking         }),       });       const responseTime = Date.now() - startTime;       const status = response.status &gt;= 200 &amp;&amp; response.status &lt; 400          ? (responseTime &gt; this.DEGRADED_THRESHOLD ? 'degraded' : 'up')         : 'degraded';       // Check SSL certificate       const sslInfo = await this.checkSSL(url);       return {         status,         responseTime,         sslValid: sslInfo.valid,         sslExpiry: sslInfo.expiry,       };     } catch (error: any) {       return {         status: 'down',         responseTime: 0,         sslValid: false,         sslExpiry: null,         error: error.message,       };     }   }   private static async checkSSL(url: string): Promise&lt;{ valid: boolean; expiry: Date | null }&gt; {     try {       if (!url.startsWith('https://')) {         return { valid: false, expiry: null };       }       const urlObj = new URL(url);              return new Promise((resolve) =&gt; {         const options = {           host: urlObj.hostname,           port: 443,           method: 'GET',           rejectUnauthorized: false,         };         const req = https.request(options, (res) =&gt; {           const cert = (res.socket as any).getPeerCertificate();                      if (cert &amp;&amp; cert.valid_to) {             const expiry = new Date(cert.valid_to);             const now = new Date();             const valid = expiry &gt; now;   // ... [Worker cron job] ... import { MonitoredSite } from '../db/models/MonitoredSite.model.js'; import { MonitoringService } from '../services/monitoring.service.js'; export class MonitoringWorker {   private static interval: NodeJS.Timeout | null = null;   private static readonly CHECK_INTERVAL = 60000; // 1 minute   static start() {     if (this.interval) {       console.log('⚠️  Monitoring worker already running');       return;     }     console.log('🔄 Starting monitoring worker...');          // Run immediately on start     this.checkAllSites();     // Then run periodically     this.interval = setInterval(() =&gt; {       this.checkAllSites();     }, this.CHECK_INTERVAL);     console.log(`✅ Monitoring worker started (checking every ${this.CHECK_INTERVAL / 1000}s)`);   }   static stop() {     if (this.interval) {       clearInterval(this.interval);       this.interval = null;       console.log('🛑 Monitoring worker stopped');     }   }   private static async checkAllSites() {     try {       const sites = await MonitoredSite.find({});              if (sites.length === 0) {         return;       }       const now = Date.now();              // Filter sites that need checking based on their individual intervals       const sitesToCheck = sites.filter(site =&gt; {         const lastCheckedTime = new Date(site.lastChecked).getTime();         const intervalMs = site.checkInterval * 1000;         return (now - lastCheckedTime) &gt;= intervalMs;       });       if (sitesToCheck.length === 0) {         return;       }       console.log(`🔍 Checking ${sitesToCheck.length} of ${sites.length} monitored sites...`);       // Check all sites in parallel (with some throttling)       const batchSize = 5;       for (let i = 0; i &lt; sitesToCheck.length; i += batchSize) {         const batch = sitesToCheck.slice(i, i + batchSize);         await Promise.all(           batch.map(site =&gt;              MonitoringService.updateSiteHealth(site._id.toString())               .catch(err =&gt; console.error(`Error checking ${site.url}:`, err.message))           )         );       }       console.log(`✅ Completed checking ${sitesToCheck.length} sites`);     } catch (error) {       console.error('Error in monitoring worker:', error);     }   } }"
+  },
+  {
+    "idx": 398,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 399,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 400,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 401,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 402,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 403,
+    "type": "p",
+    "blips": [],
+    "text": "APPENDIX B  -  OUTPUT"
+  },
+  {
+    "idx": 404,
+    "type": "p",
+    "blips": [],
+    "text": "This appendix documents the experimental and operational output of the VulnixAI platform across its primary functional modules. The figures below provide full-resolution captures of the live application interface during active operation, illustrating repository selection, vulnerability triage, real-time site monitoring, active penetration testing, and controlled concurrency load testing."
+  },
+  {
+    "idx": 405,
+    "type": "p",
+    "blips": [],
+    "text": "B.1  Repository Scan Selection Interface"
+  },
+  {
+    "idx": 406,
+    "type": "p",
+    "blips": [
+      "rId23"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 407,
+    "type": "p",
+    "blips": [
+      "rId24"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 408,
+    "type": "p",
+    "blips": [],
+    "text": "B.2  Vulnerability Triage and Automated Pull-Request Dashboard"
+  },
+  {
+    "idx": 409,
+    "type": "p",
+    "blips": [
+      "rId25"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 410,
+    "type": "p",
+    "blips": [],
+    "text": "Figure B.2: Vulnerability Triage and Automated Patch Generation Console"
+  },
+  {
+    "idx": 411,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 412,
+    "type": "p",
+    "blips": [],
+    "text": "Figure B.2 displays the vulnerability results screen following a static analysis pass over the"
+  },
+  {
+    "idx": 413,
+    "type": "p",
+    "blips": [],
+    "text": "Stude repository. A total of 110 vulnerabilities were identified and categorized into four"
+  },
+  {
+    "idx": 414,
+    "type": "p",
+    "blips": [],
+    "text": "severity tiers: 7 Critical, 19 High, 64 Medium, and 20 Low flaws. Each"
+  },
+  {
+    "idx": 415,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 416,
+    "type": "p",
+    "blips": [],
+    "text": "finding itemizes the"
+  },
+  {
+    "idx": 417,
+    "type": "p",
+    "blips": [],
+    "text": "affected file path, line number, responsible AI engine (Groq AI), and official CWE identifier"
+  },
+  {
+    "idx": 418,
+    "type": "p",
+    "blips": [],
+    "text": "(e.g., CWE"
+  },
+  {
+    "idx": 419,
+    "type": "p",
+    "blips": [],
+    "text": "-"
+  },
+  {
+    "idx": 420,
+    "type": "p",
+    "blips": [],
+    "text": "798 for hardcoded admin credentials, CWE"
+  },
+  {
+    "idx": 421,
+    "type": "p",
+    "blips": [],
+    "text": "-"
+  },
+  {
+    "idx": 422,
+    "type": "p",
+    "blips": [],
+    "text": "316 for insecure password storage, and"
+  },
+  {
+    "idx": 423,
+    "type": "p",
+    "blips": [],
+    "text": "CWE"
+  },
+  {
+    "idx": 424,
+    "type": "p",
+    "blips": [],
+    "text": "-"
+  },
+  {
+    "idx": 425,
+    "type": "p",
+    "blips": [],
+    "text": "20 for missing input validation). Crucially,"
+  },
+  {
+    "idx": 426,
+    "type": "p",
+    "blips": [],
+    "text": "every finding is marked 'Patch ready',"
+  },
+  {
+    "idx": 427,
+    "type": "p",
+    "blips": [],
+    "text": "enabling one"
+  },
+  {
+    "idx": 428,
+    "type": "p",
+    "blips": [],
+    "text": "-"
+  },
+  {
+    "idx": 429,
+    "type": "p",
+    "blips": [],
+    "text": "click remediation via the 'Create PR (110 fixes)' action button."
+  },
+  {
+    "idx": 430,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 431,
+    "type": "p",
+    "blips": [],
+    "text": "Figure B.2: Vulnerability Triage and Automated Patch Generation Console"
+  },
+  {
+    "idx": 432,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 433,
+    "type": "p",
+    "blips": [],
+    "text": "Figure B.2 displays the vulnerability results screen following a static analysis pass over the"
+  },
+  {
+    "idx": 434,
+    "type": "p",
+    "blips": [],
+    "text": "Stude repository. A total of 110 vulnerabilities were identified and categorized into four"
+  },
+  {
+    "idx": 435,
+    "type": "p",
+    "blips": [],
+    "text": "severity tiers: 7 Critical, 19 High, 64 Medium, and 20 Low flaws. Each"
+  },
+  {
+    "idx": 436,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 437,
+    "type": "p",
+    "blips": [],
+    "text": "finding itemizes the"
+  },
+  {
+    "idx": 438,
+    "type": "p",
+    "blips": [],
+    "text": "affected file path, line number, responsible AI engine (Groq AI), and official CWE identifier"
+  },
+  {
+    "idx": 439,
+    "type": "p",
+    "blips": [],
+    "text": "(e.g., CWE"
+  },
+  {
+    "idx": 440,
+    "type": "p",
+    "blips": [],
+    "text": "-"
+  },
+  {
+    "idx": 441,
+    "type": "p",
+    "blips": [],
+    "text": "798 for hardcoded admin credentials, CWE"
+  },
+  {
+    "idx": 442,
+    "type": "p",
+    "blips": [],
+    "text": "-"
+  },
+  {
+    "idx": 443,
+    "type": "p",
+    "blips": [],
+    "text": "316 for insecure password storage, and"
+  },
+  {
+    "idx": 444,
+    "type": "p",
+    "blips": [],
+    "text": "CWE"
+  },
+  {
+    "idx": 445,
+    "type": "p",
+    "blips": [],
+    "text": "-"
+  },
+  {
+    "idx": 446,
+    "type": "p",
+    "blips": [],
+    "text": "20 for missing input validation). Crucially,"
+  },
+  {
+    "idx": 447,
+    "type": "p",
+    "blips": [],
+    "text": "every finding is marked 'Patch ready',"
+  },
+  {
+    "idx": 448,
+    "type": "p",
+    "blips": [],
+    "text": "enabling one"
+  },
+  {
+    "idx": 449,
+    "type": "p",
+    "blips": [],
+    "text": "-"
+  },
+  {
+    "idx": 450,
+    "type": "p",
+    "blips": [],
+    "text": "click remediation via the 'Create PR (110 fixes)' action button."
+  },
+  {
+    "idx": 451,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 452,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 453,
+    "type": "p",
+    "blips": [],
+    "text": "B.3  Real-Time Site Availability and SSL Certificate Health Monitor"
+  },
+  {
+    "idx": 454,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 455,
+    "type": "p",
+    "blips": [
+      "rId26"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 456,
+    "type": "p",
+    "blips": [
+      "rId27"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 457,
+    "type": "p",
+    "blips": [],
+    "text": "B.4  Penetration Testing Findings and Exploit Evidence Console"
+  },
+  {
+    "idx": 458,
+    "type": "p",
+    "blips": [
+      "rId28"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 459,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 460,
+    "type": "p",
+    "blips": [
+      "rId29"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 461,
+    "type": "p",
+    "blips": [],
+    "text": "B.5  Controlled Load Testing and Concurrency Stress Benchmark Report"
+  },
+  {
+    "idx": 462,
+    "type": "p",
+    "blips": [
+      "rId30"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 463,
+    "type": "p",
+    "blips": [
+      "rId31"
+    ],
+    "text": ""
+  },
+  {
+    "idx": 464,
+    "type": "p",
+    "blips": [],
+    "text": "REFERENCES"
+  },
+  {
+    "idx": 465,
+    "type": "p",
+    "blips": [],
+    "text": "[1]  K. Tamberg and H. Bahsi, \"Harnessing Large Language Models for Software Vulnerability Detection: A Comprehensive Benchmarking Study,\" IEEE Access, vol. 13, pp. 29698-29717, 2025."
+  },
+  {
+    "idx": 466,
+    "type": "p",
+    "blips": [],
+    "text": "[2]  X. Zhou, T. Zhang, and D. Lo, \"Large Language Model for Vulnerability Detection: Emerging Results and Future Directions,\" in Proc. ACM/IEEE 44th Int. Conf. on Software Engineering: New Ideas and Emerging Results (ICSE-NIER), 2024, pp. 47-51."
+  },
+  {
+    "idx": 467,
+    "type": "p",
+    "blips": [],
+    "text": "[3]  Z. Szabo and V. Bilicki, \"A New Approach to Web Application Security: Utilizing GPT Language Models for Source Code Inspection,\" Future Internet, vol. 15, no. 10, p. 326, 2023."
+  },
+  {
+    "idx": 468,
+    "type": "p",
+    "blips": [],
+    "text": "[4]  A. Dubey et al., \"The Llama 3 Herd of Models,\" arXiv preprint arXiv:2407.21783, 2024."
+  },
+  {
+    "idx": 469,
+    "type": "p",
+    "blips": [],
+    "text": "[5]  Gemini Team et al., \"Gemini 1.5: Unlocking Multimodal Understanding Across Millions of Tokens of Context,\" arXiv preprint arXiv:2403.05530, 2024."
+  },
+  {
+    "idx": 470,
+    "type": "p",
+    "blips": [],
+    "text": "[6]  B. Berabi, A. Gronskiy, V. Raychev, G. Sivanrupan, V. Chibotaru, and M. Vechev, \"DeepCode AI Fix: Fixing Security Vulnerabilities with Large Language Models,\" arXiv preprint arXiv:2402.13291, 2024."
+  },
+  {
+    "idx": 471,
+    "type": "p",
+    "blips": [],
+    "text": "[7]  C. E. Jimenez, J. Yang, A. Wettig, S. Yao, K. Pei, O. Press, and K. Narasimhan, \"SWE-bench: Can Language Models Resolve Real-World GitHub Issues?,\" in Proc. Int. Conf. on Learning Representations (ICLR), 2024."
+  },
+  {
+    "idx": 472,
+    "type": "p",
+    "blips": [],
+    "text": "[8]  Z. Yu, S. Zhang, M. Sun, Y. Li, Y. Zhao, X. Hua, L. Zhu, X. Wen, and D. Pei, \"Supervised Fine-Tuning for Unsupervised KPI Anomaly Detection for Mobile Web Systems,\" in Proc. ACM Web Conference (WWW), 2024, pp. 2859-2869."
+  },
+  {
+    "idx": 473,
+    "type": "p",
+    "blips": [],
+    "text": "[9]  N. Jha, S. Lin, S. Jayaraman, K. Frohling, C. Constantinides, and D. Patel, \"LLM Assisted Anomaly Detection Service for Site Reliability Engineers: Enhancing Cloud Infrastructure Resilience,\" arXiv preprint arXiv:2501.16744, 2025."
+  },
+  {
+    "idx": 474,
+    "type": "p",
+    "blips": [],
+    "text": "[10]  G. Deng, Y. Liu, V. Mayoral-Vilches, P. Liu, Y. Li, Y. Xu, T. Zhang, Y. Liu, M. Pinzger, and S. Rass, \"PentestGPT: Evaluating and Harnessing Large  Language Models for Automated Penetration Testing,\" in Proc. 33rd USENIX Security Symposium, 2024, pp. 847-864."
+  },
+  {
+    "idx": 475,
+    "type": "p",
+    "blips": [],
+    "text": "[11]  I. Isozaki, M. Shrestha, R. Console, and E. Kim, \"Towards Automated Penetration Testing: Introducing LLM Benchmark, Analysis, and Improvements,\" arXiv preprint arXiv:2410.17141, 2025."
+  },
+  {
+    "idx": 476,
+    "type": "p",
+    "blips": [],
+    "text": "[12]  M. Neelapu, \"The Effectiveness of Load and Performance Testing on Application Scalability,\" ESP Journal of Engineering &amp; Technology Advancements, vol. 4, no. 3, pp. 171-180, 2024."
+  },
+  {
+    "idx": 477,
+    "type": "p",
+    "blips": [],
+    "text": "[13]  OWASP Foundation, \"OWASP Top 10: 2021 The Ten Most Critical Web Application Security Risks,\" Open Web Application Security Project, Tech. Rep., 2021."
+  },
+  {
+    "idx": 478,
+    "type": "p",
+    "blips": [],
+    "text": "[14]  The MITRE Corporation, \"2023 CWE Top 25 Most Dangerous Software Weaknesses,\" Common Weakness Enumeration, Tech. Rep., 2023."
+  },
+  {
+    "idx": 479,
+    "type": "p",
+    "blips": [],
+    "text": "[15]  D. Hardt, \"The OAuth 2.0 Authorization Framework,\" RFC 6749, Internet Engineering Task Force (IETF), Oct. 2012."
+  },
+  {
+    "idx": 480,
+    "type": "p",
+    "blips": [],
+    "text": "[16]  M. Jones, J. Bradley, and N. Sakimura, \"JSON Web Token (JWT),\" RFC 7519, Internet Engineering Task Force (IETF), May 2015."
+  },
+  {
+    "idx": 481,
+    "type": "p",
+    "blips": [],
+    "text": "[17]  GitHub Inc., \"GitHub REST API Documentation and Octokit Client SDK,\" GitHub Developer Guides, 2024. [Online]. Available: https://docs.github.com/rest"
+  },
+  {
+    "idx": 482,
+    "type": "p",
+    "blips": [],
+    "text": "[18]  Twilio Inc., \"Twilio API for WhatsApp Messaging Reference,\" Twilio Documentation, 2024. [Online]. Available: https://www.twilio.com/docs/whatsapp"
+  },
+  {
+    "idx": 483,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 484,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 485,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 486,
+    "type": "p",
+    "blips": [],
+    "text": "LIST OF PUBLICATION"
+  },
+  {
+    "idx": 487,
+    "type": "p",
+    "blips": [],
+    "text": "AUTHOR NAME:  Mr. Pandiarajan S, Divyadharshini M, Dinesh S, Sanjay N"
+  },
+  {
+    "idx": 488,
+    "type": "p",
+    "blips": [],
+    "text": "TITLE OF THE PAPER:  VulnixAI: An AI-Powered Multi-Modal Platform for Automated Vulnerability Detection, Real-Time Monitoring, and Remediation"
+  },
+  {
+    "idx": 489,
+    "type": "p",
+    "blips": [],
+    "text": ""
+  },
+  {
+    "idx": 490,
+    "type": "sectPr",
+    "blips": [],
+    "text": ""
+  }
+]

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body { background: #0f141c; color: #e6edf3; padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+  .title { font-size: 20px; font-weight: 700; color: #58a6ff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+  .chart-box { background: #161b22; border: 1.5px solid #30363d; border-radius: 8px; padding: 25px; width: 100%; max-width: 1000px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; padding: 12px 14px; background: #21262d; color: #8b949e; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
+  td { padding: 12px 14px; border-bottom: 1px solid #30363d; color: #c9d1d9; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 11px; }
+  .badge-full { background: rgba(35,134,54,0.2); color: #3fb950; border: 1px solid #238636; }
+  .badge-drop { background: rgba(248,81,73,0.2); color: #f85149; border: 1px solid #da3633; }
+</style>
+</head>
+<body>
+  <div class="title">Module Ablation Study: Impact on Detection & Precision</div>
+  <div class="chart-box">
+    <table>
+      <thead>
+        <tr>
+          <th>Configuration</th>
+          <th>BOLA Recall</th>
+          <th>BFLA Recall</th>
+          <th>False Positives</th>
+          <th>F1-Score</th>
+          <th>Primary Operational Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-full">Full OFFAT-X</span></td>
+          <td style="color:#3fb950; font-weight:bold;">0.93</td>
+          <td style="color:#3fb950; font-weight:bold;">0.89</td>
+          <td style="color:#3fb950; font-weight:bold;">4</td>
+          <td style="color:#3fb950; font-weight:bold;">0.92</td>
+          <td>Optimal end-to-end authorization coverage</td>
+        </tr>
+        <tr>
+          <td><strong>− Chaining Module</strong></td>
+          <td style="color:#f85149; font-weight:bold;">0.41</td>
+          <td>0.88</td>
+          <td>6</td>
+          <td><span class="badge badge-drop">0.68</span></td>
+          <td>Misses dependent endpoints; 404 setup failures</td>
+        </tr>
+        <tr>
+          <td><strong>− Role Matrix</strong></td>
+          <td>0.91</td>
+          <td style="color:#f85149; font-weight:bold;">0.35</td>
+          <td>8</td>
+          <td><span class="badge badge-drop">0.65</span></td>
+          <td>Blind to privilege escalation & admin function bypass</td>
+        </tr>
+        <tr>
+          <td><strong>− Semantic Differ</strong></td>
+          <td>0.92</td>
+          <td>0.89</td>
+          <td style="color:#f85149; font-weight:bold;">38</td>
+          <td><span class="badge badge-drop">0.71</span></td>
+          <td>False alarm explosion on 200 OK error responses</td>
+        </tr>
+        <tr>
+          <td><strong>− Ephemeral Sandbox</strong></td>
+          <td>0.93</td>
+          <td>0.89</td>
+          <td>4</td>
+          <td>0.91</td>
+          <td>Exposes host system to malicious reconnaissance payloads</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

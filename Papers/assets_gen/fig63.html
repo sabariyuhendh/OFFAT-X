@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body { background: #0f141c; color: #e6edf3; padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+  .title { font-size: 20px; font-weight: 700; color: #58a6ff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+  .chart-box { background: #161b22; border: 1.5px solid #30363d; border-radius: 8px; padding: 25px; width: 100%; max-width: 1000px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+  .chart-area { position: relative; width: 100%; height: 280px; border-left: 2px solid #8b949e; border-bottom: 2px solid #8b949e; margin-top: 15px; }
+  .threshold-line { position: absolute; left: 0; width: 100%; bottom: 175px; border-top: 2px dashed #f85149; }
+  .threshold-tag { position: absolute; right: 10px; top: -18px; font-size: 11px; font-weight: 700; color: #f85149; background: #161b22; padding: 0 4px; }
+  .legend { display: flex; justify-content: center; gap: 25px; margin-bottom: 15px; font-size: 12px; font-weight: 600; }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-line { width: 20px; height: 3px; border-radius: 2px; }
+  .l-green { background: #3fb950; }
+  .l-blue { background: #58a6ff; }
+  .l-red { background: #f85149; }
+  .x-axis-lbl { text-align: center; font-size: 12px; color: #8b949e; margin-top: 12px; font-weight: 600; }
+  .y-axis-lbl { position: absolute; left: -45px; top: 45%; transform: rotate(-90deg); font-size: 12px; color: #8b949e; font-weight: 600; }
+  svg.plot { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+  <div class="title">Semantic Differ Score D vs Owner Overlap O (Equation 2)</div>
+  <div class="chart-box">
+    <div class="legend">
+      <div class="legend-item"><div class="legend-line l-green"></div><span>Matching Schema Shape (J = 1.0, 2xx)</span></div>
+      <div class="legend-item"><div class="legend-line l-blue"></div><span>Mismatched Schema Shape (J = 0.0, 2xx)</span></div>
+      <div class="legend-item"><div class="legend-line l-red"></div><span>200 OK with Error Signature (E = 1.0)</span></div>
+    </div>
+    <div class="chart-area">
+      <div class="y-axis-lbl">Score D</div>
+      <div class="threshold-line"><span class="threshold-tag">Threshold τ = 0.70 (Vulnerable Boundary)</span></div>
+      <svg class="plot" viewBox="0 0 900 280" preserveAspectRatio="none">
+        <!-- Curve 1: Green: J=1.0, 2xx. D = 0.3(1.0) + 0.2(1) + 0.5(O) = 0.5 + 0.5 O. At O=0: D=0.5 (y=125). At O=1: D=1.0 (y=250 from bottom -> y=30) -->
+        <line x1="20" y1="155" x2="880" y2="30" stroke="#3fb950" stroke-width="3.5" />
+        <!-- Intersection point at O=0.4: x=20 + 0.4*860 = 364, y=105 (τ=0.7) -->
+        <circle cx="364" cy="105" r="5" fill="#3fb950" />
+
+        <!-- Curve 2: Blue: J=0.0, 2xx. D = 0.2 + 0.5 O. At O=0: D=0.2 (y=230). At O=1: D=0.7 (y=105) -->
+        <line x1="20" y1="230" x2="880" y2="105" stroke="#58a6ff" stroke-width="3" stroke-dasharray="5 3" />
+
+        <!-- Curve 3: Red: Error payload. D = 0.5 - 0.6 = -0.1 (below zero line) -->
+        <line x1="20" y1="270" x2="880" y2="270" stroke="#f85149" stroke-width="2.5" />
+      </svg>
+    </div>
+    <div class="x-axis-lbl">Owner-Identifier Overlap Ratio O ➔ [0.0 to 1.0]</div>
+  </div>
+</body>
+</html>

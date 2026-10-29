@@ -1,0 +1,104 @@
+name: OFFAT-X API Security Scan
+
+on:
+  push:
+    branches: [main, dev]
+  workflow_dispatch:
+    inputs:
+      spec_url:
+        description: "OAS spec URL (overrides secret)"
+        required: false
+      enable_dirb:
+        description: "Run DIRB endpoint discovery? (true/false)"
+        required: false
+        default: "true"
+      enable_jwt:
+        description: "Run JWT security tests? (true/false)"
+        required: false
+        default: "true"
+
+jobs:
+  api-security-scan:
+    name: OFFAT-X Full API Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - name: Build OFFAT-X
+        run: |
+          go mod tidy
+          go build -o bin/offat-x ./cmd/offat-x/
+
+      - name: Download OAS spec
+        run: |
+          SPEC_URL="${{ github.event.inputs.spec_url || secrets.API_SPEC_URL }}"
+          curl -sSf "$SPEC_URL" -o /tmp/spec.json
+        env:
+          API_SPEC_URL: ${{ secrets.API_SPEC_URL }}
+
+      - name: Run OFFAT-X — Security Tests + DIRB Discovery
+        run: |
+          DIRB_FLAG=""
+          JWT_FLAG=""
+
+          if [ "${{ github.event.inputs.enable_dirb }}" != "false" ]; then
+            DIRB_FLAG="--dirb --dirb-c 15 --dirb-r 30"
+          fi
+
+          if [ "${{ github.event.inputs.enable_jwt }}" != "false" ] && [ -n "$API_TOKEN" ]; then
+            JWT_FLAG="-jwt"
+          fi
+
+          ./bin/offat-x \
+            -f /tmp/spec.json \
+            -b "${{ secrets.API_BASE_URL }}" \
+            -H "Authorization: Bearer ${{ secrets.API_TOKEN }}" \
+            $JWT_FLAG \
+            $DIRB_FLAG \
+            -rl -rl-probes 20 \
+            -r 60 \
+            -dl data-leak-patterns.yml \
+            -o offat-x-results.json \
+            --html offat-x-report.html
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+
+      - name: Upload JSON results
+        uses: actions/upload-artifact@v4
+        with:
+          name: offat-x-json-results
+          path: offat-x-results.json
+          retention-days: 14
+
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: offat-x-html-report
+          path: offat-x-report.html
+          retention-days: 14
+
+      - name: Upload DIRB discovery report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: offat-x-discovery-report
+          path: offat-x-discovery.json
+          retention-days: 14
+
+      - name: Fail on critical findings
+        run: |
+          # Fail the pipeline if any CRITICAL vulnerabilities were found
+          CRITICALS=$(jq '[.[] | select(.severity == "CRITICAL" and .is_vulnerable == true)] | length' offat-x-results.json 2>/dev/null || echo "0")
+          echo "Critical findings: $CRITICALS"
+          if [ "$CRITICALS" -gt "0" ]; then
+            echo "❌ $CRITICALS CRITICAL vulnerabilities found — failing pipeline"
+            exit 1
+          fi
+          echo "✅ No critical vulnerabilities found"

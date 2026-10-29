@@ -1,0 +1,54 @@
+# Binaries and compiled objects
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+.pytest_cache/
+
+# Temporary unpack & verification directories
+Papers/offat_temp/
+Papers/vulnix_temp/
+Papers/temp_verify/
+temp_verify/
+
+# Scan report outputs
+offat-x-output.json
+offat-x-results.json
+offat-x-report.html
+offat-x-report.sarif
+offat-x-discovery.json
+
+# Operating System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor artifacts
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

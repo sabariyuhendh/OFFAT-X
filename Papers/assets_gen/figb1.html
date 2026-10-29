@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0d14; padding: 25px; display: flex; justify-content: center; align-items: center; height: 100vh; }
+  .terminal { width: 100%; max-width: 1100px; background: #0d1117; border: 1.5px solid #30363d; border-radius: 8px; box-shadow: 0 12px 36px rgba(0,0,0,0.6); overflow: hidden; font-family: 'Consolas', 'Courier New', monospace; font-size: 12.5px; }
+  .term-header { background: #161b22; padding: 10px 16px; display: flex; align-items: center; border-bottom: 1px solid #30363d; }
+  .term-dots { display: flex; gap: 8px; margin-right: 16px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-red { background: #ff5f56; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #27c93f; }
+  .term-title { color: #8b949e; font-size: 12px; font-weight: 600; flex: 1; text-align: center; }
+  .term-body { padding: 20px; color: #c9d1d9; line-height: 1.5; white-space: pre-wrap; height: 600px; overflow-y: hidden; }
+  .c-cyan { color: #58a6ff; }
+  .c-green { color: #3fb950; font-weight: bold; }
+  .c-yellow { color: #d29922; }
+  .c-red { color: #f85149; font-weight: bold; }
+  .c-purple { color: #bc8cff; }
+  .c-dim { color: #6e7681; }
+</style>
+</head>
+<body>
+  <div class="terminal">
+    <div class="term-header">
+      <div class="term-dots">
+        <div class="dot dot-red"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+      </div>
+      <div class="term-title">bash - sabari@kit-research: ~/OFFAT-X (offat-x v1.0.0)</div>
+    </div>
+    <div class="term-body">$ ./bin/offat-x -f ./openapi.json -b https://api.crapi.local -jwt -bfla -rl --dirb --html report.html
+
+<span class="c-cyan">   ___  _________  ___  _____  _  __
+  / _ / __/ __/ |/ / |/ / _ / |/ /
+ / // / _// _//    /   / __ /    / 
+/____/_/ /_/ /_/|_/_/|_/_/ |_/_/|_/ 
+           OFFensive API Tester X</span>
+  ──────────────────────────────────────────────────────────
+  OWASP API Top 10 • JWT Security • GraphQL • DIRB Discovery
+  Stateful Chaining • Role Differential • CVSS v3.1 Scoring
+  ──────────────────────────────────────────────────────────
+
+<span class="c-dim">[09:30:01]</span> <span class="c-green">[INFO]</span>  Validating target against scope allowlist (api.crapi.local) ... <span class="c-green">OK</span>
+<span class="c-dim">[09:30:01]</span> <span class="c-green">[INFO]</span>  Ingesting OpenAPI 3.0.2 spec: ./openapi.json (24 endpoints)
+<span class="c-dim">[09:30:02]</span> <span class="c-green">[INFO]</span>  Building producer-consumer dependency graph G=(V,E)... <span class="c-cyan">18 dependency edges inferred</span>
+<span class="c-dim">[09:30:02]</span> <span class="c-yellow">[INFO]</span>  Launching Ephemeral Sandboxed Reconnaissance (DIRB container: debian-dirb:latest)
+<span class="c-dim">[09:30:05]</span> <span class="c-purple">[DISC]</span>  DIRB finished: <span class="c-purple">9 undocumented/shadow API endpoints discovered</span> (OWASP API9:2023)
+<span class="c-dim">[09:30:05]</span> <span class="c-green">[INFO]</span>  Generating stateful test chains (BFS max depth L=4) across 4 privilege tiers...
+<span class="c-dim">[09:30:06]</span> <span class="c-green">[EXEC]</span>  Testing BOLA & BFLA with semantic response diffing (τ=0.70)...
+
+[========================================================================>] 100% (248/248 tests)
+
+<span class="c-red">[CRITICAL]</span> BOLA Detected: GET /api/v1/orders/{orderId} (Attacker: Bob, Owner: Alice, Overlap O=1.0, D=1.00)
+<span class="c-red">[CRITICAL]</span> JWT Flaw: alg 'none' accepted without signature on POST /identity/api/auth/vtoken
+<span class="c-yellow">[HIGH]</span>     BFLA Detected: DELETE /api/v1/admin/users/{id} executed by Low-Tier user (Status: 200 OK)
+<span class="c-yellow">[HIGH]</span>     Shadow API: /api/v1/debug/heap-dump accessible without authentication (CVSS 7.5)
+<span class="c-dim">[INFO]</span>     Rate Limit Probing: 30 requests sent -> Bypass via X-Forwarded-For successful
+
++-------------------------------------+--------+------------------------+--------+------------+----------+------+------------+
+| TEST NAME                           | METHOD | PATH                   | STATUS | VULNERABLE | SEVERITY | CVSS | OWASP      |
++-------------------------------------+--------+------------------------+--------+------------+----------+------+------------+
+| Broken Object Level Auth (BOLA)     | GET    | /api/v1/orders/{id}    |    200 | YES ⚠      | CRITICAL |  8.8 | API1:2023  |
+| JWT Algorithm None Acceptance       | POST   | /identity/auth/vtoken  |    200 | YES ⚠      | CRITICAL |  9.1 | API2:2023  |
+| Broken Function Level Auth (BFLA)   | DELETE | /api/v1/admin/users    |    200 | YES ⚠      | HIGH     |  7.5 | API5:2023  |
+| Undocumented Shadow Endpoint Probe  | GET    | /api/v1/debug/heap     |    200 | YES ⚠      | HIGH     |  7.5 | API9:2023  |
+| Rate Limit Bypass (X-Forwarded-For) | POST   | /api/v1/auth/login     |    200 | YES ⚠      | MEDIUM   |  5.3 | API4:2023  |
++-------------------------------------+--------+------------------------+--------+------------+----------+------+------------+
+
+<span class="c-green">[SUCCESS]</span> Scan complete in 8.91s! Interactive HTML report generated at: <span class="c-cyan">report.html</span></div>
+  </div>
+</body>
+</html>

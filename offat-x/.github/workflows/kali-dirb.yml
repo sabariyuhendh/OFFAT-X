@@ -1,0 +1,143 @@
+name: OFFAT-X Kali DIRB Discovery
+
+# This workflow runs on a Kali Linux runner and uses the system dirb binary
+# along with SecLists wordlists for maximum endpoint coverage.
+# Detects Shadow APIs / undocumented endpoints — OWASP API9:2023.
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: "Target API base URL"
+        required: true
+      spec_path:
+        description: "OAS spec URL or file path"
+        required: true
+      wordlist:
+        description: "Wordlist path on runner (leave blank for auto)"
+        required: false
+        default: "/usr/share/seclists/Discovery/Web-Content/api/api-endpoints.txt"
+
+jobs:
+  kali-dirb-scan:
+    name: Kali DIRB + OFFAT-X Discovery
+    runs-on: ubuntu-latest   # swap to kali-linux runner if self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── Install Kali tools on Ubuntu runner ──────────────────────────────
+      - name: Install dirb + SecLists
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y dirb seclists 2>/dev/null || \
+          sudo apt-get install -y dirb
+
+          # Fallback: install SecLists manually if package unavailable
+          if [ ! -d "/usr/share/seclists" ]; then
+            echo "Installing SecLists from GitHub…"
+            sudo git clone --depth 1 \
+              https://github.com/danielmiessler/SecLists.git \
+              /usr/share/seclists
+          fi
+
+      - name: Verify dirb installation
+        run: |
+          dirb --help 2>&1 | head -5 || echo "dirb not found — using built-in scanner"
+          ls /usr/share/dirb/wordlists/ 2>/dev/null || echo "Kali wordlists not found"
+          ls /usr/share/seclists/Discovery/Web-Content/ 2>/dev/null | head -10
+
+      # ── Build OFFAT-X ─────────────────────────────────────────────────────
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - name: Build OFFAT-X
+        run: |
+          go mod tidy
+          go build -o bin/offat-x ./cmd/offat-x/
+
+      # ── Download OAS spec ─────────────────────────────────────────────────
+      - name: Download spec
+        run: |
+          curl -sSfL "${{ github.event.inputs.spec_path }}" -o /tmp/spec.json || \
+          cp "${{ github.event.inputs.spec_path }}" /tmp/spec.json
+
+      # ── Run Phase 1: system dirb ──────────────────────────────────────────
+      - name: Run system dirb
+        run: |
+          WORDLIST="${{ github.event.inputs.wordlist }}"
+          if [ ! -f "$WORDLIST" ]; then
+            WORDLIST="/usr/share/dirb/wordlists/common.txt"
+          fi
+          if [ ! -f "$WORDLIST" ]; then
+            echo "No wordlist found, skipping system dirb"
+            exit 0
+          fi
+
+          echo "Running dirb with wordlist: $WORDLIST"
+          dirb "${{ github.event.inputs.target_url }}" "$WORDLIST" \
+            -S -r -z 100 \
+            -o /tmp/dirb-raw-output.txt 2>&1 || true
+
+          echo "── dirb output ──"
+          cat /tmp/dirb-raw-output.txt || echo "(no output)"
+
+      # ── Run Phase 2: OFFAT-X with --dirb-system ───────────────────────────
+      - name: Run OFFAT-X full scan with DIRB
+        run: |
+          WORDLIST="${{ github.event.inputs.wordlist }}"
+          WORDLIST_FLAG=""
+          if [ -f "$WORDLIST" ]; then
+            WORDLIST_FLAG="--dirb-wordlist $WORDLIST"
+          fi
+
+          ./bin/offat-x \
+            -f /tmp/spec.json \
+            -b "${{ github.event.inputs.target_url }}" \
+            -H "Authorization: Bearer ${{ secrets.API_TOKEN }}" \
+            --dirb \
+            --dirb-system \
+            $WORDLIST_FLAG \
+            --dirb-c 15 \
+            --dirb-r 30 \
+            -jwt \
+            -rl \
+            -r 60 \
+            -dl data-leak-patterns.yml \
+            -o offat-x-results.json \
+            --html offat-x-report.html
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+
+      # ── Upload all artifacts ──────────────────────────────────────────────
+      - name: Upload OFFAT-X JSON results
+        uses: actions/upload-artifact@v4
+        with:
+          name: kali-offat-x-results
+          path: offat-x-results.json
+          retention-days: 30
+
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kali-offat-x-report
+          path: offat-x-report.html
+          retention-days: 30
+
+      - name: Upload DIRB discovery report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kali-offat-x-discovery
+          path: offat-x-discovery.json
+          retention-days: 30
+
+      - name: Upload raw dirb output
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: raw-dirb-output
+          path: /tmp/dirb-raw-output.txt
+          retention-days: 30

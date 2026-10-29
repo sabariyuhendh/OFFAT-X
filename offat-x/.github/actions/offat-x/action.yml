@@ -1,0 +1,80 @@
+name: 'OFFAT-X Security Gate'
+description: 'Automated Sandboxed, Dependency-Aware and Role-Differential REST API Authorization Testing'
+author: 'Sabari Yuhendhran M, Sadhana M, Jegan S, Dr. Priya A'
+
+inputs:
+  spec:
+    description: 'Path or URL to OpenAPI 2.0 / 3.x specification'
+    required: true
+  scope:
+    description: 'Path to offat-x.yml scope and role configuration'
+    required: false
+    default: 'offat-x.yml'
+  base-url:
+    description: 'Target API base URL (e.g. http://localhost:8000)'
+    required: false
+    default: ''
+  baseline:
+    description: 'Path to baseline JSON report from default branch for differential gating'
+    required: false
+    default: ''
+  fail-on:
+    description: 'Merge gate failure condition: high-new, critical-new, any-new, any-critical'
+    required: false
+    default: 'high-new'
+  sarif-out:
+    description: 'OASIS SARIF 2.1.0 output report path'
+    required: false
+    default: 'offat-x-report.sarif'
+  html-out:
+    description: 'Interactive HTML executive dashboard report path'
+    required: false
+    default: 'offat-x-report.html'
+  json-out:
+    description: 'JSON report output path'
+    required: false
+    default: 'offat-x-results.json'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Go Runtime
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.22'
+
+    - name: Build OFFAT-X Binary
+      shell: bash
+      run: |
+        echo "::group::Building OFFAT-X"
+        go build -o /tmp/offat-x ./cmd/offat-x/
+        echo "::endgroup::"
+
+    - name: Execute OFFAT-X Stateful Testing & Merge Gate
+      shell: bash
+      run: |
+        ARGS="-f ${{ inputs.spec }} -o ${{ inputs.json-out }} -html ${{ inputs.html-out }} -sarif ${{ inputs.sarif-out }}"
+        
+        if [ -n "${{ inputs.base-url }}" ]; then
+          ARGS="$ARGS -b ${{ inputs.base-url }}"
+        fi
+
+        if [ -f "${{ inputs.scope }}" ]; then
+          ARGS="$ARGS -scope ${{ inputs.scope }}"
+        fi
+
+        if [ -n "${{ inputs.baseline }}" ] && [ -f "${{ inputs.baseline }}" ]; then
+          ARGS="$ARGS -baseline ${{ inputs.baseline }}"
+        fi
+
+        ARGS="$ARGS -ci -fail-on ${{ inputs.fail-on }}"
+
+        echo "Executing: /tmp/offat-x $ARGS"
+        /tmp/offat-x $ARGS
+
+    - name: Upload OASIS SARIF 2.1.0 Report to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v3
+      if: always() && hashFiles(inputs.sarif-out) != ''
+      with:
+        sarif_file: ${{ inputs.sarif-out }}
+        category: 'offat-x-authorization-scan'

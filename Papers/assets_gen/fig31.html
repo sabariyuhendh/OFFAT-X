@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body { background: #0f141c; color: #e6edf3; padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+  .title { font-size: 20px; font-weight: 700; color: #58a6ff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+  .diagram-container { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1100px; gap: 18px; }
+  .box { background: #161b22; border: 1.5px solid #30363d; border-radius: 8px; padding: 20px; flex: 1; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+  .box.danger { border-color: #f85149; background: rgba(248, 81, 73, 0.05); }
+  .box.warning { border-color: #d29922; background: rgba(210, 153, 34, 0.05); }
+  .box.primary { border-color: #58a6ff; }
+  .box-header { font-size: 14px; font-weight: 700; color: #f0f6fc; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
+  .box-content { font-size: 12px; color: #8b949e; line-height: 1.5; }
+  .box-content ul { list-style: none; padding-left: 0; }
+  .box-content li { margin-bottom: 8px; position: relative; padding-left: 14px; }
+  .box-content li::before { content: "•"; position: absolute; left: 0; color: #58a6ff; }
+  .danger .box-content li::before { color: #f85149; }
+  .warning .box-content li::before { color: #d29922; }
+  .badge { display: inline-block; padding: 2px 6px; font-size: 10px; font-weight: bold; border-radius: 4px; margin-top: 8px; text-align: center; }
+  .badge-danger { background: rgba(248,81,73,0.2); color: #f85149; border: 1px solid #f85149; }
+  .badge-warning { background: rgba(210,153,34,0.2); color: #d29922; border: 1px solid #d29922; }
+  .arrow { color: #8b949e; font-size: 24px; font-weight: bold; }
+  .footer-note { margin-top: 30px; font-size: 13px; color: #f85149; background: rgba(248,81,73,0.1); border: 1px solid rgba(248,81,73,0.3); padding: 10px 20px; border-radius: 6px; width: 100%; max-width: 1100px; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="title">Conventional Baseline Testing Architecture (Unmodified OFFAT)</div>
+  <div class="diagram-container">
+    <div class="box primary">
+      <div class="box-header">📄 OpenAPI Spec</div>
+      <div class="box-content">
+        <ul>
+          <li>Static OAS 2.0 / 3.0 schema</li>
+          <li>Parsed independently</li>
+          <li>No endpoint dependencies</li>
+          <li>No producer-consumer links</li>
+        </ul>
+      </div>
+      <div class="badge" style="background:#238636;color:#fff;">OAS Ingestion</div>
+    </div>
+    <div class="arrow">➔</div>
+    <div class="box warning">
+      <div class="box-header">⚡ Flat Test Generator</div>
+      <div class="box-content">
+        <ul>
+          <li>Single-request generation</li>
+          <li>Random / static parameter fuzzing</li>
+          <li>No state setup requests</li>
+          <li>Single-identity execution</li>
+        </ul>
+      </div>
+      <div class="badge badge-warning">Stateless Fuzzing</div>
+    </div>
+    <div class="arrow">➔</div>
+    <div class="box danger">
+      <div class="box-header">🎯 Target REST API</div>
+      <div class="box-content">
+        <ul>
+          <li>Endpoints require existing resource IDs</li>
+          <li>Uncreated IDs return 404 Not Found</li>
+          <li>Fails to evaluate BOLA authorization</li>
+          <li>Inconclusive test execution</li>
+        </ul>
+      </div>
+      <div class="badge badge-danger">404 Dead-Ends</div>
+    </div>
+    <div class="arrow">➔</div>
+    <div class="box danger">
+      <div class="box-header">🔍 Blind Status Differ</div>
+      <div class="box-content">
+        <ul>
+          <li>Checks HTTP 200 vs 403 status</li>
+          <li>200 with error body marked safe</li>
+          <li>200 with leaked data treated as normal</li>
+          <li>High False Positives (40% - 60%)</li>
+        </ul>
+      </div>
+      <div class="badge badge-danger">Status Code Illusion</div>
+    </div>
+    <div class="arrow">➔</div>
+    <div class="box warning">
+      <div class="box-header">⚠️ Manual Triage</div>
+      <div class="box-content">
+        <ul>
+          <li>No automated code patches</li>
+          <li>No Git PR / SARIF integration</li>
+          <li>Unsandboxed host tool risks</li>
+          <li>High engineering MTTR</li>
+        </ul>
+      </div>
+      <div class="badge badge-warning">Developer Bottleneck</div>
+    </div>
+  </div>
+  <div class="footer-note">
+    <strong>Key Architectural Bottlenecks:</strong> Lack of stateful chaining causes 404 test failures; single-tier auth misses BOLA/BFLA; blind status evaluation yields massive false positives.
+  </div>
+</body>
+</html>

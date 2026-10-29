@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body { background: #0f141c; color: #e6edf3; padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+  .title { font-size: 20px; font-weight: 700; color: #58a6ff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+  .chart-box { background: #161b22; border: 1.5px solid #30363d; border-radius: 8px; padding: 25px; width: 100%; max-width: 1000px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); display: flex; gap: 30px; align-items: center; }
+  .donut-container { position: relative; width: 220px; height: 220px; flex-shrink: 0; }
+  svg { transform: rotate(-90deg); border-radius: 50%; }
+  circle { fill: none; stroke-width: 38; }
+  .donut-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+  .donut-num { font-size: 32px; font-weight: 800; color: #f0f6fc; }
+  .donut-lbl { font-size: 11px; color: #8b949e; text-transform: uppercase; }
+  .cat-list { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .cat-item { display: flex; flex-direction: column; gap: 4px; }
+  .cat-header { display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 600; color: #c9d1d9; }
+  .progress-bg { width: 100%; height: 10px; background: #21262d; border-radius: 5px; overflow: hidden; }
+  .progress-bar { height: 100%; border-radius: 5px; }
+</style>
+</head>
+<body>
+  <div class="title">OFFAT-X Vulnerability Discovery Breakdown (Benchmark Targets)</div>
+  <div class="chart-box">
+    <div class="donut-container">
+      <svg width="220" height="220" viewBox="0 0 220 220">
+        <circle cx="110" cy="110" r="80" stroke="#21262d" />
+        <!-- BOLA 38% -> 190.8 -->
+        <circle cx="110" cy="110" r="80" stroke="#f85149" stroke-dasharray="191 502" stroke-dashoffset="0" />
+        <!-- BFLA 24% -> 120.6 -->
+        <circle cx="110" cy="110" r="80" stroke="#f0883e" stroke-dasharray="121 502" stroke-dashoffset="-191" />
+        <!-- JWT 16% -> 80.4 -->
+        <circle cx="110" cy="110" r="80" stroke="#d29922" stroke-dasharray="80 502" stroke-dashoffset="-312" />
+        <!-- Shadow 12% -> 60.3 -->
+        <circle cx="110" cy="110" r="80" stroke="#58a6ff" stroke-dasharray="60 502" stroke-dashoffset="-392" />
+        <!-- Rate limit 6% -> 30.1 -->
+        <circle cx="110" cy="110" r="80" stroke="#bc8cff" stroke-dasharray="30 502" stroke-dashoffset="-452" />
+        <!-- Injections 4% -> 20.1 -->
+        <circle cx="110" cy="110" r="80" stroke="#3fb950" stroke-dasharray="20 502" stroke-dashoffset="-482" />
+      </svg>
+      <div class="donut-text">
+        <div class="donut-num">82</div>
+        <div class="donut-lbl">True Flaws</div>
+      </div>
+    </div>
+    <div class="cat-list">
+      <div class="cat-item">
+        <div class="cat-header"><span>Broken Object Level Authorization (BOLA / OWASP API1)</span><span>31 (37.8%)</span></div>
+        <div class="progress-bg"><div class="progress-bar" style="width: 37.8%; background: #f85149;"></div></div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-header"><span>Broken Function Level Authorization (BFLA / OWASP API5)</span><span>20 (24.4%)</span></div>
+        <div class="progress-bg"><div class="progress-bar" style="width: 24.4%; background: #f0883e;"></div></div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-header"><span>Broken Authentication & JWT Vulnerabilities (OWASP API2)</span><span>13 (15.9%)</span></div>
+        <div class="progress-bg"><div class="progress-bar" style="width: 15.9%; background: #d29922;"></div></div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-header"><span>Shadow & Undocumented APIs (DIRB / OWASP API9)</span><span>10 (12.2%)</span></div>
+        <div class="progress-bg"><div class="progress-bar" style="width: 12.2%; background: #58a6ff;"></div></div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-header"><span>Rate Limiting & Resource Exhaustion (OWASP API4)</span><span>5 (6.1%)</span></div>
+        <div class="progress-bg"><div class="progress-bar" style="width: 6.1%; background: #bc8cff;"></div></div>
+      </div>
+      <div class="cat-item">
+        <div class="cat-header"><span>Injection, SSRF & Data Leakage (OWASP API7/8)</span><span>3 (3.6%)</span></div>
+        <div class="progress-bg"><div class="progress-bar" style="width: 3.6%; background: #3fb950;"></div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

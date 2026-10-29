@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #0f1117; --surface: #1a1d27; --border: #2d3143;
+    --text: #e2e8f0; --muted: #94a3b8;
+    --critical: #ef4444; --high: #f97316; --medium: #eab308;
+    --low: #22c55e; --info: #3b82f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  body { background: var(--bg); color: var(--text); padding: 25px; height: 100vh; overflow: hidden; }
+  .header-box { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+  h1 { font-size: 24px; color: #60a5fa; display: flex; align-items: center; gap: 10px; }
+  .subtitle { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .meta-tag { background: #1e293b; border: 1px solid #334155; padding: 4px 10px; border-radius: 6px; font-size: 11px; color: #94a3b8; }
+  .cards { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .card .num { font-size: 26px; font-weight: 700; }
+  .card .lbl { color: var(--muted); font-size: 11px; text-transform: uppercase; margin-top: 4px; }
+  .card.c-crit .num { color: var(--critical); }
+  .card.c-high .num { color: var(--high); }
+  .card.c-med .num { color: var(--medium); }
+  .card.c-low .num { color: var(--low); }
+  .card.c-info .num { color: var(--info); }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 8px; overflow: hidden; font-size: 12px; border: 1px solid var(--border); }
+  th { background: #2d3143; padding: 10px 12px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tr.sev-critical td { border-left: 4px solid var(--critical); }
+  tr.sev-high td { border-left: 4px solid var(--high); }
+  tr.sev-medium td { border-left: 4px solid var(--medium); }
+  .badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+  .badge.CRITICAL { background: var(--critical); color: #fff; }
+  .badge.HIGH { background: var(--high); color: #fff; }
+  .badge.MEDIUM { background: var(--medium); color: #000; }
+  code { font-family: monospace; background: #0f1117; padding: 2px 6px; border-radius: 4px; font-size: 11px; color: #38bdf8; }
+  .rem-box { color: #94a3b8; font-size: 11px; }
+</style>
+</head>
+<body>
+  <div class="header-box">
+    <div>
+      <h1>🛡 OFFAT-X Security Report</h1>
+      <p class="subtitle">Generated 2026-10-23 09:30:15 UTC &nbsp;|&nbsp; Target: https://api.crAPI.local &nbsp;|&nbsp; Engine: OFFAT-X v1.0.0</p>
+    </div>
+    <div class="meta-tag">Status: <strong>MERGE BLOCKED (2 Critical, 2 High)</strong></div>
+  </div>
+
+  <div class="cards">
+    <div class="card"><div class="num">248</div><div class="lbl">Total Tests</div></div>
+    <div class="card c-crit"><div class="num">7</div><div class="lbl">Critical</div></div>
+    <div class="card c-high"><div class="num">18</div><div class="lbl">High</div></div>
+    <div class="card c-med"><div class="num">29</div><div class="lbl">Medium</div></div>
+    <div class="card c-low"><div class="num">14</div><div class="lbl">Low</div></div>
+    <div class="card c-info"><div class="num">12</div><div class="lbl">Data Leaks</div></div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Severity</th>
+        <th>Endpoint</th>
+        <th>Status</th>
+        <th>Vulnerability Class</th>
+        <th>CVSS</th>
+        <th>OWASP Category</th>
+        <th>CWE</th>
+        <th>Remediation Recommendation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="sev-critical">
+        <td><span class="badge CRITICAL">CRITICAL</span></td>
+        <td><code>GET /api/v1/orders/{orderId}</code></td>
+        <td>200 OK</td>
+        <td><strong>Broken Object Level Auth (BOLA)</strong></td>
+        <td style="color:#ef4444; font-weight:bold;">8.8</td>
+        <td>API1:2023</td>
+        <td>CWE-639</td>
+        <td class="rem-box">Enforce ownership filter: <code>where: { id, userId: currentUser.id }</code></td>
+      </tr>
+      <tr class="sev-critical">
+        <td><span class="badge CRITICAL">CRITICAL</span></td>
+        <td><code>POST /identity/api/auth/vtoken</code></td>
+        <td>200 OK</td>
+        <td><strong>JWT Algorithm 'none' Bypass</strong></td>
+        <td style="color:#ef4444; font-weight:bold;">9.1</td>
+        <td>API2:2023</td>
+        <td>CWE-287</td>
+        <td class="rem-box">Reject unsecured tokens; enforce explicit signing algorithm allowlist (RS256)</td>
+      </tr>
+      <tr class="sev-high">
+        <td><span class="badge HIGH">HIGH</span></td>
+        <td><code>DELETE /api/v1/admin/users/{id}</code></td>
+        <td>200 OK</td>
+        <td><strong>Broken Function Level Auth (BFLA)</strong></td>
+        <td style="color:#f97316; font-weight:bold;">7.5</td>
+        <td>API5:2023</td>
+        <td>CWE-285</td>
+        <td class="rem-box">Attach <code>requireRole(['ADMIN'])</code> middleware before controller execution</td>
+      </tr>
+      <tr class="sev-high">
+        <td><span class="badge HIGH">HIGH</span></td>
+        <td><code>GET /api/v1/debug/heap-dump</code></td>
+        <td>200 OK</td>
+        <td><strong>Undocumented Shadow API Endpoint</strong></td>
+        <td style="color:#f97316; font-weight:bold;">7.5</td>
+        <td>API9:2023</td>
+        <td>CWE-200</td>
+        <td class="rem-box">Disable debug actuator endpoints on production ingress or document in OAS contract</td>
+      </tr>
+      <tr class="sev-medium">
+        <td><span class="badge MEDIUM">MEDIUM</span></td>
+        <td><code>POST /api/v1/auth/login</code></td>
+        <td>200 OK</td>
+        <td><strong>Rate Limit Header-Based Bypass</strong></td>
+        <td style="color:#eab308; font-weight:bold;">5.3</td>
+        <td>API4:2023</td>
+        <td>CWE-799</td>
+        <td class="rem-box">Derive client IP from trusted reverse proxy socket rather than spoofable headers</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body { background: #0d1117; color: #e6edf3; padding: 25px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+  .title { font-size: 19px; font-weight: 700; color: #58a6ff; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 1px; }
+  .pipeline-flow { display: flex; flex-direction: column; width: 100%; max-width: 1080px; gap: 12px; }
+  .flow-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .step-node { background: #161b22; border: 1.5px solid #30363d; border-radius: 6px; padding: 12px 16px; flex: 1; display: flex; align-items: center; gap: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  .step-node.green { border-color: #238636; }
+  .step-node.blue { border-color: #1f6feb; }
+  .step-node.yellow { border-color: #d29922; }
+  .step-node.purple { border-color: #8957e5; }
+  .step-num { width: 32px; height: 32px; border-radius: 50%; background: #30363d; color: #58a6ff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .step-node.green .step-num { background: rgba(35,134,54,0.3); color: #3fb950; }
+  .step-node.blue .step-num { background: rgba(31,111,235,0.3); color: #58a6ff; }
+  .step-node.yellow .step-num { background: rgba(210,153,34,0.3); color: #d29922; }
+  .step-node.purple .step-num { background: rgba(137,87,229,0.3); color: #a371f7; }
+  .step-info { display: flex; flex-direction: column; }
+  .step-title { font-size: 13px; font-weight: 700; color: #f0f6fc; }
+  .step-desc { font-size: 11px; color: #8b949e; margin-top: 2px; }
+  .row-arrow { text-align: center; color: #58a6ff; font-size: 18px; margin: -4px 0; }
+</style>
+</head>
+<body>
+  <div class="title">OFFAT-X End-to-End Methodology Pipeline Flowchart</div>
+  <div class="pipeline-flow">
+    <div class="flow-row">
+      <div class="step-node blue">
+        <div class="step-num">01</div>
+        <div class="step-info">
+          <div class="step-title">Scope & Target Allowlist Validation</div>
+          <div class="step-desc">Parses offat-x.yml; validates host boundaries & rate limits to prevent unauthorized scanning.</div>
+        </div>
+      </div>
+      <div class="step-node blue">
+        <div class="step-num">02</div>
+        <div class="step-info">
+          <div class="step-title">Specification Ingestion & Normalization</div>
+          <div class="step-desc">Normalizes OpenAPI 2.0 & 3.x; maps endpoints, HTTP verbs, parameters, schemas & auth tiers.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-arrow">▼</div>
+
+    <div class="flow-row">
+      <div class="step-node yellow">
+        <div class="step-num">03</div>
+        <div class="step-info">
+          <div class="step-title">Sandboxed Reconnaissance (DIRB)</div>
+          <div class="step-desc">Spawns hardened, isolated ephemeral container to fuzz and identify undocumented Shadow APIs.</div>
+        </div>
+      </div>
+      <div class="step-node yellow">
+        <div class="step-num">04</div>
+        <div class="step-info">
+          <div class="step-title">Dependency Graph & Chain Planner</div>
+          <div class="step-desc">Builds DAG G=(V,E) of producer-consumer links; solves BFS state setup sequence bounded to L ≤ 4.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-arrow">▼</div>
+
+    <div class="flow-row">
+      <div class="step-node purple">
+        <div class="step-num">05</div>
+        <div class="step-info">
+          <div class="step-title">Multi-Tier Role-Differential Execution</div>
+          <div class="step-desc">Runs chained state setup as Owner; replays target endpoint across Guest, Low, Premium, Admin tiers.</div>
+        </div>
+      </div>
+      <div class="step-node purple">
+        <div class="step-num">06</div>
+        <div class="step-info">
+          <div class="step-title">Semantic Response Diffing Engine</div>
+          <div class="step-desc">Evaluates Jaccard schema (J), value overlap (O), and error penalty (E). Calculates score D against threshold τ = 0.70.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-arrow">▼</div>
+
+    <div class="flow-row">
+      <div class="step-node green">
+        <div class="step-num">07</div>
+        <div class="step-info">
+          <div class="step-title">CVSS v3.1 Scoring & Remediation Synthesis</div>
+          <div class="step-desc">Calculates CVSS base score; assigns OWASP Top 10 category & generates targeted source code patches.</div>
+        </div>
+      </div>
+      <div class="step-node green">
+        <div class="step-num">08</div>
+        <div class="step-info">
+          <div class="step-title">SARIF Reporting & CI/CD Security Gate</div>
+          <div class="step-desc">Emits SARIF 2.1.0 & HTML report; executes GitHub Action gating merge on new Critical/High findings.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

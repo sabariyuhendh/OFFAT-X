@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body { background: #0f141c; color: #e6edf3; padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+  .title { font-size: 20px; font-weight: 700; color: #58a6ff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+  .chart-box { background: #161b22; border: 1.5px solid #30363d; border-radius: 8px; padding: 25px; width: 100%; max-width: 1000px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+  .desc { font-size: 13px; color: #8b949e; margin-bottom: 20px; text-align: center; }
+  .table-grid { display: flex; justify-content: space-around; gap: 15px; }
+  .step-card { background: #21262d; border: 1px solid #30363d; border-radius: 6px; padding: 18px; flex: 1; text-align: center; }
+  .step-depth { font-size: 14px; font-weight: 700; color: #58a6ff; }
+  .step-req { font-size: 28px; font-weight: 800; color: #3fb950; margin: 8px 0; }
+  .step-formula { font-size: 11px; color: #8b949e; font-family: monospace; }
+  .note { margin-top: 25px; font-size: 12px; color: #58a6ff; background: rgba(56,139,253,0.1); border: 1px solid rgba(56,139,253,0.3); padding: 10px; border-radius: 6px; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="title">Chaining Complexity: Bounded Request Formula 4(L + 3)</div>
+  <div class="chart-box">
+    <div class="desc">Deterministic complexity scaling across 4 privilege tiers with maximum setup depth bound L ≤ 4.</div>
+    <div class="table-grid">
+      <div class="step-card">
+        <div class="step-depth">Chain Depth L = 1</div>
+        <div class="step-req">16</div>
+        <div class="step-formula">4 × (1 + 3) requests</div>
+      </div>
+      <div class="step-card">
+        <div class="step-depth">Chain Depth L = 2</div>
+        <div class="step-req">20</div>
+        <div class="step-formula">4 × (2 + 3) requests</div>
+      </div>
+      <div class="step-card">
+        <div class="step-depth">Chain Depth L = 3</div>
+        <div class="step-req">24</div>
+        <div class="step-formula">4 × (3 + 3) requests</div>
+      </div>
+      <div class="step-card" style="border-color: #238636;">
+        <div class="step-depth" style="color: #3fb950;">Max Bound L = 4</div>
+        <div class="step-req">28</div>
+        <div class="step-formula">4 × (4 + 3) requests</div>
+      </div>
+    </div>
+    <div class="note">
+      <strong>Predictability Guarantee:</strong> Because BFS traversal strictly caps dependency chains at L = 4, target verification never exceeds 28 HTTP requests, preventing combinatorial state explosion.
+    </div>
+  </div>
+</body>
+</html>

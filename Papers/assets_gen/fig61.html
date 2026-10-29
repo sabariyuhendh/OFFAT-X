@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  body { background: #0f141c; color: #e6edf3; padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+  .title { font-size: 20px; font-weight: 700; color: #58a6ff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+  .chart-box { background: #161b22; border: 1.5px solid #30363d; border-radius: 8px; padding: 25px; width: 100%; max-width: 1000px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+  .legend { display: flex; justify-content: center; gap: 30px; margin-bottom: 25px; font-size: 13px; font-weight: 600; }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-color { width: 16px; height: 16px; border-radius: 3px; }
+  .c-offat { background: #f85149; }
+  .c-offatx { background: #2ea043; }
+  .bars-container { display: flex; justify-content: space-around; align-items: flex-end; height: 260px; border-bottom: 2px solid #30363d; padding-bottom: 10px; position: relative; }
+  .grid-line { position: absolute; left: 0; width: 100%; height: 1px; background: rgba(255,255,255,0.06); }
+  .metric-group { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 180px; }
+  .pair-bars { display: flex; align-items: flex-end; gap: 12px; height: 220px; width: 100%; justify-content: center; }
+  .bar-wrapper { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .bar-val { font-size: 11px; font-weight: 700; color: #c9d1d9; }
+  .bar { width: 44px; border-radius: 4px 4px 0 0; transition: height 0.3s; position: relative; }
+  .bar.offat { background: #da3633; border: 1px solid #f85149; }
+  .bar.offatx { background: #238636; border: 1px solid #3fb950; }
+  .group-label { font-size: 13px; font-weight: 700; color: #8b949e; margin-top: 10px; }
+  .summary-metrics { display: flex; justify-content: space-around; margin-top: 25px; border-top: 1px solid #30363d; padding-top: 15px; font-size: 12px; color: #8b949e; }
+  .metric-highlight { color: #3fb950; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="title">Comparative Detection Performance (Mean Across 5 Runs)</div>
+  <div class="chart-box">
+    <div class="legend">
+      <div class="legend-item"><div class="legend-color c-offat"></div><span>Baseline OWASP OFFAT</span></div>
+      <div class="legend-item"><div class="legend-color c-offatx"></div><span>Proposed OFFAT-X Framework</span></div>
+    </div>
+    <div class="bars-container">
+      <div class="grid-line" style="bottom: 220px;"></div>
+      <div class="grid-line" style="bottom: 165px;"></div>
+      <div class="grid-line" style="bottom: 110px;"></div>
+      <div class="grid-line" style="bottom: 55px;"></div>
+
+      <div class="metric-group">
+        <div class="pair-bars">
+          <div class="bar-wrapper">
+            <span class="bar-val">0.61</span>
+            <div class="bar offat" style="height: 134px;"></div>
+          </div>
+          <div class="bar-wrapper">
+            <span class="bar-val">0.94</span>
+            <div class="bar offatx" style="height: 206px;"></div>
+          </div>
+        </div>
+        <div class="group-label">Precision</div>
+      </div>
+
+      <div class="metric-group">
+        <div class="pair-bars">
+          <div class="bar-wrapper">
+            <span class="bar-val">0.43</span>
+            <div class="bar offat" style="height: 94px;"></div>
+          </div>
+          <div class="bar-wrapper">
+            <span class="bar-val">0.91</span>
+            <div class="bar offatx" style="height: 200px;"></div>
+          </div>
+        </div>
+        <div class="group-label">Recall</div>
+      </div>
+
+      <div class="metric-group">
+        <div class="pair-bars">
+          <div class="bar-wrapper">
+            <span class="bar-val">0.50</span>
+            <div class="bar offat" style="height: 110px;"></div>
+          </div>
+          <div class="bar-wrapper">
+            <span class="bar-val">0.92</span>
+            <div class="bar offatx" style="height: 202px;"></div>
+          </div>
+        </div>
+        <div class="group-label">F1-Score</div>
+      </div>
+
+      <div class="metric-group">
+        <div class="pair-bars">
+          <div class="bar-wrapper">
+            <span class="bar-val">41.8%</span>
+            <div class="bar offat" style="height: 92px;"></div>
+          </div>
+          <div class="bar-wrapper">
+            <span class="bar-val">4.2%</span>
+            <div class="bar offatx" style="height: 10px;"></div>
+          </div>
+        </div>
+        <div class="group-label">False Positive Rate</div>
+      </div>
+    </div>
+    <div class="summary-metrics">
+      <div>Precision Gain: <span class="metric-highlight">+54.1%</span></div>
+      <div>Recall Gain: <span class="metric-highlight">+111.6%</span></div>
+      <div>F1-Score Gain: <span class="metric-highlight">+84.0%</span></div>
+      <div>FPR Reduction: <span class="metric-highlight">-89.9% (Near Zero)</span></div>
+    </div>
+  </div>
+</body>
+</html>

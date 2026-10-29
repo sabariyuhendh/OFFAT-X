@@ -1,0 +1,50 @@
+# OFFAT-X Configuration & Scope File (offat-x.yml)
+# Formalized in Section 4.3 and Listing 1 of the OFFAT-X IEEE Paper and Phase 1 Report.
+
+target: http://localhost:8000
+
+# Strict scope allowlist to prevent unintended testing of unauthorized infrastructure
+scope:
+  - localhost
+  - 127.0.0.1
+  - api.staging.example.com
+
+# Four-Tier Role-Differential Matrix R = {guest < low < premium < admin}
+# Includes horizontal identities (low vs low_secondary) for BOLA testing (Alice vs Bob)
+roles:
+  guest:
+    auth: none
+
+  low:
+    auth: bearer
+    env: LOW_TOKEN
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbGljZSIsInJvbGUiOiJ1c2VyIiwidXNlcklkIjoiMTA0MiJ9.test
+
+  low_secondary:
+    auth: bearer
+    env: LOW_TOKEN_2
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJib2IiLCJyb2xlIjoidXNlciIiwidXNlcklkIjoiMTA0MyJ9.test
+
+  premium:
+    auth: bearer
+    env: PREMIUM_TOKEN
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjaGFybGllIiwicm9sZSI6InByZW1pdW0ifQ.test
+
+  admin:
+    auth: bearer
+    env: ADMIN_TOKEN
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiJ9.test
+
+# Explicit RBAC policies (overrides inferred provisional policy)
+policy:
+  - op: 'DELETE /api/admin/users/{id}'
+    allow: [admin]
+  - op: 'GET /api/v1/admin/*'
+    allow: [admin]
+  - op: 'POST /api/v1/admin/*'
+    allow: [admin]
+
+# Operational testing boundaries
+limits:
+  rps: 60              # Requests per second throttling
+  destructive: false   # Disallow state deletion unless explicitly targeted

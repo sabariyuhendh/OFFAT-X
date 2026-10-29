@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Consolas', monospace; }
+  body { background: #0a0d14; padding: 25px; display: flex; justify-content: center; align-items: center; height: 100vh; }
+  .box { width: 100%; max-width: 1100px; background: #0d1117; border: 1.5px solid #30363d; border-radius: 8px; box-shadow: 0 12px 36px rgba(0,0,0,0.6); overflow: hidden; font-size: 11.5px; }
+  .header { background: #161b22; padding: 10px 16px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
+  .content { padding: 20px; color: #c9d1d9; line-height: 1.5; white-space: pre-wrap; height: 600px; }
+  .c-green { color: #3fb950; }
+  .c-yellow { color: #d29922; }
+  .c-red { color: #f85149; }
+  .c-cyan { color: #58a6ff; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="header">
+      <div style="color:#58a6ff; font-weight:bold;">📋 OFFAT-X OASIS SARIF 2.1.0 Standard Export (results.sarif)</div>
+      <div style="font-size:11px; color:#8b949e;">Interoperable with GitHub Code Scanning, GitLab SAST, & VS Code</div>
+    </div>
+    <div class="content">{
+  <span class="c-cyan">"$schema"</span>: <span class="c-green">"https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json"</span>,
+  <span class="c-cyan">"version"</span>: <span class="c-green">"2.1.0"</span>,
+  <span class="c-cyan">"runs"</span>: [
+    {
+      <span class="c-cyan">"tool"</span>: {
+        <span class="c-cyan">"driver"</span>: {
+          <span class="c-cyan">"name"</span>: <span class="c-green">"OFFAT-X"</span>,
+          <span class="c-cyan">"version"</span>: <span class="c-green">"1.0.0"</span>,
+          <span class="c-cyan">"informationUri"</span>: <span class="c-green">"https://github.com/offat-x/offat-x"</span>,
+          <span class="c-cyan">"rules"</span>: [
+            {
+              <span class="c-cyan">"id"</span>: <span class="c-green">"OFFATX001"</span>,
+              <span class="c-cyan">"name"</span>: <span class="c-green">"BrokenObjectLevelAuthorization"</span>,
+              <span class="c-cyan">"shortDescription"</span>: { <span class="c-cyan">"text"</span>: <span class="c-green">"OWASP API1:2023 BOLA Improper Authorization"</span> },
+              <span class="c-cyan">"defaultConfiguration"</span>: { <span class="c-cyan">"level"</span>: <span class="c-red">"error"</span> }
+            }
+          ]
+        }
+      },
+      <span class="c-cyan">"results"</span>: [
+        {
+          <span class="c-cyan">"ruleId"</span>: <span class="c-green">"OFFATX001"</span>,
+          <span class="c-cyan">"level"</span>: <span class="c-red">"error"</span>,
+          <span class="c-cyan">"message"</span>: {
+            <span class="c-cyan">"text"</span>: <span class="c-green">"BOLA verified: User 'Bob' retrieved order belonging to 'Alice' on GET /api/v1/orders/1042 with Semantic Diff D=1.00."</span>
+          },
+          <span class="c-cyan">"locations"</span>: [
+            {
+              <span class="c-cyan">"physicalLocation"</span>: {
+                <span class="c-cyan">"artifactLocation"</span>: { <span class="c-cyan">"uri"</span>: <span class="c-green">"openapi.json#/paths/~1api~1v1~1orders~1{id}/get"</span> }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}</div>
+  </div>
+</body>
+</html>
