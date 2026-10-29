@@ -46,6 +46,18 @@ Thumbs.db
 ehthumbs.db
 [Dd]esktop.ini
 
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Coverage & Test artifacts
+coverage.txt
+coverage.html
+profile.cov
+*.coverprofile
+*.log
+
 # IDE & Editor artifacts
 .idea/
 .vscode/
