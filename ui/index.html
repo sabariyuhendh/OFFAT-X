@@ -40,6 +40,14 @@
       <button class="btn-outline"  onclick="navigate('scan')">Browse Goals</button>
       <button class="btn-outline"  onclick="navigate('config')">Configure Target</button>
     </div>
+    <div style="margin-top:1rem;padding:.75rem 1rem;background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.25);border-radius:8px;font-size:.84rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem">
+      <div>
+        <span style="color:var(--green);font-weight:700">&#9679; Mock API Live</span> &mdash;
+        <span style="color:var(--text2)">Target:</span> <code style="color:var(--accent)">http://localhost:4000/mock-api</code>
+        <span style="color:var(--text2);margin-left:.5rem">(OWASP API Top 10 Deliberately Vulnerable Sandbox &middot; Zero Docker)</span>
+      </div>
+      <a href="/mock-api" target="_blank" class="btn-outline" style="font-size:.78rem;padding:.3rem .6rem;text-decoration:none">Inspect Endpoints &rarr;</a>
+    </div>
   </div>
 
   <div class="card">

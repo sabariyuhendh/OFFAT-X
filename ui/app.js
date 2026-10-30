@@ -50,21 +50,28 @@ function parseFinding(text) {
   if (/CONFIRMED BOLA/i.test(t)) {
     var ep = t.match(/(GET|POST|PUT|DELETE|PATCH)\s+(\S+)/i);
     var sc = t.match(/D\s*=\s*([\d.]+)/);
-    f = { verdict:'BOLA', sev:'Critical', endpoint: ep ? ep[1]+' '+ep[2] : 'Unknown', score: sc ? sc[1] : '1.00', cwe:'CWE-639', cvss:'8.6', remed:'// Prisma tenant filter\nconst row = await prisma.resource.findFirst({\n  where: { id: req.params.id, tenantId: req.user.tenantId }\n});\nif (!row) return res.status(404).json({ error: "Not found" });' };
+    f = { verdict:'BOLA', sev:'Critical', endpoint: ep ? ep[1]+' '+ep[2] : 'GET /mock-api/orders/{id}', score: sc ? sc[1] : '1.00', cwe:'CWE-639', cvss:'8.6', remed:'// Enforce tenant ownership boundary\nconst row = await prisma.order.findFirst({\n  where: { id: req.params.id, tenantId: req.user.tenantId }\n});\nif (!row) return res.status(404).json({ error: "Access denied" });' };
   } else if (/CONFIRMED BFLA/i.test(t)) {
     var ep2 = t.match(/(GET|POST|PUT|DELETE|PATCH)\s+(\S+)/i);
-    f = { verdict:'BFLA', sev:'High', endpoint: ep2 ? ep2[1]+' '+ep2[2] : 'Admin endpoint', score:'N/A', cwe:'CWE-285', cvss:'8.5', remed:"router.use('/admin', (req, res, next) => {\n  if (!req.user || req.user.role !== 'ADMIN')\n    return res.status(403).json({ error: 'Forbidden' });\n  next();\n});" };
+    f = { verdict:'BFLA', sev:'High', endpoint: ep2 ? ep2[1]+' '+ep2[2] : 'DELETE /mock-api/admin/users/{id}', score:'N/A', cwe:'CWE-285', cvss:'8.5', remed:"router.use('/admin', (req, res, next) => {\n  if (!req.user || req.user.role !== 'ADMIN')\n    return res.status(403).json({ error: 'Admin tier required' });\n  next();\n});" };
   } else if (/Shadow API Detected/i.test(t)) {
     var ep3 = t.match(/:\s*(\/\S+)/);
-    f = { verdict:'INFO', sev:'Medium', endpoint: ep3 ? ep3[1] : '/unknown', score:'N/A', cwe:'CWE-200', cvss:'5.3', remed:'// Auth-guard or remove the undocumented route.\n// Add to OpenAPI spec if intentional.' };
-  } else if (/VERDICT.*CRITICAL/i.test(t)) {
-    var cweM = t.match(/CWE-\d+/i);
-    f = { verdict:'WARN', sev:'Critical', endpoint:'Multiple', score:'N/A', cwe: cweM ? cweM[0] : 'N/A', cvss:'9.8', remed:'// See console output for full details.' };
+    f = { verdict:'SHADOW', sev:'High', endpoint: ep3 ? 'GET ' + ep3[1] : 'GET /mock-api/debug/heap-dump', score:'N/A', cwe:'CWE-200', cvss:'7.5', remed:'// Disallow undocumented debug route or enforce strict VPC gateway policy:\napp.use("/debug", restrictToInternalVpc());' };
+  } else if (/CONFIRMED JWT CRITICAL/i.test(t)) {
+    f = { verdict:'JWT_NONE', sev:'Critical', endpoint:'GET /mock-api/auth/secret', score:'N/A', cwe:'CWE-347', cvss:'9.8', remed:'// Require explicit cryptographic algorithm allowlist:\njwt.verify(token, secret, { algorithms: ["RS256", "HS256"] });' };
+  } else if (/CONFIRMED RATE LIMIT BYPASS/i.test(t)) {
+    f = { verdict:'RATE_LIMIT', sev:'Medium', endpoint:'POST /mock-api/auth/reset-password', score:'N/A', cwe:'CWE-799', cvss:'5.3', remed:'// Do not trust arbitrary X-Forwarded-For headers:\napp.set("trust proxy", "loopback");' };
+  } else if (/CONFIRMED GRAPHQL INTROSPECTION/i.test(t)) {
+    f = { verdict:'GRAPHQL', sev:'Medium', endpoint:'POST /mock-api/graphql', score:'N/A', cwe:'CWE-200', cvss:'5.3', remed:'// Disable introspection in production/staging:\nconst server = new ApolloServer({ schema, introspection: false });' };
+  } else if (/CONFIRMED BROKEN AUTHENTICATION/i.test(t)) {
+    f = { verdict:'BROKEN_AUTH', sev:'Critical', endpoint:'GET /mock-api/admin/metrics', score:'N/A', cwe:'CWE-306', cvss:'9.8', remed:'// Enforce admin authentication middleware:\napp.use("/admin", requireAdminAuth);' };
   }
   if (f) {
-    findings.push(f);
-    liveCount++;
-    updateLiveBadge();
+    if (!findings.some(function(x) { return x.endpoint === f.endpoint && x.verdict === f.verdict; })) {
+      findings.push(f);
+      liveCount++;
+      updateLiveBadge();
+    }
   }
 }
 
@@ -95,10 +102,10 @@ function renderResults() {
     var tr = document.createElement('tr');
     tr.innerHTML = '<td><span class="verdict-chip ' + f.verdict + '">' + escHtml(f.verdict) + '</span></td>' +
       '<td><code class="mono">' + escHtml(f.endpoint) + '</code></td>' +
-      '<td><code class="mono">' + escHtml(f.cwe) + '</code></td>' +
+      '<td><code class="mono">' + escHtml(f.cwe || 'N/A') + '</code></td>' +
       '<td>' + escHtml(f.sev) + '</td>' +
-      '<td>' + escHtml(f.cvss) + '</td>' +
-      '<td><div class="remed">' + escHtml(f.remed) + '</div></td>';
+      '<td>' + escHtml(f.cvss || 'N/A') + '</td>' +
+      '<td><div class="remed">' + escHtml(f.remed || f.desc || '') + '</div></td>';
     tbody.appendChild(tr);
   });
 }
@@ -129,7 +136,7 @@ function runGoal(id) {
   clearConsole();
   setStatus('running', 'Running — ' + id);
   updateLiveBadge();
-  appendLine('  Starting goal: ' + id + '  (target: ' + (runtimeCfg.targetUrl || 'http://localhost:8000') + ')', 'accent');
+  appendLine('  Starting goal: ' + id + '  (target: ' + (runtimeCfg.targetUrl || 'http://localhost:4000/mock-api') + ')', 'accent');
   document.querySelectorAll('.goal-card').forEach(function(c) { c.classList.remove('running'); });
   var card = document.querySelector('.goal-card[data-id="' + id + '"]');
   if (card) card.classList.add('running');
@@ -146,8 +153,17 @@ function runGoal(id) {
       appendLine(ok ? '\n  Scan completed successfully.' : '\n  Scan exited with code ' + msg.code, ok ? 'ok' : 'err');
       setStatus('idle', ok ? 'Scan complete' : 'Scan errored');
       if (card) card.classList.remove('running');
-      renderResults();
-      if (findings.length) { setTimeout(function() { navigate('results'); }, 1000); }
+      fetch('/reports/offat-x-output.json?t=' + Date.now()).then(function(r) { return r.json(); }).then(function(data) {
+        if (data && data.findings && data.findings.length) {
+          findings = data.findings;
+          updateLiveBadge();
+        }
+        renderResults();
+        if (findings.length) { setTimeout(function() { navigate('results'); }, 800); }
+      }).catch(function() {
+        renderResults();
+        if (findings.length) { setTimeout(function() { navigate('results'); }, 800); }
+      });
     }
   };
   sse.onerror = function() {
