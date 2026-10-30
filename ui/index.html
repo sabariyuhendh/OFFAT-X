@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OFFAT-X Security Dashboard</title>
+  <meta name="description" content="OFFAT-X — OFFensive API Tester X. Full-stack web dashboard for autonomous API security testing." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Top Nav ── -->
+<nav class="topnav">
+  <span class="logo">⬡ OFFAT‑X</span>
+  <ul class="tabs">
+    <li><a href="#" data-tab="dashboard" onclick="navigate('dashboard');return false;" class="active">Dashboard</a></li>
+    <li><a href="#" data-tab="scan"      onclick="navigate('scan');return false;">Run Scan</a></li>
+    <li><a href="#" data-tab="results"   onclick="navigate('results');return false;">Results</a></li>
+    <li><a href="#" data-tab="report"    onclick="navigate('report');return false;">Report</a></li>
+    <li><a href="#" data-tab="config"    onclick="navigate('config');return false;">Config</a></li>
+  </ul>
+  <div class="status-dot">
+    <span class="dot idle" id="status-dot"></span>
+    <span id="status-label">Connecting…</span>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 1 — DASHBOARD
+═══════════════════════════════════════════════════════════ -->
+<section class="page active" id="page-dashboard">
+
+  <div class="hero">
+    <h1>OFFensive API Tester X</h1>
+    <p>
+      OFFAT-X is an autonomous 8-stage API security testing pipeline that detects
+      <strong>BOLA</strong>, <strong>BFLA</strong>, JWT attacks, Shadow APIs and more —
+      all from this single dashboard. No compilation required.
+    </p>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="val">9</div>
+        <div class="lbl">Test Goals</div>
+      </div>
+      <div class="stat">
+        <div class="val" id="stat-findings">0</div>
+        <div class="lbl">Findings</div>
+      </div>
+      <div class="stat">
+        <div class="val" id="stat-critical">0</div>
+        <div class="lbl">Critical</div>
+      </div>
+      <div class="stat">
+        <div class="val">8</div>
+        <div class="lbl">Pipeline Stages</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;flex-wrap:wrap">
+      <button class="btn-primary" onclick="runGoal('full')">▶ Run Full Scan</button>
+      <button class="btn-outline" onclick="navigate('scan')">Browse Goals</button>
+    </div>
+  </div>
+
+  <!-- Pipeline overview -->
+  <div class="card">
+    <div class="card-title">8-Stage Autonomous Pipeline</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem;margin-top:.5rem">
+      <div style="padding:.75rem;background:#0d0f14;border-radius:8px;border:1px solid var(--border)">
+        <div style="color:var(--accent);font-size:.78rem;font-weight:700">Stage 1</div>
+        <div style="font-size:.85rem;margin-top:.2rem">Scope Validation</div>
+        <div style="font-size:.75rem;color:var(--text2);margin-top:.2rem">Hostname allowlist enforcement via offat-x.yml</div>
+      </div>
+      <div style="padding:.75rem;background:#0d0f14;border-radius:8px;border:1px solid var(--border)">
+        <div style="color:var(--accent);font-size:.78rem;font-weight:700">Stage 2</div>
+        <div style="font-size:.85rem;margin-top:.2rem">OAS Contract Ingestion</div>
+        <div style="font-size:.75rem;color:var(--text2);margin-top:.2rem">OpenAPI 3.x parsing — operations, parameters, schemas</div>
+      </div>
+      <div style="padding:.75rem;background:#0d0f14;border-radius:8px;border:1px solid var(--border)">
+        <div style="color:var(--accent);font-size:.78rem;font-weight:700">Stage 3</div>
+        <div style="font-size:.85rem;margin-top:.2rem">DIRB Reconnaissance</div>
+        <div style="font-size:.75rem;color:var(--text2);margin-top:.2rem">Shadow API discovery via sandboxed dictionary brute-force</div>
+      </div>
+      <div style="padding:.75rem;background:#0d0f14;border-radius:8px;border:1px solid var(--border)">
+        <div style="color:var(--accent);font-size:.78rem;font-weight:700">Stage 4</div>
+        <div style="font-size:.85rem;margin-top:.2rem">DAG Construction</div>
+        <div style="font-size:.75rem;color:var(--text2);margin-top:.2rem">BFS chaining (L≤4) — eliminates 404 dead-ends</div>
+      </div>
+      <div style="padding:.75rem;background:#0d0f14;border-radius:8px;border:1px solid var(--border)">
+        <div style="color:var(--accent);font-size:.78rem;font-weight:700">Stage 5</div>
+        <div style="font-size:.85rem;margin-top:.2rem">Role-Differential Matrix</div>
+        <div style="font-size:.75rem;color:var(--text2);margin-top:.2rem">R = {Guest &lt; Low &lt; Premium &lt; Admin}</div>
+      </div>
+      <div style="padding:.75rem;background:#0d0f14;border-radius:8px;border:1px solid var(--border)">
+        <div style="color:var(--accent);font-size:.78rem;font-weight:700">Stage 6</div>
+        <div style="font-size:.85rem;margin-top:.2rem">Semantic Diffing (Eq. 2)</div>
+        <div style="font-size:.75rem;color:var(--text2);margin-top:.2rem">D = 0.30·J + 0.50·O + 0.20·1[2xx] - 0.60·E(a), τ=0.70</div>
+      </div>
+      <div style="padding:.75rem;background:#0d0f14;border-radius:8px;border:1px solid var(--border)">
+        <div style="color:var(--accent);font-size:.78rem;font-weight:700">Stage 7</div>
+        <div style="font-size:.85rem;margin-top:.2rem">Code Remediation</div>
+        <div style="font-size:.75rem;color:var(--text2);margin-top:.2rem">Prisma tenant filter + Express RBAC middleware generation</div>
+      </div>
+      <div style="padding:.75rem;background:#0d0f14;border-radius:8px;border:1px solid var(--border)">
+        <div style="color:var(--accent);font-size:.78rem;font-weight:700">Stage 8</div>
+        <div style="font-size:.85rem;margin-top:.2rem">Artifact Export</div>
+        <div style="font-size:.75rem;color:var(--text2);margin-top:.2rem">JSON · HTML Executive Report · OASIS SARIF 2.1.0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick reference -->
+  <div class="card">
+    <div class="card-title">Quick Reference — CLI Commands</div>
+    <table class="results-table" style="margin-top:.5rem">
+      <thead><tr><th>Command</th><th>Goal</th></tr></thead>
+      <tbody>
+        <tr><td><code class="mono">node run_tests.js --goal=full</code></td><td>Complete 8-stage scan</td></tr>
+        <tr><td><code class="mono">node run_tests.js --goal=bola</code></td><td>BOLA / IDOR stateful chain</td></tr>
+        <tr><td><code class="mono">node run_tests.js --goal=bfla</code></td><td>Privilege escalation</td></tr>
+        <tr><td><code class="mono">node run_tests.js --goal=dirb</code></td><td>Shadow API discovery</td></tr>
+        <tr><td><code class="mono">node run_tests.js --goal=jwt</code></td><td>JWT attack battery</td></tr>
+        <tr><td><code class="mono">node run_tests.js --goal=ratelimit</code></td><td>Rate-limit bypass</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 2 — RUN SCAN
+═══════════════════════════════════════════════════════════ -->
+<section class="page" id="page-scan">
+
+  <div class="card" style="padding:1rem 1.5rem">
+    <div class="card-title">Select a Test Goal</div>
+    <div class="goal-grid" id="goal-grid">
+      <!-- populated by app.js -->
+      <div style="color:var(--text2);padding:1rem">Loading goals…</div>
+    </div>
+  </div>
+
+  <!-- Live console -->
+  <div class="console-wrap">
+    <div class="console-header">
+      <span class="circ r"></span><span class="circ y"></span><span class="circ g"></span>
+      <span style="margin-left:.5rem">OFFAT-X Console Output</span>
+      <button onclick="clearConsole()" style="margin-left:auto;background:none;border:none;color:var(--text2);cursor:pointer;font-size:.8rem">Clear</button>
+    </div>
+    <div class="console-body" id="console-body">
+      <span class="ln dim">Waiting for scan to start…</span>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 3 — RESULTS
+═══════════════════════════════════════════════════════════ -->
+<section class="page" id="page-results">
+
+  <div class="card">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem">
+      <div class="card-title" style="margin:0">Security Findings — <span id="finding-count">0</span> total</div>
+      <button class="btn-outline" onclick="findings=[];renderResults();updateDashboardStats()">Clear</button>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Verdict</th>
+            <th>Endpoint</th>
+            <th>CWE</th>
+            <th>Severity</th>
+            <th>CVSS</th>
+            <th>Remediation</th>
+          </tr>
+        </thead>
+        <tbody id="results-tbody">
+          <tr><td colspan="6" style="text-align:center;color:var(--text2);padding:2rem">No findings yet — run a scan first.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 4 — REPORT (iframe)
+═══════════════════════════════════════════════════════════ -->
+<section class="page" id="page-report">
+  <div class="card" style="padding:.75rem 1.25rem;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-size:.85rem;color:var(--text2)">Executive HTML Report — generated by the Full 8-Stage Scan</span>
+    <button class="btn-outline" style="font-size:.8rem" onclick="loadReport()">↻ Refresh</button>
+  </div>
+  <div id="report-container">
+    <div class="empty-state">
+      <div class="icon">📋</div>
+      <p>No report generated yet.</p>
+      <p style="margin-top:.5rem">Run the <strong>Full 8-Stage Scan</strong> goal first.</p>
+      <button class="btn-primary" style="margin-top:1.5rem" onclick="runGoal('full')">Run Full Scan Now</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE 5 — CONFIG
+═══════════════════════════════════════════════════════════ -->
+<section class="page" id="page-config">
+
+  <div class="card">
+    <div class="card-title">Target API Configuration</div>
+    <div class="form-row">
+      <label>Target URL</label>
+      <input type="text" id="cfg-target" placeholder="http://localhost:8000" />
+    </div>
+    <div class="form-row">
+      <label>Documented API Paths (from OpenAPI spec)</label>
+      <textarea id="cfg-paths" readonly placeholder="Loading…"></textarea>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">offat-x.yml — Scope &amp; Role Configuration</div>
+    <div class="form-row">
+      <label>Raw YAML (read-only — edit the file at offat-x/offat-x.yml)</label>
+      <textarea id="cfg-yml" readonly style="min-height:260px;font-size:.76rem"></textarea>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Run a Specific Goal</div>
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap;align-items:center">
+      <select id="cfg-goal-select" style="background:#0d0f14;border:1px solid var(--border);border-radius:6px;color:var(--text);padding:.5rem .8rem;font-size:.85rem;outline:none">
+        <option value="full">Full 8-Stage Scan</option>
+        <option value="bola">BOLA / IDOR Test</option>
+        <option value="bfla">BFLA Privilege Escalation</option>
+        <option value="dirb">Shadow API Discovery</option>
+        <option value="jwt">JWT Attack Battery</option>
+        <option value="ratelimit">Rate Limit Bypass</option>
+        <option value="graphql">GraphQL Security</option>
+        <option value="ci">CI/CD PR Gate</option>
+        <option value="report">Rebuild DOCX Report</option>
+      </select>
+      <button class="btn-primary" onclick="runGoal(document.getElementById('cfg-goal-select').value)">▶ Run Selected Goal</button>
+    </div>
+  </div>
+
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
