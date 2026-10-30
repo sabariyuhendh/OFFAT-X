@@ -314,3 +314,17 @@ code.mono { font-family: var(--mono); background: rgba(0,0,0,.3); padding: .1rem
   .page { padding: 1rem; }
   .goal-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Stage cards (pipeline overview) ── */
+.stage-card {
+  padding: .75rem;
+  background: #0d0f14;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.stage-num  { color: var(--accent); font-size: .78rem; font-weight: 700; margin-bottom: .2rem; }
+.stage-name { font-size: .85rem; font-weight: 600; margin-bottom: .2rem; }
+.stage-desc { font-size: .75rem; color: var(--text2); line-height: 1.5; }
+
+/* ── Spec tab active state ── */
+.btn-outline.active { border-color: var(--accent2); color: var(--accent); }
